@@ -1,0 +1,29 @@
+%% =====================================================================
+%%  dossiers-book.tex -- THE SOURCE DOSSIERS (companion volume).
+%%
+%%  The main book (main.tex -> handbook.pdf) is the reading text. This
+%%  file compiles the audit trail separately: one section per entry,
+%%  one dossier per (book, entry) pair, grouped by part and chapter.
+%%
+%%        make pdf-appendix      (or build it anywhere latexmk runs)
+%%
+%%  GENERATED CONTENT, DO NOT EDIT: everything under \input comes from
+%%  registry/compiled/dossiers.tex, produced by tools/build_index.py.
+%% =====================================================================
+\documentclass[a5paper]{style/handbook}
+\usepackage{style/entry}
+\input{registry/compiled/booknames}
+
+\begin{document}
+\frontmatter
+\pagestyle{empty}
+\begin{center}
+  {\Large\bfseries Source Dossiers}\\[6pt]
+  {\small the companion volume to \emph{The Manipulation Handbook}}
+\end{center}
+\clearpage
+
+\pagestyle{plain}
+\input{registry/compiled/dossiers}
+
+\end{document}

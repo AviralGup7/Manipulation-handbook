@@ -587,12 +587,16 @@ def check_inputs(repo: Repo, rep: Report) -> None:
     must be reachable from main.tex. A dangling \\input is the single most
     common first-compile failure in a project assembled from many files."""
     seen: Set[str] = set()
-    queue = ["main.tex"]
+    # two compile roots since the dossier volume was split out of the
+    # reading book: main.tex (handbook) and dossiers-book.tex (companion)
+    queue = ["main.tex", "dossiers-book.tex"]
     reachable: Set[str] = set()
     while queue:
         relp = queue.pop()
         absp = os.path.join(ROOT, relp)
         if not os.path.exists(absp):
+            if os.path.basename(relp) == "dossiers-book.tex":
+                continue        # companion volume is optional to build
             if not os.path.exists(absp + ".tex"):
                 rep.err("R18", relp, "file does not exist")
                 continue

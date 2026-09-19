@@ -31,9 +31,9 @@ ch5 pp.130, ch6 pp.152, ch7 pp.188, ch8 pp.216, ch9 pp.249, ch10 pp.281.
 | ch.5 get a "that's right" (summary as commitment device; "you're right" as counterfeit) | `T-16-05` | written |
 | ch.6 bend their reality (loss aversion, anchoring, ranges, the fair trap) | `T-25-03` | written |
 | ch.7 illusion of control (calibrated How/What questions) | `T-14-08` | written |
-| ch.8 guarantee execution (7-38-55, three kinds of yes, Pinocchio effect) | `T-06-05` | scaffolded |
-| ch.9 bargain hard (Ackerman system, precise odd numbers, throw-in) | `T-25-04` | scaffolded |
-| ch.10 find the black swan (unknown unknowns, similarity, face time) | `T-05-03` | scaffolded |
+| ch.8 guarantee execution (7-38-55, three kinds of yes, Pinocchio effect) | `T-06-05` | written |
+| ch.9 bargain hard (Ackerman system, precise odd numbers, throw-in) | `T-25-04` | written |
+| ch.10 find the black swan (unknown unknowns, similarity, face time) | `T-05-03` | written |
 | appendix: negotiation one-sheet | folded into ch.9 entry | merged |
 
 ## Slot routing for B5 material

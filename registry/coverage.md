@@ -38,12 +38,12 @@ already contributed to it.
 | `T-04-04` | stable | B1, B3 | The Self-Audit | Load-Bearing Points | 442 |
 | `T-05-01` | stable | B1 | The Real Objection | Motives Before Words | 451 |
 | `T-05-02` | stable | B1, B3 | Follow the Interest | Motives Before Words | 432 |
-| `T-05-03` | planned | B5 | The Black Swan | Motives Before Words | 43 |
+| `T-05-03` | stable | B5 | The Black Swan | Motives Before Words | 559 |
 | `T-06-01` | stable | B1 | Protest Too Much | Tells and Consistency | 429 |
 | `T-06-02` | stable | B1 | The Two-Tellings Test | Tells and Consistency | 450 |
 | `T-06-03` | stable | B1 | The Third-Party Lie Rule | Tells and Consistency | 464 |
 | `T-06-04` | stable | B1, B3, B4 | Behaviour Over Declaration | Tells and Consistency | 486 |
-| `T-06-05` | planned | B5 | The Three Channels | Tells and Consistency | 44 |
+| `T-06-05` | stable | B5 | The Three Channels | Tells and Consistency | 555 |
 | `T-07-01` | stable | B3, B5 | Posing as a Friend | Gathering Information | 453 |
 | `T-07-02` | stable | B3, B1 | The Indirect Question | Gathering Information | 412 |
 | `T-07-03` | stable | B1 | The Three-Second Read | Gathering Information | 453 |
@@ -94,7 +94,7 @@ already contributed to it.
 | `T-25-01` | stable | B4 | The Reneged Price | Money and Contracts | 491 |
 | `T-25-02` | planned | B3 | The Free Lunch | Money and Contracts | 35 |
 | `T-25-03` | stable | B5 | The Anchor | Money and Contracts | 555 |
-| `T-25-04` | planned | B5 | The Ackerman Plan | Money and Contracts | 47 |
+| `T-25-04` | stable | B5 | The Ackerman Plan | Money and Contracts | 559 |
 | `T-26-02` | planned | B1 | The Ordered Exit | Exit and Aftermath | 36 |
 | `T-27-01` | planned | B1 | The Bill for the Method | What You Get Out of Using People | 41 |
 
@@ -115,6 +115,3 @@ already contributed to it.
 - `B3-T-21-02` -- TODO chapter / section / pages in the source (unique: no)
 - `B3-T-21-03` -- TODO chapter / section / pages in the source (unique: no)
 - `B3-T-25-02` -- TODO chapter / section / pages in the source (unique: no)
-- `B5-T-05-03` -- TODO chapter / section / pages in the source (unique: no)
-- `B5-T-06-05` -- TODO chapter / section / pages in the source (unique: no)
-- `B5-T-25-04` -- TODO chapter / section / pages in the source (unique: no)

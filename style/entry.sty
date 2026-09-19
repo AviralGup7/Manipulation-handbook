@@ -72,9 +72,8 @@
 
 %% Slot head: small caps, accented, run alone on its line.
 \newcommand{\hbslot}[1]{%
-  \par\addvspace{5pt}\noindent
-  {\footnotesize\bfseries\hbcolor{hbaccent}\MakeUppercase{#1}}%
-  \par\nobreak\addvspace{1.5pt}\ignorespaces}
+  \par\addvspace{7pt}\noindent
+  {\footnotesize\scshape\hbcolor{hbmuted}#1.}\hspace{0.55em}\ignorespaces}
 
 %% ---------------------------------------------------------------------
 %% \topic{ID}{Title}{Subtitle}
@@ -124,13 +123,13 @@
 \newenvironment{mechanism}{\hbslot{Mechanism}\ignorespaces}{\par}
 
 %% TELLS -- how to recognise it in the wild.
-\newenvironment{feedback}{\hbslot{Feedback}\begin{itemize}\ignorespaces}{\end{itemize}}
+\newenvironment{feedback}{\hbslot{Feedback}\begin{itemize}\setlength\itemsep{1.5pt}\setlength\parsep{1.5pt}\ignorespaces}{\end{itemize}}
 
 %% MOVES -- how it is executed. Short, numbered, imperative.
-\newenvironment{application}{\hbslot{Application}\begin{enumerate}\ignorespaces}{\end{enumerate}}
+\newenvironment{application}{\hbslot{Application}\begin{enumerate}\setlength\itemsep{1.5pt}\setlength\parsep{1.5pt}\ignorespaces}{\end{enumerate}}
 
 %% COUNTERS -- defence, reversal, inoculation.
-\newenvironment{countermeasures}{\hbslot{Countermeasures}\begin{itemize}\ignorespaces}{\end{itemize}}
+\newenvironment{countermeasures}{\hbslot{Countermeasures}\begin{itemize}\setlength\itemsep{1.5pt}\setlength\parsep{1.5pt}\ignorespaces}{\end{itemize}}
 
 %% COST -- when it fails, what it costs, blowback, legality.
 %% Named `cost`, not `limits`: \limits is a TeX primitive and
@@ -179,7 +178,7 @@
     \fi}%
   \par}}
 \newcommand{\seesources}{\par\vspace{3pt}\noindent{\footnotesize
-  \hbcolor{hbmuted}Source dossiers for this entry are filed in Appendix~A.\par}}
+  \hbcolor{hbmuted}Source dossiers for this entry are collected in the companion Source Dossiers volume.\par}}
 
 %% ---------------------------------------------------------------------
 %% SOURCE-DOSSIER DSL  (Layer A -- append-only, docs/RULES.md R8)

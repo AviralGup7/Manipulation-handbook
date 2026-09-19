@@ -102,6 +102,9 @@ pdf: index
 pdf-wasm: index
 	@node --max-old-space-size=6144 tools/wasm-pdftex/build.js . $(MAIN) $(PDF)
 
+pdf-appendix: index
+	@node --max-old-space-size=6144 tools/wasm-pdftex/build.js . dossiers-book.tex dossiers.pdf
+
 # ---------------------------------------------------------------------
 # Source text extraction (gitignored; only needed for the R15 verbatim check)
 # ---------------------------------------------------------------------
