@@ -117,3 +117,8 @@ to power, an image, a symbol, and a reversal.
   chapter. Rows whose planned half had come to point at an already-written
   entry were re-marked `additive`. Law 5 keeps `T-09-01`; the provisional
   46–48 row moves to `T-09-04`. Drift of this kind is now rule R21.
+
+* 2026-09-19 (grounding audit) --- randomised content audit of the whole registry:
+  T-02-03 and T-12-03 repaired (stale source-count phrase; street proverb de-attributed
+  from B3 --- this edition's text contains no Corleone passage). No dossier changes; the
+  remaining sampled entries verified grounded against the corpus.
