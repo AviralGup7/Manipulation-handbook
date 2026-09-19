@@ -81,7 +81,11 @@
 \newcommand{\topic}[3]{%
   \@ifundefined{needspace}{}{\needspace{5\baselineskip}}%
   \hbphantomsection
-  \section[{#2}]{#2 {\normalfont\footnotesize\hbcolor{hbmuted}#1}}%
+  \if\relax\detokenize{#3}\relax
+    \section[{#2}]{#2 {\normalfont\footnotesize\hbcolor{hbmuted}#1}}%
+  \else
+    \section[{#2 --- {\normalfont\itshape #3}}]{#2 {\normalfont\footnotesize\hbcolor{hbmuted}#1}}%
+  \fi
   \label{#1}%
   \hbtopicmark{\MakeUppercase{#2}}%
   \gdef\hbcurrenttopicid{#1}%

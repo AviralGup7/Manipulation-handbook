@@ -16,6 +16,7 @@ already contributed to it.
 | B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 33 | 33 | 26 |
 | B5 | primary | 85 | Never Split the Difference | Chris Voss (with Tahl Raz) | 2016 | 11 | 11 | 9 |
 | B6 | primary | 85 | In Sheep's Clothing: Understanding and Dealing with Manipulative People | George K. Simon Jr. | 1996 | 9 | 9 | 4 |
+| B7 | primary | 80 | Spy the Lie: How to Spot Deception the CIA Way | Philip Houston, Michael Floyd, with Susan Carnicero | 2012 | 7 | 7 | 4 |
 
 ## Entries
 
@@ -42,7 +43,7 @@ already contributed to it.
 | `T-05-02` | stable | B1, B3 | Follow the Interest | Motives Before Words | 432 |
 | `T-05-03` | stable | B5 | The Black Swan | Motives Before Words | 559 |
 | `T-06-01` | stable | B1 | Protest Too Much | Tells and Consistency | 429 |
-| `T-06-02` | stable | B1, B6 | The Two-Tellings Test | Tells and Consistency | 513 |
+| `T-06-02` | stable | B1, B6, B7 | The Two-Tellings Test | Tells and Consistency | 562 |
 | `T-06-03` | stable | B1 | The Third-Party Lie Rule | Tells and Consistency | 464 |
 | `T-06-04` | stable | B1, B3, B4 | Behaviour Over Declaration | Tells and Consistency | 486 |
 | `T-06-05` | stable | B5 | The Three Channels | Tells and Consistency | 555 |
@@ -71,7 +72,7 @@ already contributed to it.
 | `T-12-04` | stable | B3 | Credit Routing | Alliances, Patrons and Courts | 632 |
 | `T-12-05` | stable | B3 | The Courtier | Alliances, Patrons and Courts | 538 |
 | `T-13-01` | stable | B4 | Manufactured Consensus | Concealment and Indirection | 454 |
-| `T-13-02` | stable | B1, B6 | Weakness as a Mask | Concealment and Indirection | 567 |
+| `T-13-02` | stable | B1, B6, B7 | Weakness as a Mask | Concealment and Indirection | 623 |
 | `T-13-03` | stable | B3 | The Veil | Concealment and Indirection | 639 |
 | `T-13-04` | stable | B3 | The Cutout | Concealment and Indirection | 532 |
 | `T-14-01` | stable | B4, B5 | The Automatic Response | Framing and Controlled Choice | 560 |
@@ -120,7 +121,11 @@ already contributed to it.
 | `T-23-01` | stable | B4 | Reading a Seeded Room | Detection | 472 |
 | `T-23-02` | stable | B4, B6 | Manufactured Rapport | Detection | 490 |
 | `T-23-03` | stable | B4 | Testing a Claimed Credential | Detection | 491 |
-| `T-23-04` | stable | B6 | The Gut Verdict | Detection | 644 |
+| `T-23-04` | stable | B6, B7 | The Gut Verdict | Detection | 697 |
+| `T-23-05` | stable | B7 | The Five-Second Window | Detection | 682 |
+| `T-23-06` | stable | B7 | The Three Lies | Detection | 686 |
+| `T-23-07` | stable | B7 | The Wrath of the Liar | Detection | 694 |
+| `T-23-08` | stable | B7 | The Working Question | Detection | 691 |
 | `T-24-01` | stable | B4 | Refusing an Unauthorised Debt | Inoculation and Refusal | 535 |
 | `T-24-02` | stable | B4 | A Commitment You Did Not Choose | Inoculation and Refusal | 499 |
 | `T-24-03` | stable | B4 | Refusing a Deadline | Inoculation and Refusal | 502 |

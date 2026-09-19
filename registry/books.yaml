@@ -127,6 +127,22 @@
   notes: >
     TODO
 
+
+- id: B7
+  rank: primary
+  weight: 80
+  status: active
+  title: "Spy the Lie: How to Spot Deception the CIA Way"
+  author: "Philip Houston, Michael Floyd, with Susan Carnicero"
+  year: 2012
+  publisher: "St. Martin's Press"
+  file: "books/Spy the Lie - Houston Floyd Carnicero.pdf"
+  contributed: "the formal detection instrument: the stimulus-timed behavioural model (five-second window, cluster rule), the three-lie taxonomy with its verbal indicator catalogue, the nonverbal indicators, the counterattack tell, and the question-craft doctrine (cliff moments, entrenchment timing, the reserve rule)."
+  structure: "TODO"
+  short: "Houston et al., Spy the Lie (2012)"
+  notes: >
+    TODO
+
 # NEXT BOOK GOES HERE. Do not renumber the ones above.
 # ---------------------------------------------------------------------
 # - id: B6
