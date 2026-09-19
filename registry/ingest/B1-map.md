@@ -1,8 +1,7 @@
 # Ingest record — B1 · Sparkman, *The Art of Manipulation* (1978)
 
-**Status: substantially ingested.** Chapters covered by Parts I–II are mapped and
-merged. Every tactic chapter's mapped entries are now written except where a row
-below still says planned (`T-16-04`, `T-19-03` and the additive pendings).
+**Status: fully ingested.** Every chapter's mapped entries are written, and the
+additive dossiers (Tactics 8 and 10) are filed against their entries.
 
 Source shape: one framing chapter, fourteen numbered tactics, one closing cost
 chapter. 181 PDF pages, of which roughly two-thirds are first-person anecdote.
@@ -27,11 +26,11 @@ chapter. 181 PDF pages, of which roughly two-thirds are first-person anecdote.
 | Tactic 5 — the meek shall manipulate; never know much | `T-02-02`, `T-08-02`; `T-13-02` | merged / written |
 | Tactic 6 — picking a person apart; real motives | `T-05-01`, `T-07-02`, `T-07-03`, `T-04-04` | merged |
 | Tactic 7 — the Guernsey vs. the Brahma | `T-02-05` | merged |
-| Tactic 8 — avoiding being taken in financial dealings | `T-05-02`; `T-25-01` | additive: dossier pending for `T-25-01` |
+| Tactic 8 — avoiding being taken in financial dealings | `T-05-02`; `T-25-01` | additive: dossier filed for `T-25-01` |
 | Tactic 9 — manipulating a person's thinking | `T-16-02` | written |
-| Tactic 10 — win ninety-five percent of your arguments | `T-08-02`; `T-16-01`, `T-16-03` | additive pending for `T-08-02`, `T-16-01`; `T-16-03` written |
-| Tactic 11 — manipulate a person against his will; the unargue technique | `T-16-04` | **planned** |
-| Tactic 12 — a little pressure has its place, but seldom | `T-19-03`, `T-20-01` | partly written; **planned** |
+| Tactic 10 — win ninety-five percent of your arguments | `T-08-02`; `T-16-01`, `T-16-03` | additive filed for `T-08-02`, `T-16-01`; `T-16-03` written |
+| Tactic 11 — manipulate a person against his will; the unargue technique | `T-16-04` | written |
+| Tactic 12 — a little pressure has its place, but seldom | `T-19-03`, `T-20-01` | written |
 | Tactic 13 — if all else fails, try the dirty way | `T-20-02` | written |
 | Tactic 14 — how to squelch ingratitude before it starts | `T-04-02`; `T-26-01` | partly merged / written |
 | ch. 16 — what you get out of using people | `T-01-04`; `T-27-01`, `T-27-02` | partly merged / written |
@@ -40,8 +39,9 @@ chapter. 181 PDF pages, of which roughly two-thirds are first-person anecdote.
 
 * Tactic 2 and Tactic 4 both fed `T-11-01` and are filed as two dossiers against
   that entry; Tactic 4's need-posture half later took the new slot `T-11-02`.
-* Still unwritten from this book: `T-16-04` (the Unargue technique) and the
-  fear half of Tactic 12 (`T-19-03`).
+* Nothing from this book remains unwritten. `T-16-04` (the Unargue, six steps
+  and token-objection doctrine) and `T-19-03` (the unanswerable question and the
+  social-pressure family) completed the map.
 * Tactic 13 describes conduct that is criminal in most jurisdictions. It is
   admitted for recognition purposes only and must carry a `failure` slot that
   says so.

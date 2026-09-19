@@ -212,6 +212,18 @@ def gen_coverage_tex(repo: Repo) -> str:
                f"Planned: \\textbf{{{n_plan}}}\\quad "
                f"Sources ingested: \\textbf{{{len(repo.books)}}}")
     out.append("")
+    roll = []
+    pub = [t for t in repo.topics.values() if t.status in BODY_STATUSES]
+    for b in repo.books:
+        bid = b["id"]
+        cited = sum(1 for t in pub if bid in t.sources)
+        orig = sum(1 for t in pub if t.sources and t.sources[0] == bid)
+        doss = sum(1 for d in repo.dossiers.values() if d.meta.get("book") == bid)
+        roll.append(f"\\textbf{{{bid}}} originates {orig}, "
+                    f"is cited in {cited}, files {doss} dossiers")
+    out.append("\\noindent\\small\\hbcolor{hbmuted}Contribution by source: "
+               + "; ".join(roll) + ".")
+    out.append("")
 
     for part in repo.ordered_parts():
         out.append(f"\\section*{{{tex_escape(part.title)}}}")
@@ -223,7 +235,8 @@ def gen_coverage_tex(repo: Repo) -> str:
             for t in topics:
                 sym = {"stable": "$\\bullet$", "draft": "$\\circ$"}.get(t.status, "$\\cdot$")
                 srcs = ",".join(t.sources) or "--"
-                marks.append(f"{sym}\\,\\texttt{{{t.id}}} [{srcs}]")
+                marks.append(f"{sym}\\,\\texttt{{{t.id}}} "
+                             f"{tex_escape(t.title)} [{srcs}]")
             body = "; ".join(marks) if marks else "\\emph{no entries yet}"
             out.append(f"\\item \\textbf{{{tex_escape(ch.title)}}} --- {body}")
         out.append("\\end{itemize}")
@@ -244,13 +257,16 @@ def gen_coverage_md(repo: Repo) -> str:
     L.append("to find out whether a topic already exists, and which books have")
     L.append("already contributed to it.\n")
     L.append("## Sources\n")
-    L.append("| id | rank | w | title | author | year | dossiers |")
-    L.append("|----|------|---|-------|--------|------|----------|")
+    L.append("| id | rank | w | title | author | year | dossiers | cited-in | originates |")
+    L.append("|----|------|---|-------|--------|------|----------|----------|------------|")
+    pub = [t for t in repo.topics.values() if t.status in BODY_STATUSES]
     for b in repo.books:
         n = sum(1 for d in repo.dossiers.values() if d.meta.get("book") == b["id"])
+        cited = sum(1 for t in pub if b["id"] in t.sources)
+        orig = sum(1 for t in pub if t.sources and t.sources[0] == b["id"])
         L.append(f"| {b['id']} | {b.get('rank','')} | {b.get('weight','')} "
                  f"| {b.get('title','')} | {b.get('author','')} "
-                 f"| {b.get('year','')} | {n} |")
+                 f"| {b.get('year','')} | {n} | {cited} | {orig} |")
     L.append("")
     L.append("## Entries\n")
     L.append("| entry | status | sources | title | chapter | words |")

@@ -8,13 +8,13 @@ already contributed to it.
 
 ## Sources
 
-| id | rank | w | title | author | year | dossiers |
-|----|------|---|-------|--------|------|----------|
-| B1 | primary | 90 | The Art of Manipulation | R. B. Sparkman | 1978 | 31 |
-| B2 | secondary | 20 | Art of Manipulation (condensed study summary of B1) | Bookey | 2025 | 1 |
-| B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 35 |
-| B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 29 |
-| B5 | primary | 85 | Never Split the Difference | Chris Voss (with Tahl Raz) | 2016 | 11 |
+| id | rank | w | title | author | year | dossiers | cited-in | originates |
+|----|------|---|-------|--------|------|----------|----------|------------|
+| B1 | primary | 90 | The Art of Manipulation | R. B. Sparkman | 1978 | 35 | 35 | 31 |
+| B2 | secondary | 20 | Art of Manipulation (condensed study summary of B1) | Bookey | 2025 | 1 | 1 | 0 |
+| B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 62 | 62 | 47 |
+| B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 33 | 33 | 26 |
+| B5 | primary | 85 | Never Split the Difference | Chris Voss (with Tahl Raz) | 2016 | 11 | 11 | 9 |
 
 ## Entries
 
@@ -50,45 +50,70 @@ already contributed to it.
 | `T-07-04` | stable | B5 | The Mirror | Gathering Information | 547 |
 | `T-08-01` | stable | B3 | Do Not Offend the Wrong Person | Judging Who You Are Dealing With | 483 |
 | `T-08-02` | stable | B1, B3 | The Engagement Decision | Judging Who You Are Dealing With | 454 |
-| `T-09-01` | stable | B3 | A Reputation You Built on Purpose | Reputation | 555 |
+| `T-09-01` | stable | B3, B4 | A Reputation You Built on Purpose | Reputation | 590 |
 | `T-09-02` | stable | B3 | Bearing Sets the Price | Reputation | 559 |
 | `T-09-03` | stable | B3 | The Inherited Shadow | Reputation | 536 |
+| `T-09-04` | stable | B3 | The Envy Margin | Reputation | 558 |
 | `T-10-01` | stable | B4 | Value as a Function of Availability | Attention, Absence and Scarcity | 490 |
 | `T-10-02` | stable | B4 | The Reactance Trigger | Attention, Absence and Scarcity | 532 |
 | `T-10-03` | stable | B4 | Limited Numbers and Deadlines | Attention, Absence and Scarcity | 516 |
+| `T-10-04` | stable | B3 | The Attention Market | Attention, Absence and Scarcity | 537 |
+| `T-10-05` | stable | B3 | The Withdrawal | Attention, Absence and Scarcity | 580 |
+| `T-10-06` | stable | B3 | The Spectacle | Attention, Absence and Scarcity | 570 |
 | `T-11-01` | stable | B1, B3 | The Dependence Build | Dependence | 558 |
 | `T-11-02` | stable | B1 | The Upper Hand | Dependence | 604 |
+| `T-11-03` | stable | B3 | The Extensive Web | Dependence | 630 |
 | `T-12-01` | stable | B1, B3 | The Patron Map | Alliances, Patrons and Courts | 554 |
+| `T-12-02` | stable | B3 | The Uncommitted | Alliances, Patrons and Courts | 604 |
+| `T-12-03` | stable | B3 | Friends and Enemies | Alliances, Patrons and Courts | 633 |
+| `T-12-04` | stable | B3 | Credit Routing | Alliances, Patrons and Courts | 632 |
 | `T-12-05` | stable | B3 | The Courtier | Alliances, Patrons and Courts | 538 |
 | `T-13-01` | stable | B4 | Manufactured Consensus | Concealment and Indirection | 454 |
 | `T-13-02` | stable | B1 | Weakness as a Mask | Concealment and Indirection | 530 |
+| `T-13-03` | stable | B3 | The Veil | Concealment and Indirection | 639 |
 | `T-13-04` | stable | B3 | The Cutout | Concealment and Indirection | 532 |
 | `T-14-01` | stable | B4, B5 | The Automatic Response | Framing and Controlled Choice | 560 |
 | `T-14-02` | stable | B4 | The Contrast Principle | Framing and Controlled Choice | 489 |
 | `T-14-03` | stable | B4 | The Small First Yes | Framing and Controlled Choice | 510 |
 | `T-14-04` | stable | B4 | The Four Amplifiers | Framing and Controlled Choice | 485 |
+| `T-14-05` | stable | B3 | The Bait | Framing and Controlled Choice | 607 |
+| `T-14-06` | stable | B3 | Their Cards | Framing and Controlled Choice | 633 |
 | `T-14-07` | stable | B5 | The Label | Framing and Controlled Choice | 547 |
 | `T-14-08` | stable | B5 | The Calibrated Question | Framing and Controlled Choice | 547 |
-| `T-15-01` | stable | B4 | The Crowd as Evidence | The Appeals | 467 |
+| `T-15-01` | stable | B4, B3 | The Crowd as Evidence | The Appeals | 511 |
 | `T-15-02` | stable | B4 | Uncertainty and Similarity | The Appeals | 447 |
-| `T-16-01` | stable | B4 | Concession and Retreat | Argument and Demonstration | 518 |
+| `T-15-03` | stable | B3 | The Belief Market | The Appeals | 614 |
+| `T-15-04` | stable | B3 | The Fantasy Floor | The Appeals | 673 |
+| `T-16-01` | stable | B4, B1, B3 | Concession and Retreat | Argument and Demonstration | 567 |
 | `T-16-02` | stable | B1 | Doing Their Thinking | Argument and Demonstration | 517 |
 | `T-16-03` | stable | B1 | Refuse the Argument | Argument and Demonstration | 584 |
+| `T-16-04` | stable | B1 | The Unargue | Argument and Demonstration | 648 |
 | `T-16-05` | stable | B5 | The Summary That Gets "That's Right" | Argument and Demonstration | 520 |
 | `T-17-01` | stable | B3 | Master Timing | Delivery | 537 |
 | `T-17-02` | stable | B3 | Bold Entry | Delivery | 548 |
-| `T-18-01` | stable | B4 | The Symbols of Authority | Appearance and Compliance | 515 |
+| `T-17-04` | stable | B3 | The Second Self | Delivery | 594 |
+| `T-17-05` | stable | B3 | Staged Grandeur | Delivery | 608 |
+| `T-17-06` | stable | B3 | The Slow Reform | Delivery | 641 |
+| `T-18-01` | stable | B4, B3 | The Symbols of Authority | Appearance and Compliance | 554 |
 | `T-18-02` | stable | B4 | Titles, Uniform and Trappings | Appearance and Compliance | 547 |
 | `T-18-04` | stable | B3 | Behave Like Others | Appearance and Compliance | 555 |
+| `T-18-03` | stable | B3 | The Sucker's Face | Appearance and Compliance | 660 |
 | `T-19-01` | stable | B4 | The Uninvited Debt | Guilt, Fear and Obligation | 546 |
 | `T-19-02` | stable | B4 | Unequal Exchange | Guilt, Fear and Obligation | 511 |
+| `T-19-03` | stable | B1 | The Unanswerable Question | Guilt, Fear and Obligation | 637 |
+| `T-19-04` | stable | B3 | The Unpredictable Clock | Guilt, Fear and Obligation | 625 |
 | `T-20-01` | stable | B1 | Measured Pressure | Coercion and the Dirty Way | 553 |
 | `T-20-02` | stable | B1 | The Dirty Way | Coercion and the Dirty Way | 619 |
 | `T-21-01` | stable | B3 | Total Defeat | Conflict | 580 |
 | `T-21-02` | stable | B3 | The Surrender Tactic | Conflict | 583 |
 | `T-21-03` | stable | B3 | Strategic Disdain | Conflict | 565 |
-| `T-22-01` | stable | B4 | The Liking Handle | Working the Hearts | 503 |
+| `T-21-04` | stable | B4 | The Frozen Crowd | Conflict | 671 |
+| `T-21-05` | stable | B3 | Strike the Shepherd | Conflict | 630 |
+| `T-21-06` | stable | B3 | Stirred Water | Conflict | 650 |
+| `T-22-01` | stable | B4, B3 | The Liking Handle | Working the Hearts | 542 |
 | `T-22-02` | stable | B4 | Borrowed Warmth | Working the Hearts | 469 |
+| `T-22-03` | stable | B4 | The Familiar Face | Working the Hearts | 652 |
+| `T-22-04` | stable | B3 | The Soothing Mirror | Working the Hearts | 662 |
 | `T-23-01` | stable | B4 | Reading a Seeded Room | Detection | 472 |
 | `T-23-02` | stable | B4 | Manufactured Rapport | Detection | 450 |
 | `T-23-03` | stable | B4 | Testing a Claimed Credential | Detection | 491 |
@@ -96,14 +121,16 @@ already contributed to it.
 | `T-24-02` | stable | B4 | A Commitment You Did Not Choose | Inoculation and Refusal | 499 |
 | `T-24-03` | stable | B4 | Refusing a Deadline | Inoculation and Refusal | 502 |
 | `T-24-05` | stable | B5 | The Safety of No | Inoculation and Refusal | 560 |
-| `T-25-01` | stable | B4 | The Reneged Price | Money and Contracts | 491 |
-| `T-25-02` | stable | B3 | The Free Lunch | Money and Contracts | 589 |
+| `T-25-01` | stable | B4, B1 | The Reneged Price | Money and Contracts | 537 |
+| `T-25-02` | stable | B3, B4 | The Free Lunch | Money and Contracts | 630 |
 | `T-25-03` | stable | B5 | The Anchor | Money and Contracts | 555 |
 | `T-25-04` | stable | B5 | The Ackerman Plan | Money and Contracts | 559 |
 | `T-26-02` | stable | B1 | The Ordered Exit | Exit and Aftermath | 626 |
 | `T-26-01` | stable | B1 | The Ingratitude Cure | Exit and Aftermath | 571 |
+| `T-26-03` | stable | B3 | No Island | Exit and Aftermath | 668 |
 | `T-27-01` | stable | B1 | The Bill for the Method | What You Get Out of Using People | 576 |
 | `T-27-02` | stable | B1 | The Eagle's Ice | What You Get Out of Using People | 598 |
+| `T-27-03` | stable | B3 | The Siege Bill | What You Get Out of Using People | 697 |
 | `T-28-01` | stable | B3 | Assume Formlessness | Self-Mastery | 669 |
 | `T-28-02` | stable | B3 | The Goal Line | Self-Mastery | 602 |
 

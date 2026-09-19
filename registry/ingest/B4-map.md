@@ -140,7 +140,7 @@ took the id for a different idea and the row must be renumbered.
 | unequal exchange: a small gift buys a large concession | `T-19-02` | written (c19) |
 | rejection-then-retreat; the reciprocal concession | `T-16-01` | written (c16) |
 | refusing a debt you did not authorise | `T-24-01` | written (c24) |
-| the sample as a purchase already begun | `T-25-02` | scaffolded (c25) |
+| the sample as a purchase already begun | `T-25-02` | written (additive: B4's sample mechanism folded in, dossier filed) |
 
 ### ch. 3 — Commitment and Consistency (pp. 87–125)
 
@@ -160,8 +160,8 @@ took the id for a different idea and the row must be renumbered.
 | uncertainty and similarity: the two conditions that switch it on | `T-15-02` | written (c15) |
 | a manufactured consensus; planted audiences | `T-13-01` | written (c13) |
 | reading a room that has been seeded | `T-23-01` | written (c23) |
-| reputation as accumulated social proof | `T-09-01` | additive: dossier pending (c09) |
-| bystander diffusion | `T-21-04` | **planned** (c21) |
+| reputation as accumulated social proof | `T-09-01` | additive: dossier filed (c09) |
+| bystander diffusion | `T-21-04` | written (c21) |
 
 ### ch. 5 — Liking (pp. 157–177)
 
@@ -170,7 +170,7 @@ took the id for a different idea and the row must be renumbered.
 | liking as a handle, and its five components | `T-22-01` | written (c22) |
 | association and borrowed warmth | `T-22-02` | written (c22) |
 | flattery works on the person who knows it is flattery | `T-04-03` | additive |
-| familiarity manufactured on purpose | `T-22-03` | **planned** (c22) |
+| familiarity manufactured on purpose | `T-22-03` | written (c22) |
 | spotting manufactured rapport | `T-23-02` | written (c23) |
 
 ### ch. 6 — Authority (pp. 178–204)
@@ -222,7 +222,8 @@ rather than forced through:
   `T-18-01`, `T-18-02` and `T-23-03`.
 * **`T-25-01` / `T-25-02` (ch. 2–3) — renumbered.** The low-ball entry was
   written before the sample entry, so it took the first free id. The sample
-  remains planned at `T-25-02`.
+  entry was later written from B3's Law 40 with B4's sample mechanism folded
+  in additively; both books are cited.
 
 Recording revisions here is part of the method. A map that silently disagrees
 with the tree is worse than no map.
