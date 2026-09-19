@@ -15,6 +15,7 @@ already contributed to it.
 | B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 62 | 62 | 47 |
 | B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 33 | 33 | 26 |
 | B5 | primary | 85 | Never Split the Difference | Chris Voss (with Tahl Raz) | 2016 | 11 | 11 | 9 |
+| B6 | primary | 85 | In Sheep's Clothing: Understanding and Dealing with Manipulative People | George K. Simon Jr. | 1996 | 9 | 9 | 4 |
 
 ## Entries
 
@@ -32,6 +33,7 @@ already contributed to it.
 | `T-02-05` | stable | B1 | Persistence Over Attitude | The Practitioner's Equipment | 390 |
 | `T-03-01` | stable | B3 | The Five Dangerous Marks | Character Types | 467 |
 | `T-03-02` | stable | B1 | The Operator Profile | Character Types | 427 |
+| `T-03-03` | stable | B6 | The Covert Aggressor | Character Types | 678 |
 | `T-04-01` | stable | B3 | The Thumbscrew | Load-Bearing Points | 422 |
 | `T-04-02` | stable | B1, B3, B4 | The Favour Debt | Load-Bearing Points | 550 |
 | `T-04-03` | stable | B3, B1, B4 | Vanity as a Handle | Load-Bearing Points | 494 |
@@ -40,7 +42,7 @@ already contributed to it.
 | `T-05-02` | stable | B1, B3 | Follow the Interest | Motives Before Words | 432 |
 | `T-05-03` | stable | B5 | The Black Swan | Motives Before Words | 559 |
 | `T-06-01` | stable | B1 | Protest Too Much | Tells and Consistency | 429 |
-| `T-06-02` | stable | B1 | The Two-Tellings Test | Tells and Consistency | 450 |
+| `T-06-02` | stable | B1, B6 | The Two-Tellings Test | Tells and Consistency | 513 |
 | `T-06-03` | stable | B1 | The Third-Party Lie Rule | Tells and Consistency | 464 |
 | `T-06-04` | stable | B1, B3, B4 | Behaviour Over Declaration | Tells and Consistency | 486 |
 | `T-06-05` | stable | B5 | The Three Channels | Tells and Consistency | 555 |
@@ -60,7 +62,7 @@ already contributed to it.
 | `T-10-04` | stable | B3 | The Attention Market | Attention, Absence and Scarcity | 537 |
 | `T-10-05` | stable | B3 | The Withdrawal | Attention, Absence and Scarcity | 580 |
 | `T-10-06` | stable | B3 | The Spectacle | Attention, Absence and Scarcity | 570 |
-| `T-11-01` | stable | B1, B3 | The Dependence Build | Dependence | 558 |
+| `T-11-01` | stable | B1, B3, B6 | The Dependence Build | Dependence | 591 |
 | `T-11-02` | stable | B1 | The Upper Hand | Dependence | 604 |
 | `T-11-03` | stable | B3 | The Extensive Web | Dependence | 630 |
 | `T-12-01` | stable | B1, B3 | The Patron Map | Alliances, Patrons and Courts | 554 |
@@ -69,7 +71,7 @@ already contributed to it.
 | `T-12-04` | stable | B3 | Credit Routing | Alliances, Patrons and Courts | 632 |
 | `T-12-05` | stable | B3 | The Courtier | Alliances, Patrons and Courts | 538 |
 | `T-13-01` | stable | B4 | Manufactured Consensus | Concealment and Indirection | 454 |
-| `T-13-02` | stable | B1 | Weakness as a Mask | Concealment and Indirection | 530 |
+| `T-13-02` | stable | B1, B6 | Weakness as a Mask | Concealment and Indirection | 567 |
 | `T-13-03` | stable | B3 | The Veil | Concealment and Indirection | 639 |
 | `T-13-04` | stable | B3 | The Cutout | Concealment and Indirection | 532 |
 | `T-14-01` | stable | B4, B5 | The Automatic Response | Framing and Controlled Choice | 560 |
@@ -102,6 +104,7 @@ already contributed to it.
 | `T-19-02` | stable | B4 | Unequal Exchange | Guilt, Fear and Obligation | 511 |
 | `T-19-03` | stable | B1 | The Unanswerable Question | Guilt, Fear and Obligation | 637 |
 | `T-19-04` | stable | B3 | The Unpredictable Clock | Guilt, Fear and Obligation | 625 |
+| `T-19-05` | stable | B6 | The Conscience Attack | Guilt, Fear and Obligation | 642 |
 | `T-20-01` | stable | B1 | Measured Pressure | Coercion and the Dirty Way | 553 |
 | `T-20-02` | stable | B1 | The Dirty Way | Coercion and the Dirty Way | 619 |
 | `T-21-01` | stable | B3 | Total Defeat | Conflict | 580 |
@@ -109,17 +112,19 @@ already contributed to it.
 | `T-21-03` | stable | B3 | Strategic Disdain | Conflict | 565 |
 | `T-21-04` | stable | B4 | The Frozen Crowd | Conflict | 671 |
 | `T-21-05` | stable | B3 | Strike the Shepherd | Conflict | 630 |
-| `T-21-06` | stable | B3 | Stirred Water | Conflict | 650 |
+| `T-21-06` | stable | B3, B6 | Stirred Water | Conflict | 691 |
 | `T-22-01` | stable | B4, B3 | The Liking Handle | Working the Hearts | 542 |
 | `T-22-02` | stable | B4 | Borrowed Warmth | Working the Hearts | 469 |
 | `T-22-03` | stable | B4 | The Familiar Face | Working the Hearts | 652 |
 | `T-22-04` | stable | B3 | The Soothing Mirror | Working the Hearts | 662 |
 | `T-23-01` | stable | B4 | Reading a Seeded Room | Detection | 472 |
-| `T-23-02` | stable | B4 | Manufactured Rapport | Detection | 450 |
+| `T-23-02` | stable | B4, B6 | Manufactured Rapport | Detection | 490 |
 | `T-23-03` | stable | B4 | Testing a Claimed Credential | Detection | 491 |
+| `T-23-04` | stable | B6 | The Gut Verdict | Detection | 644 |
 | `T-24-01` | stable | B4 | Refusing an Unauthorised Debt | Inoculation and Refusal | 535 |
 | `T-24-02` | stable | B4 | A Commitment You Did Not Choose | Inoculation and Refusal | 499 |
 | `T-24-03` | stable | B4 | Refusing a Deadline | Inoculation and Refusal | 502 |
+| `T-24-06` | stable | B6 | Judge the Deed | Inoculation and Refusal | 694 |
 | `T-24-05` | stable | B5 | The Safety of No | Inoculation and Refusal | 560 |
 | `T-25-01` | stable | B4, B1 | The Reneged Price | Money and Contracts | 537 |
 | `T-25-02` | stable | B3, B4 | The Free Lunch | Money and Contracts | 630 |

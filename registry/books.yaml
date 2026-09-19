@@ -111,6 +111,22 @@
     its claims are domain-bound (high-stakes bargains), so strategic claims
     still defer to B3 and mechanism claims to B4/B5 on their own ground.
 
+
+- id: B6
+  rank: primary
+  weight: 85
+  status: active
+  title: "In Sheep's Clothing: Understanding and Dealing with Manipulative People"
+  author: "George K. Simon Jr."
+  year: 1996
+  publisher: "A.J. Christopher"
+  file: "books/In Sheep's Clothing - George K Simon.pdf"
+  contributed: "the clinical character layer: the covert-aggressive personality and its victim signature, the working tactic catalogue (guilt, shaming, the victim and servant roles, seduction, the anger display, the evasive answer), the target-side vulnerabilities, and the counter-doctrine of judging deeds, not intentions."
+  structure: "TODO"
+  short: "Simon, In Sheep's Clothing (1996)"
+  notes: >
+    TODO
+
 # NEXT BOOK GOES HERE. Do not renumber the ones above.
 # ---------------------------------------------------------------------
 # - id: B6
