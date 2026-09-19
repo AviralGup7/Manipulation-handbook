@@ -97,6 +97,19 @@
 
 \newenvironment{partblurb}{\par\vspace{2pt}\begingroup\small\itshape
   \hbcolor{hbmuted}\ignorespaces}{\par\endgroup\vspace{8pt}}
+%% Chapter state notice.
+%% Emitted by tools/build_index.py with the number of published entries in
+%% the chapter, so it cannot go stale: a chapter that acquires its first
+%% entry stops printing "not yet written" without anyone editing anything.
+%% Hand-authoring this notice in a _meta.tex is what rule R20 forbids.
+\newcommand{\hbchapterstate}[1]{%
+  \ifnum#1=0
+    \begin{chapterblurb}
+    Entries in this chapter are not yet written. The scaffolding is in place;
+    see the State of the Build appendix for what is outstanding.
+    \end{chapterblurb}
+  \fi}
+
 \newenvironment{chapterblurb}{\par\begingroup\small\itshape
   \hbcolor{hbmuted}\ignorespaces}{\par\endgroup\vspace{6pt}}
 

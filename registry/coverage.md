@@ -13,7 +13,7 @@ already contributed to it.
 | B1 | primary | 90 | The Art of Manipulation | R. B. Sparkman | 1978 | 19 |
 | B2 | secondary | 20 | Art of Manipulation (condensed study summary of B1) | Bookey | 2025 | 1 |
 | B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 19 |
-| B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 9 |
+| B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 29 |
 
 ## Entries
 
@@ -33,25 +33,43 @@ already contributed to it.
 | `T-03-02` | stable | B1 | The Operator Profile | Character Types | 427 |
 | `T-04-01` | stable | B3 | The Thumbscrew | Load-Bearing Points | 422 |
 | `T-04-02` | stable | B1, B3, B4 | The Favour Debt | Load-Bearing Points | 556 |
-| `T-04-03` | stable | B3, B1 | Vanity as a Handle | Load-Bearing Points | 439 |
+| `T-04-03` | stable | B3, B1, B4 | Vanity as a Handle | Load-Bearing Points | 494 |
 | `T-04-04` | stable | B1, B3 | The Self-Audit | Load-Bearing Points | 442 |
 | `T-05-01` | stable | B1 | The Real Objection | Motives Before Words | 451 |
 | `T-05-02` | stable | B1, B3 | Follow the Interest | Motives Before Words | 432 |
 | `T-06-01` | stable | B1 | Protest Too Much | Tells and Consistency | 429 |
 | `T-06-02` | stable | B1 | The Two-Tellings Test | Tells and Consistency | 450 |
 | `T-06-03` | stable | B1 | The Third-Party Lie Rule | Tells and Consistency | 464 |
-| `T-06-04` | stable | B1, B3 | Behaviour Over Declaration | Tells and Consistency | 422 |
+| `T-06-04` | stable | B1, B3, B4 | Behaviour Over Declaration | Tells and Consistency | 486 |
 | `T-07-01` | stable | B3 | Posing as a Friend | Gathering Information | 426 |
 | `T-07-02` | stable | B3, B1 | The Indirect Question | Gathering Information | 412 |
 | `T-07-03` | stable | B1 | The Three-Second Read | Gathering Information | 453 |
 | `T-08-01` | stable | B3 | Do Not Offend the Wrong Person | Judging Who You Are Dealing With | 483 |
 | `T-08-02` | stable | B1, B3 | The Engagement Decision | Judging Who You Are Dealing With | 454 |
+| `T-10-01` | stable | B4 | Value as a Function of Availability | Attention, Absence and Scarcity | 490 |
+| `T-10-02` | stable | B4 | The Reactance Trigger | Attention, Absence and Scarcity | 532 |
+| `T-10-03` | stable | B4 | Limited Numbers and Deadlines | Attention, Absence and Scarcity | 516 |
+| `T-13-01` | stable | B4 | Manufactured Consensus | Concealment and Indirection | 454 |
 | `T-14-01` | stable | B4 | The Automatic Response | Framing and Controlled Choice | 530 |
 | `T-14-02` | stable | B4 | The Contrast Principle | Framing and Controlled Choice | 489 |
+| `T-14-03` | stable | B4 | The Small First Yes | Framing and Controlled Choice | 510 |
+| `T-14-04` | stable | B4 | The Four Amplifiers | Framing and Controlled Choice | 485 |
+| `T-15-01` | stable | B4 | The Crowd as Evidence | The Appeals | 467 |
+| `T-15-02` | stable | B4 | Uncertainty and Similarity | The Appeals | 447 |
 | `T-16-01` | stable | B4 | Concession and Retreat | Argument and Demonstration | 518 |
+| `T-18-01` | stable | B4 | The Symbols of Authority | Appearance and Compliance | 515 |
+| `T-18-02` | stable | B4 | Titles, Uniform and Trappings | Appearance and Compliance | 547 |
 | `T-19-01` | stable | B4 | The Uninvited Debt | Guilt, Fear and Obligation | 546 |
 | `T-19-02` | stable | B4 | Unequal Exchange | Guilt, Fear and Obligation | 511 |
+| `T-22-01` | stable | B4 | The Liking Handle | Working the Hearts | 503 |
+| `T-22-02` | stable | B4 | Borrowed Warmth | Working the Hearts | 469 |
+| `T-23-01` | stable | B4 | Reading a Seeded Room | Detection | 472 |
+| `T-23-02` | stable | B4 | Manufactured Rapport | Detection | 450 |
+| `T-23-03` | stable | B4 | Testing a Claimed Credential | Detection | 491 |
 | `T-24-01` | stable | B4 | Refusing an Unauthorised Debt | Inoculation and Refusal | 535 |
+| `T-24-02` | stable | B4 | A Commitment You Did Not Choose | Inoculation and Refusal | 499 |
+| `T-24-03` | stable | B4 | Refusing a Deadline | Inoculation and Refusal | 502 |
+| `T-25-01` | stable | B4 | The Reneged Price | Money and Contracts | 491 |
 
 ## Un-filed dossiers (source material not yet merged)
 

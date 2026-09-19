@@ -30,6 +30,7 @@ Exit code 0 = clean, 1 = errors (do not commit), warnings never fail a build.
     R18  every \\input resolves and every managed file is reachable
          from main.tex (the usual first-compile failure)
     R19  style files never redefine a TeX primitive or kernel command
+    R20  the chapter-state notice is generated, never hand-authored
 """
 
 from __future__ import annotations
@@ -368,6 +369,31 @@ def check_texlint(repo: Repo, rep: Report) -> None:
             (rep.err if sev == "error" else rep.warn)("R13", f"{m.rel}:{n}", msg)
 
 
+STATE_NOTICE = "not yet written"
+
+
+def check_chapter_state(repo: Repo, rep: Report) -> None:
+    """R20 -- the chapter-state notice must be generated, never authored.
+
+    Every chapter _meta.tex used to carry a hand-written "entries in this
+    chapter are not yet written" blurb. It went stale the moment the chapter
+    gained its first entry, and the book then claimed to be empty above
+    printed entries. The notice is now emitted by build_index.py as
+    \\hbchapterstate{n}, keyed on the count of published entries, so it cannot
+    drift. This check keeps it that way.
+    """
+    for ch in repo.chapters.values():
+        # comments are not content: the generated-notice marker that replaces
+        # the blurb mentions the phrase in a %% line, and must not trip this.
+        body = "\n".join(l for l in ch.body.splitlines()
+                         if not l.lstrip().startswith("%"))
+        if STATE_NOTICE in body:
+            rep.err("R20", ch.rel,
+                    "hand-authors the chapter-state notice. It is generated as "
+                    "\\hbchapterstate{n} in registry/compiled/index.tex -- "
+                    "remove the chapterblurb and let the count decide")
+
+
 def check_style(repo: Repo, rep: Report) -> None:
     """R19 -- style files must not redefine TeX primitives or kernel commands."""
     for sub in ("style",):
@@ -577,6 +603,7 @@ def main(argv: List[str]) -> int:
     check_stable(repo, rep)
     check_inputs(repo, rep)
     check_style(repo, rep)
+    check_chapter_state(repo, rep)
 
     print(f"scanned: {len(repo.parts)} parts, {len(repo.chapters)} chapters, "
           f"{len(repo.topics)} entries, {len(repo.dossiers)} dossiers, "

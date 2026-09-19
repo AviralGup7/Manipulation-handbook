@@ -4,8 +4,15 @@ A merged, de-padded reference on how influence is applied, how it is spotted,
 and how it is refused — built from primary sources as a **LaTeX** project that is
 meant to grow for years without breaking.
 
-**Current state:** Parts I–II written (27 entries), Parts III–VII scaffolded
-(28 chapters, 7 parts). Sources ingested: 3. Build the PDF with `make pdf`.
+**Current state:** see [`registry/coverage.md`](registry/coverage.md), which is
+generated from the tree on every build and so cannot go stale. The same numbers
+are typeset into the PDF's front matter and colophon from
+`registry/compiled/counts.tex`. Build with `make pdf`.
+
+Counts used to be hand-written here and in the chapter introductions, and both
+went stale the moment a batch landed — the book printed "no entries in this
+chapter" above printed entries. They are now generated everywhere, and rule R20
+fails the build if anyone hand-authors one again.
 
 ---
 

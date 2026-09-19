@@ -186,6 +186,14 @@ files, and no content file can break the build by inventing formatting.
 
 R6.3 Front matter (`front/`, `back/`) is exempt and may use layout directly.
 
+R6.5 **[enforced]** The "entries in this chapter are not yet written" notice is
+generated, never hand-authored. `tools/build_index.py` emits
+`\hbchapterstate{n}` with the count of published entries in the chapter, and
+the macro in `style/entry.sty` prints the notice only when that count is zero.
+A chapter that gains its first entry therefore stops claiming to be empty
+without anyone editing a file. Rule R20 fails the build if a chapter
+`_meta.tex` contains the notice text.
+
 R6.4 **[enforced]** Style files must never define a command or environment whose
 name collides with a TeX primitive or a LaTeX kernel command. `tools/texlint.py`
 holds the reserved-name list. This is not hypothetical: the sixth slot was

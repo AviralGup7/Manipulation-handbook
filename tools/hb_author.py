@@ -152,3 +152,61 @@ def report(paths: Sequence[str]) -> None:
     for p in paths:
         print("  + " + p)
     print(f"{len(paths)} file(s)")
+
+
+# ---------------------------------------------------------------------------
+# Additive merge helper
+# ---------------------------------------------------------------------------
+def add_source(tid: str, book: str, chapter: str = "", mechanism_addition: str = "") -> str:
+    """Add `book` to an existing entry's source list, and optionally append a
+    sentence to its `mechanism` slot.
+
+    This is the sanctioned way a new source deepens an entry that B1 or B3
+    already wrote. It never rewrites prose: it appends to one slot and adds
+    one token to two lines.
+
+    The source list is read from the file rather than hard-coded. Entries do
+    not list their books in register order --- T-04-03 is `B3, B1` --- so a
+    replacement built on an assumed ordering silently does nothing, and the
+    build then fails R10 because a dossier exists for a book the entry never
+    cited.
+    """
+    import re as _re
+
+    path = os.path.join(DIR_TOPICS, chapter, f"{tid}.tex") if chapter else ""
+    if not path or not os.path.exists(path):
+        hits = []
+        for ch in sorted(os.listdir(DIR_TOPICS)):
+            cand = os.path.join(DIR_TOPICS, ch, f"{tid}.tex")
+            if os.path.isfile(cand):
+                hits.append(cand)
+        if len(hits) != 1:
+            raise FileNotFoundError(f"{tid}: expected exactly one file, found {hits}")
+        path = hits[0]
+
+    s = open(path, encoding="utf-8").read()
+
+    m = _re.search(r"^%% @sources:\s*(.+)$", s, _re.M)
+    if not m:
+        raise ValueError(f"{tid}: no @sources line")
+    srcs = [x.strip() for x in m.group(1).split(",") if x.strip()]
+    if book not in srcs:
+        srcs.append(book)
+        joined = ", ".join(srcs)
+        s = _re.sub(r"^%% @sources:\s*.+$", lambda _x: "%% @sources: " + joined,
+                    s, count=1, flags=_re.M)
+        repl = "\\sources{" + joined + "}"
+        s = _re.sub(r"^\\sources\{[^}]*\}", lambda _x: repl, s, count=1, flags=_re.M)
+
+    if mechanism_addition:
+        mm = _re.search(r"(\\begin\{mechanism\}\n)(.*?)(\n\\end\{mechanism\})", s, _re.S)
+        if not mm:
+            raise ValueError(f"{tid}: no mechanism slot to append to")
+        body = mm.group(2).rstrip()
+        if mechanism_addition.strip() in body:
+            pass                      # idempotent: already applied
+        else:
+            s = s[:mm.start(2)] + body + " " + mechanism_addition.strip() + s[mm.end(2):]
+
+    open(path, "w", encoding="utf-8").write(s)
+    return rel(path)

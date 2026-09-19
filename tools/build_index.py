@@ -91,6 +91,9 @@ def gen_index(repo: Repo) -> str:
             sub = ch.meta.get("subtitle", "")
             out.append(f"\\chaphead{{{tex_escape(ch.title)}}}"
                        f"{{{tex_escape(sub)}}}")
+            n_pub = sum(1 for t in repo.topics_in_chapter(ch.id)
+                        if t.status in BODY_STATUSES)
+            out.append(f"\\hbchapterstate{{{n_pub}}}")
             out.append(f"\\label{{{ch.id}}}")
             out.append(f"\\input{{{rel(ch.path)[:-4]}}}")
             topics = repo.topics_in_chapter(ch.id)

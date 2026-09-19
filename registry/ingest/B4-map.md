@@ -128,7 +128,7 @@ for an entry that has not been written yet.
 | unequal exchange: a small gift buys a large concession | `T-19-02` | **new** (c19) |
 | rejection-then-retreat; the reciprocal concession | `T-16-01` | **new** (c16) |
 | refusing a debt you did not authorise | `T-24-01` | **new** (c24) |
-| the sample as a purchase already begun | `T-25-01` | **planned** (c25) |
+| the sample as a purchase already begun | `T-25-02` | **planned** (c25) |
 
 ### ch. 3 — Commitment and Consistency (pp. 87–125)
 
@@ -137,7 +137,7 @@ for an entry that has not been written yet.
 | a stated position is defended regardless of its origin | `T-06-04` | additive |
 | the small first yes | `T-14-03` | **new** (c14) |
 | written, active, public, effortful — the four amplifiers | `T-14-04` | **new** (c14) |
-| the price that changes after the commitment is made | `T-25-02` | **new** (c25) |
+| the price that changes after the commitment is made | `T-25-01` | **new** (c25) — written first, so it took the first free id |
 | spotting a commitment you did not choose | `T-24-02` | **new** (c24) |
 
 ### ch. 4 — Social Proof (pp. 126–156)
@@ -185,13 +185,31 @@ for an entry that has not been written yet.
 Ingestion proceeds one chapter at a time, in book order, because ch. 1's frame
 is cited by every later chapter. Each chapter is a separate batch:
 
-1. ch. 1 → `T-14-01`, `T-14-02` + additive dossiers on `T-01-01`, `T-01-02`
-2. ch. 2 → `T-19-01`, `T-19-02`, `T-16-01`, `T-24-01` + additive on `T-04-02`
-3. ch. 3 → `T-14-03`, `T-14-04`, `T-25-02`, `T-24-02` + additive on `T-06-04`
-4. ch. 4 → `T-15-01`, `T-15-02`, `T-13-01`, `T-23-01`
-5. ch. 5 → `T-22-01`, `T-22-02`, `T-23-02` + additive on `T-04-03`
-6. ch. 6 → `T-18-01`, `T-18-02`, `T-23-03` + additive on `T-08-01`
-7. ch. 7 → `T-10-01`, `T-10-02`, `T-10-03`, `T-24-03`
+1. ch. 1 → `T-14-01`, `T-14-02` + additive dossiers on `T-01-01`, `T-01-02`  ✔ done
+2. ch. 2 → `T-19-01`, `T-19-02`, `T-16-01`, `T-24-01` + additive on `T-04-02`  ✔ done
+3. ch. 3 → `T-14-03`, `T-14-04`, `T-25-01`, `T-24-02` + additive on `T-06-04`  ✔ done
+4. ch. 4 → `T-15-01`, `T-15-02`, `T-13-01`, `T-23-01`  ✔ done
+5. ch. 5 → `T-22-01`, `T-22-02`, `T-23-02` + additive on `T-04-03`  ✔ done
+6. ch. 6 → `T-18-01`, `T-18-02`, `T-23-03`  ✔ done (see revision below)
+7. ch. 7 → `T-10-01`, `T-10-02`, `T-10-03`, `T-24-03`  ✔ done
+
+### Revisions to this map
+
+Mappings are proposals, and two were revised on contact with the entries
+rather than forced through:
+
+* **`T-08-01` (ch. 6) — withdrawn.** The plan was an additive dossier on *Do
+  Not Offend the Wrong Person*. That entry is about the variance in how
+  dangerous people respond to a slight; the authority material would deepen
+  nothing in it. A dossier that supports no sentence is padding, and rule R7
+  bans padding, so the mapping was dropped and the material written fresh at
+  `T-18-01`, `T-18-02` and `T-23-03`.
+* **`T-25-01` / `T-25-02` (ch. 2–3) — renumbered.** The low-ball entry was
+  written before the sample entry, so it took the first free id. The sample
+  remains planned at `T-25-02`.
+
+Recording revisions here is part of the method. A map that silently disagrees
+with the tree is worse than no map.
 
 **planned** rows are deliberately left unwritten. They are recorded so that
 nothing is silently dropped, and they will be filled by later batches or by a
