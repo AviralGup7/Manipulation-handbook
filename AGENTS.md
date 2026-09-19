@@ -63,8 +63,12 @@ Rules for the sentence you add:
 * **R21** — an ingest map never plans an entry id that is already written.
   B4's merge took fourteen ids the B1/B3 maps had reserved, so the plan of
   record disagreed with the tree. Disposition vocabulary (`merged` /
-  `additive` / `written` / `new` / `planned`) is checked against the tree;
-  renumber and record a revision, never silently re-point.
+  `additive` / `written` / `scaffolded` / `new` / `planned`) is checked
+  against the tree; renumber and record a revision, never silently re-point.
+* **R22** — the reader is never shown a bare entry id. `\seealso` renders
+  titles from the generated title registry ("Related: *Vanity as a Handle*"),
+  planned targets say so, and each heading carries its id small for citation.
+  "See also: T-04-01, T-18-03" asked the reader to memorise the registry.
 * Counts are generated everywhere — front matter, colophon, README. Never
   hand-write a number that the tree already knows.
 

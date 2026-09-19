@@ -19,6 +19,7 @@ before writing any more content.
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import shutil
@@ -185,8 +186,17 @@ def case_additive(root: str) -> None:
 def case_no_main_edit(root: str) -> None:
     """A new entry reaches the compiled book without editing main.tex."""
     main_before = read(root, "main.tex")
+    # never assume an id is free: the tree grows, and a planned scaffold
+    # may legitimately occupy T-11-01 by now. Take the next free serial.
+    existing = [n for n in (int(m.group(1)) for m in re.finditer(
+        r"T-11-(\d\d)", json.dumps(sorted(
+            os.listdir(os.path.join(root, "topics", "c11"))))) ) ] \
+        if os.path.isdir(os.path.join(root, "topics", "c11")) else []
+    serial = (max(existing) + 1) if existing else 1
+    tid = "T-11-%02d" % serial
     rc, out = run(root, sys.executable, os.path.join(root, "tools", "new_topic.py"),
-                  "--chapter", "c11", "--title", "Manufactured Indispensability",
+                  "--chapter", "c11", "--id", tid,
+                  "--title", "Manufactured Indispensability",
                   "--subtitle", "Being needed is a structure",
                   "--sources", "B1", "--status", "draft")
     assert rc == 0, f"new_topic failed:\n{out}"
@@ -195,8 +205,8 @@ def case_no_main_edit(root: str) -> None:
 
     assert read(root, "main.tex") == main_before, "main.tex was edited"
     idx = read(root, "registry/compiled/index.tex")
-    assert "topics/c11/T-11-01" in idx, "the new entry is not in the generated index"
-    assert os.path.exists(os.path.join(root, "topics/c11/T-11-01.tex"))
+    assert f"topics/c11/{tid}" in idx, "the new entry is not in the generated index"
+    assert os.path.exists(os.path.join(root, "topics/c11", tid + ".tex"))
 
 
 def case_r10_protected(root: str) -> None:

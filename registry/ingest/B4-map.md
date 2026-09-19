@@ -113,11 +113,12 @@ cannot silently drift out of date:
 | `merged` | the source's material is already in that entry | id exists |
 | `additive` | a dossier was filed and the entry gained prose by addition | id exists |
 | `written` | planned as new, and since written | id exists |
+| `scaffolded` | id exists as a reserved, bodyless entry | id exists |
 | `new` | planned as new, **not yet written** | id must NOT exist |
 | `planned` | reserved for later, deliberately unwritten | id must NOT exist |
 
 A row that says `new` but points at an occupied id is the drift this catches:
-either the plan was fulfilled and the row should say `written`, or another book
+either the plan was fulfilled (say `written` or `scaffolded`), or another book
 took the id for a different idea and the row must be renumbered.
 
 ### ch. 1 — Weapons of Influence (pp. 13–42)
@@ -139,7 +140,7 @@ took the id for a different idea and the row must be renumbered.
 | unequal exchange: a small gift buys a large concession | `T-19-02` | written (c19) |
 | rejection-then-retreat; the reciprocal concession | `T-16-01` | written (c16) |
 | refusing a debt you did not authorise | `T-24-01` | written (c24) |
-| the sample as a purchase already begun | `T-25-02` | **planned** (c25) |
+| the sample as a purchase already begun | `T-25-02` | scaffolded (c25) |
 
 ### ch. 3 — Commitment and Consistency (pp. 87–125)
 
@@ -160,7 +161,7 @@ took the id for a different idea and the row must be renumbered.
 | a manufactured consensus; planted audiences | `T-13-01` | written (c13) |
 | reading a room that has been seeded | `T-23-01` | written (c23) |
 | reputation as accumulated social proof | `T-09-01` | additive: dossier pending (c09) |
-| bystander diffusion | `T-21-03` | **planned** (c21) |
+| bystander diffusion | `T-21-04` | **planned** (c21) |
 
 ### ch. 5 — Liking (pp. 157–177)
 

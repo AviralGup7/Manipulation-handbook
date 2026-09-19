@@ -42,6 +42,30 @@ BODY_STATUSES = ("stable", "draft")
 
 
 # ---------------------------------------------------------------------------
+def gen_titles(repo: Repo) -> str:
+    out = [BANNER]
+    out.append("%% Entry-title lookups, emitted from the %% @title headers.")
+    out.append("%% \\seealso resolves ids against this file, so the reader never")
+    out.append("%% sees a bare id (rule R22). \\csname is required because a TeX")
+    out.append("%% control word cannot contain a digit.")
+    out.append("%%")
+    out.append("%% Written entries define \\hbtitle@<id>; entries that are only")
+    out.append("%% planned define \\hbpending@<id>, so \\seealso can mark them")
+    out.append("%% honestly as unwritten instead of pointing at a missing")
+    out.append("%% section. Each id is defined twice -- plain, and with one")
+    out.append("%% leading space, because comma lists are written \"A, B\" and a")
+    out.append("%% list element may carry the space after the comma with it.\n")
+    for t in sorted(repo.topics.values(), key=lambda t: t.id):
+        val = tex_escape(t.title)
+        written = t.status in BODY_STATUSES
+        macro = "hbtitle" if written else "hbpending"
+        out.append(f"\\expandafter\\newcommand\\csname {macro}@{t.id}"
+                   f"\\endcsname{{{val}}}")
+        out.append(f"\\expandafter\\newcommand\\csname {macro}@ {t.id}"
+                   f"\\endcsname{{{val}}}")
+    return "\n".join(out) + "\n"
+
+
 def gen_booknames(repo: Repo) -> str:
     out = [BANNER]
     out.append("%% Book register, emitted from registry/books.yaml.")
@@ -263,6 +287,7 @@ def main() -> int:
     os.makedirs(DIR_COMPILED, exist_ok=True)
     targets = {
         os.path.join(DIR_COMPILED, "booknames.tex"): gen_booknames(repo),
+        os.path.join(DIR_COMPILED, "titles.tex"): gen_titles(repo),
         os.path.join(DIR_COMPILED, "counts.tex"): gen_counts(repo),
         os.path.join(DIR_COMPILED, "index.tex"): gen_index(repo),
         os.path.join(DIR_COMPILED, "dossiers.tex"): gen_dossiers(repo),

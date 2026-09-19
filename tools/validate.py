@@ -374,8 +374,8 @@ STATE_NOTICE = "not yet written"
 
 MAP_ROW = re.compile(r"^\|(.+)\|\s*$")
 MAP_ID = re.compile(r"`(T-\d\d-\d\d)`")
-PLANNED = re.compile(r"\*\*(planned|new)\*\*|\b(planned|new)\b", re.I)
-DONE = re.compile(r"merged|additive|partly", re.I)
+PLANNED = re.compile(r"\*\*(planned|new)\*\*|\b(planned|new)\b(?!\s*scaffold)", re.I)
+DONE = re.compile(r"merged|additive|partly|scaffold", re.I)
 
 
 def check_ingest_maps(repo: Repo, rep: Report) -> None:
@@ -622,10 +622,72 @@ def check_inputs(repo: Repo, rep: Report) -> None:
     for m in repo.all:
         if m.kind == "source" and m.status == "skeleton":
             continue                      # scaffolded but not yet merged
+        if m.kind == "topic" and m.status == "planned":
+            continue                      # reserved; \hbchapterstate carries its state
         if m.rel.replace(os.sep, "/") not in reachable:
             rep.err("R18", m.rel,
                     "not reachable from main.tex -- it will never be typeset "
                     "(run 'make index', or check its @status/@chapter)")
+
+
+BODY_ID_RE = re.compile(r"T-\d\d-\d\d")
+
+
+def check_id_references(repo: Repo, rep: Report) -> None:
+    """R18 (dangling references) -- any entry id mentioned in a content
+    file's typeset body must exist as a topic. Three entries referenced
+    T-27-01 for two batches while the entry did not exist: the reader was
+    pointed at a price the book never states, and no rule noticed. Also
+    bans a seealso that references the entry it appears in."""
+    for m in repo.all:
+        if m.kind not in ("topic", "source"):
+            continue
+        path = os.path.join(ROOT, m.rel)
+        with open(path, "r", encoding="utf-8") as fh:
+            for n, line in enumerate(fh, start=1):
+                if line.lstrip().startswith("%"):
+                    continue            # headers and notes are not typeset
+                if m.kind == "topic":
+                    sm = re.search(r"\\seealso\{([^}]*)\}", line)
+                    if sm:
+                        for tid in BODY_ID_RE.findall(sm.group(1)):
+                            if tid == m.id:
+                                rep.err("R18", "%s:%d" % (m.rel, n),
+                                        "seealso references itself (%s)" % tid)
+                            elif tid not in repo.topics:
+                                rep.err("R18", "%s:%d" % (m.rel, n),
+                                        "seealso points at `%s`, which does "
+                                        "not exist (write the entry or drop "
+                                        "the pointer)" % tid)
+                    line = re.sub(r"\\seealso\{[^}]*\}", "", line)
+                for tid in BODY_ID_RE.findall(line):
+                    if tid not in repo.topics:
+                        rep.err("R18", "%s:%d" % (m.rel, n),
+                                "references `%s`, which does not exist "
+                                "(write the entry or drop the pointer)" % tid)
+
+
+def check_frontmatter_ids(repo: Repo, rep: Report) -> None:
+    """R22 -- the reader-facing layers never show bare entry ids. The
+    front and back matter name chapters and parts; ids live beside entry
+    headings, in the registry, and in \\seealso's generated lookups. A
+    reader should never have to remember what T-18-03 means."""
+    for sub in ("front", "back"):
+        d = os.path.join(ROOT, sub)
+        if not os.path.isdir(d):
+            continue
+        for fnm in sorted(os.listdir(d)):
+            if not fnm.endswith(".tex"):
+                continue
+            relp = sub + "/" + fnm
+            with open(os.path.join(d, fnm), "r", encoding="utf-8") as fh:
+                for n, line in enumerate(fh, start=1):
+                    if line.lstrip().startswith("%"):
+                        continue
+                    for tid in BODY_ID_RE.findall(line):
+                        rep.err("R22", "%s:%d" % (relp, n),
+                                "bare entry id `%s` in reader-facing "
+                                "text -- name the idea, not the number" % tid)
 
 
 def main(argv: List[str]) -> int:
@@ -663,6 +725,8 @@ def main(argv: List[str]) -> int:
     check_style(repo, rep)
     check_chapter_state(repo, rep)
     check_ingest_maps(repo, rep)
+    check_id_references(repo, rep)
+    check_frontmatter_ids(repo, rep)
 
     print(f"scanned: {len(repo.parts)} parts, {len(repo.chapters)} chapters, "
           f"{len(repo.topics)} entries, {len(repo.dossiers)} dossiers, "

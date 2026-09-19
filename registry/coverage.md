@@ -10,9 +10,9 @@ already contributed to it.
 
 | id | rank | w | title | author | year | dossiers |
 |----|------|---|-------|--------|------|----------|
-| B1 | primary | 90 | The Art of Manipulation | R. B. Sparkman | 1978 | 19 |
+| B1 | primary | 90 | The Art of Manipulation | R. B. Sparkman | 1978 | 25 |
 | B2 | secondary | 20 | Art of Manipulation (condensed study summary of B1) | Bookey | 2025 | 1 |
-| B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 22 |
+| B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 31 |
 | B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 29 |
 
 ## Entries
@@ -27,7 +27,7 @@ already contributed to it.
 | `T-02-01` | stable | B3 | Affect Control | The Practitioner's Equipment | 414 |
 | `T-02-02` | stable | B1, B3 | Indifference to Being Liked | The Practitioner's Equipment | 427 |
 | `T-02-03` | stable | B3 | Patience as Position | The Practitioner's Equipment | 387 |
-| `T-02-04` | stable | B3 | Effortlessness | The Practitioner's Equipment | 336 |
+| `T-02-04` | stable | B3 | Effortlessness | The Practitioner's Equipment | 335 |
 | `T-02-05` | stable | B1 | Persistence Over Attitude | The Practitioner's Equipment | 390 |
 | `T-03-01` | stable | B3 | The Five Dangerous Marks | Character Types | 467 |
 | `T-03-02` | stable | B1 | The Operator Profile | Character Types | 427 |
@@ -52,7 +52,10 @@ already contributed to it.
 | `T-10-01` | stable | B4 | Value as a Function of Availability | Attention, Absence and Scarcity | 490 |
 | `T-10-02` | stable | B4 | The Reactance Trigger | Attention, Absence and Scarcity | 532 |
 | `T-10-03` | stable | B4 | Limited Numbers and Deadlines | Attention, Absence and Scarcity | 516 |
+| `T-11-01` | planned | B1, B3 | The Dependence Build | Dependence | 35 |
 | `T-13-01` | stable | B4 | Manufactured Consensus | Concealment and Indirection | 454 |
+| `T-13-02` | planned | B1 | Weakness as a Mask | Concealment and Indirection | 36 |
+| `T-13-04` | planned | B3 | The Cutout | Concealment and Indirection | 34 |
 | `T-14-01` | stable | B4 | The Automatic Response | Framing and Controlled Choice | 530 |
 | `T-14-02` | stable | B4 | The Contrast Principle | Framing and Controlled Choice | 489 |
 | `T-14-03` | stable | B4 | The Small First Yes | Framing and Controlled Choice | 510 |
@@ -60,10 +63,18 @@ already contributed to it.
 | `T-15-01` | stable | B4 | The Crowd as Evidence | The Appeals | 467 |
 | `T-15-02` | stable | B4 | Uncertainty and Similarity | The Appeals | 447 |
 | `T-16-01` | stable | B4 | Concession and Retreat | Argument and Demonstration | 518 |
+| `T-16-02` | planned | B1 | Doing Their Thinking | Argument and Demonstration | 35 |
+| `T-16-03` | planned | B1 | Refuse the Argument | Argument and Demonstration | 36 |
+| `T-17-01` | planned | B3 | Master Timing | Delivery | 35 |
+| `T-17-02` | planned | B3 | Bold Entry | Delivery | 37 |
 | `T-18-01` | stable | B4 | The Symbols of Authority | Appearance and Compliance | 515 |
 | `T-18-02` | stable | B4 | Titles, Uniform and Trappings | Appearance and Compliance | 547 |
+| `T-18-04` | planned | B3 | Behave Like Others | Appearance and Compliance | 32 |
 | `T-19-01` | stable | B4 | The Uninvited Debt | Guilt, Fear and Obligation | 546 |
 | `T-19-02` | stable | B4 | Unequal Exchange | Guilt, Fear and Obligation | 511 |
+| `T-21-01` | planned | B3 | Total Defeat | Conflict | 31 |
+| `T-21-02` | planned | B3 | The Surrender Tactic | Conflict | 35 |
+| `T-21-03` | planned | B3 | Strategic Disdain | Conflict | 34 |
 | `T-22-01` | stable | B4 | The Liking Handle | Working the Hearts | 503 |
 | `T-22-02` | stable | B4 | Borrowed Warmth | Working the Hearts | 469 |
 | `T-23-01` | stable | B4 | Reading a Seeded Room | Detection | 472 |
@@ -73,7 +84,24 @@ already contributed to it.
 | `T-24-02` | stable | B4 | A Commitment You Did Not Choose | Inoculation and Refusal | 499 |
 | `T-24-03` | stable | B4 | Refusing a Deadline | Inoculation and Refusal | 502 |
 | `T-25-01` | stable | B4 | The Reneged Price | Money and Contracts | 491 |
+| `T-25-02` | planned | B3 | The Free Lunch | Money and Contracts | 35 |
+| `T-26-02` | planned | B1 | The Ordered Exit | Exit and Aftermath | 36 |
+| `T-27-01` | planned | B1 | The Bill for the Method | What You Get Out of Using People | 41 |
 
 ## Un-filed dossiers (source material not yet merged)
 
-_none -- every filed dossier has been merged_
+- `B1-T-11-01` -- TODO chapter / section / pages in the source (unique: no)
+- `B1-T-13-02` -- TODO chapter / section / pages in the source (unique: no)
+- `B1-T-16-02` -- TODO chapter / section / pages in the source (unique: no)
+- `B1-T-16-03` -- TODO chapter / section / pages in the source (unique: no)
+- `B1-T-26-02` -- TODO chapter / section / pages in the source (unique: no)
+- `B1-T-27-01` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-11-01` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-13-04` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-17-01` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-17-02` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-18-04` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-21-01` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-21-02` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-21-03` -- TODO chapter / section / pages in the source (unique: no)
+- `B3-T-25-02` -- TODO chapter / section / pages in the source (unique: no)

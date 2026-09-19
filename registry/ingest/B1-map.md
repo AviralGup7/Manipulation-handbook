@@ -21,20 +21,20 @@ chapter. 181 PDF pages, of which roughly two-thirds are first-person anecdote.
 |---|---|---|
 | ch. 1 — five percent of people manipulate the rest | `T-01-01`, `T-01-04`, `T-01-05` | merged |
 | Tactic 1 — character types to watch out for | `T-03-02`, `T-06-01`, `T-06-02`, `T-06-03`, `T-06-04` | merged |
-| Tactic 2 — how to make a slave out of a person | `T-11-01` (dependence) | **planned** |
+| Tactic 2 — how to make a slave out of a person | `T-11-01` (dependence) | scaffolded |
 | Tactic 3 — the world is rife with favoritism | `T-05-02`; `T-12-01` (patrons) | partly merged / **planned** |
 | Tactic 4 — the essence of manipulation ("I don't need you") | `T-11-01`, `T-04-02` | **planned** / partly merged |
-| Tactic 5 — the meek shall manipulate; never know much | `T-02-02`, `T-08-02`; `T-13-02` | merged / **planned** |
+| Tactic 5 — the meek shall manipulate; never know much | `T-02-02`, `T-08-02`; `T-13-02` | merged / scaffolded |
 | Tactic 6 — picking a person apart; real motives | `T-05-01`, `T-07-02`, `T-07-03`, `T-04-04` | merged |
 | Tactic 7 — the Guernsey vs. the Brahma | `T-02-05` | merged |
 | Tactic 8 — avoiding being taken in financial dealings | `T-05-02`; `T-25-01` | additive: dossier pending for `T-25-01` |
-| Tactic 9 — manipulating a person's thinking | `T-16-02` | **planned** |
-| Tactic 10 — win ninety-five percent of your arguments | `T-08-02`; `T-16-01`, `T-16-03` | additive pending for `T-08-02`, `T-16-01`; `T-16-03` **planned** |
+| Tactic 9 — manipulating a person's thinking | `T-16-02` | scaffolded |
+| Tactic 10 — win ninety-five percent of your arguments | `T-08-02`; `T-16-01`, `T-16-03` | additive pending for `T-08-02`, `T-16-01`; `T-16-03` scaffolded |
 | Tactic 11 — manipulate a person against his will; the unargue technique | `T-16-04` | **planned** |
 | Tactic 12 — a little pressure has its place, but seldom | `T-19-03`, `T-20-01` | **planned** |
 | Tactic 13 — if all else fails, try the dirty way | `T-20-02` | **planned** |
 | Tactic 14 — how to squelch ingratitude before it starts | `T-04-02`; `T-26-01` | partly merged / **planned** |
-| ch. 16 — what you get out of using people | `T-01-04`; `T-27-01` | partly merged / **planned** |
+| ch. 16 — what you get out of using people | `T-01-04`; `T-27-01` | partly merged / scaffolded |
 
 ## Open items
 

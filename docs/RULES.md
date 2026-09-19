@@ -186,9 +186,10 @@ vocabulary against the tree:
 | `new` / `planned` | deliberately unwritten | id must **not** exist |
 
 A row saying `new` while pointing at an occupied id is drift: either the plan
-was fulfilled (re-mark it `written`) or another book took the id for a
-different idea (renumber it to the next free id in the chapter, and record the
-revision in the map).
+was fulfilled (re-mark it `written`), the id now exists as a reserved, bodyless
+entry (re-mark it `scaffolded`), or another book took the id for a different
+idea (renumber it to the next free id in the chapter, and record the revision
+in the map).
 
 ---
 
@@ -203,6 +204,22 @@ R6.2 Consequence: the look of the entire book can be changed by editing two
 files, and no content file can break the build by inventing formatting.
 
 R6.3 Front matter (`front/`, `back/`) is exempt and may use layout directly.
+
+R6.6 **[enforced]** The reader is never shown a bare entry id. Cross-references
+(`\seealso`) render as titles resolved at build time from the generated
+`registry/compiled/titles.tex`; unwritten targets render as
+\emph{Title}~(planned); the id prints small beside each heading so citations
+and the registry stay precise. Front and back matter name ideas, never ids.
+This rule exists because "See also: T-04-01, T-18-03" asks the reader to
+memorise the registry. An id referenced anywhere in a typeset body must exist
+as a topic (checked with the dangling-reference rule R18) -- three entries
+pointed at a cost the book never stated for two batches before this was
+checked.
+
+R6.7 The front matter carries `front/map.tex`, a concept map naming parts and
+chapters and the two reading paths. It is hand-authored prose: the map's job
+is the shape of the argument, which no generator can write. It must not list
+entry ids (R6.6) or counts that the tree knows (R6.5).
 
 R6.5 **[enforced]** The "entries in this chapter are not yet written" notice is
 generated, never hand-authored. `tools/build_index.py` emits
