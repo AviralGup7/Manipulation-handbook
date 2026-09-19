@@ -141,7 +141,12 @@ function send(command, args) {
 }
 
 /* ------------------------------------------------------------------ *
- * Materialise the project into MEMFS.
+ * Worker lifecycle.  The texlive.js worker refuses a second `run`
+ * (emscripten's called-run guard swallows it silently), so every pass
+ * boots a FRESH worker and the aux/toc/out files are harvested and
+ * re-injected between passes by the driver.  This is what makes the
+ * table of contents and cross-references converge: pass N writes
+ * main.toc, pass N+1 reads it.
  * ------------------------------------------------------------------ */
 function walk(dir, out) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -162,55 +167,65 @@ function mkdirp(vfsPath) {
   }
 }
 
-const files = walk(ROOT, []);
-const byDir = new Map();
-for (const f of files) {
-  const relPath = path.relative(ROOT, f).split(path.sep).join('/');
-  const dir = path.posix.dirname('/' + relPath);
-  if (!byDir.has(dir)) byDir.set(dir, []);
-  byDir.get(dir).push([relPath, f]);
-}
+const WORKER = path.join(TEXLIVE, 'pdftex-worker.js');
+const JOBNAMES = ['.aux', '.toc', '.out', '.lof', '.lot']
+  .map((ext) => MAIN.replace(/\.tex$/, '') + ext);
 
-console.log(`texlive.js: loading ${files.length} project files into MEMFS`);
-for (const [dir] of byDir) if (dir !== '/') mkdirp(dir);
+function bootWorker() {
+  delete require.cache[require.resolve(WORKER)];
+  lastResult = undefined;
+  require(WORKER);                       // sets global.self.onmessage, fires 'ready'
 
-for (const [, list] of byDir) {
-  for (const [relPath, abs] of list) {
+  const files = walk(ROOT, []);
+  const byDir = new Map();
+  for (const f of files) {
+    const relPath = path.relative(ROOT, f).split(path.sep).join('/');
     const dir = path.posix.dirname('/' + relPath);
-    const name = path.posix.basename('/' + relPath);
-    send('FS_createDataFile', [dir, name, fs.readFileSync(abs, 'latin1'), true, true]);
+    if (!byDir.has(dir)) byDir.set(dir, []);
+    byDir.get(dir).push([relPath, f]);
   }
-}
-
-// The npm package nests the tree one level deeper than the package root.
-const TEXMF_ROOT = fs.existsSync(path.join(TEXLIVE, 'texlive', 'texmf-dist'))
-  ? path.join(TEXLIVE, 'texlive') : TEXLIVE;
-
-console.log('texlive.js: mounting the TeX Live tree (lazy) from ' + TEXMF_ROOT);
-send('FS_createLazyFilesFromList', ['/', path.join(TEXLIVE, 'texlive.lst'),
-     TEXMF_ROOT + '/', true, true]);
-
-// Verify the mount before burning a compile pass on a missing tree.
-function probeFile(p, min) {
-  try {
-    const r = send('FS_readFile', [p]);
-    const n = (r && typeof r.result === 'string') ? r.result.length : -1;
-    return n >= (min || 1);
-  } catch (e) { return false; }
-}
-for (const [p, min, what] of [
-  ['/texmf-dist/tex/latex/base/book.cls', 100, 'LaTeX base'],
-  ['/texmf.cnf', 10, 'kpathsea config'],
-  ['/texmf-var/web2c/pdftex/latex.fmt', 1000, 'LaTeX format'],
-  ['/' + MAIN, 10, 'the document'],
-]) {
-  if (!probeFile(p, min)) {
-    console.error(`texlive.js: ${what} is not readable in MEMFS: ${p}`);
-    console.error(log.slice(-30).join('\n'));
-    process.exit(1);
+  for (const [dir] of byDir) if (dir !== '/') mkdirp(dir);
+  for (const [, list] of byDir) {
+    for (const [relPath, abs] of list) {
+      const dir = path.posix.dirname('/' + relPath);
+      const name = path.posix.basename('/' + relPath);
+      send('FS_createDataFile', [dir, name, fs.readFileSync(abs, 'latin1'), true, true]);
+    }
   }
+
+  // The npm package nests the tree one level deeper than the package root.
+  const TEXMF_ROOT = fs.existsSync(path.join(TEXLIVE, 'texlive', 'texmf-dist'))
+    ? path.join(TEXLIVE, 'texlive') : TEXLIVE;
+  send('FS_createLazyFilesFromList', ['/', path.join(TEXLIVE, 'texlive.lst'),
+       TEXMF_ROOT + '/', true, true]);
+
+  function probeFile(p, min) {
+    try {
+      const r = send('FS_readFile', [p]);
+      const n = (r && typeof r.result === 'string') ? r.result.length : -1;
+      return n >= (min || 1);
+    } catch (e) { return false; }
+  }
+  for (const [p, min, what] of [
+    ['/texmf-dist/tex/latex/base/book.cls', 100, 'LaTeX base'],
+    ['/texmf.cnf', 10, 'kpathsea config'],
+    ['/texmf-var/web2c/pdftex/latex.fmt', 1000, 'LaTeX format'],
+    ['/' + MAIN, 10, 'the document'],
+  ]) {
+    if (!probeFile(p, min)) {
+      console.error(`texlive.js: ${what} is not readable in MEMFS: ${p}`);
+      console.error(log.slice(-30).join('\n'));
+      process.exit(1);
+    }
+  }
+  // re-inject the write products of the previous pass
+  for (const name of JOBNAMES) {
+    if (carry[name] != null) {
+      send('FS_createDataFile', ['/', name, carry[name], true, true]);
+    }
+  }
+  console.log('texlive.js: TeX Live tree + document mounted and verified');
 }
-console.log('texlive.js: TeX Live tree + document mounted and verified');
 
 // pdftex aborts by throwing; make sure we always see what it printed first.
 process.on('uncaughtException', (e) => {
@@ -220,12 +235,16 @@ process.on('uncaughtException', (e) => {
   process.exit(1);
 });
 
+const carry = {};     // jobname -> contents, harvested after each pass
+bootWorker();
+
 /* ------------------------------------------------------------------ *
- * Passes until convergence.
- * aux/toc/out all need extra runs; hyperref's rerunfilecheck in
- * particular drops PDF bookmarks for any pass in which main.out moved,
- * so a fixed pass count can silently ship a bookmark-less document.
- * Run until no pass asks for a rerun, with a hard ceiling.
+ * Passes until convergence.  aux/toc/out all need extra runs; hyperref's
+ * rerunfilecheck in particular drops PDF bookmarks for any pass in which
+ * main.out moved.  Run until no pass asks for a rerun, with a ceiling.
+ * A pass that emits NO stdout is an engine malfunction (the old silent
+ * second-pass bug) and fails the build loudly -- it used to be mistaken
+ * for convergence, which shipped single-pass PDFs with an empty ToC.
  * ------------------------------------------------------------------ */
 // This build's default format is already LaTeX, so no '&latex' prefix.
 // Putting it first makes web2c read the following option as a filename.
@@ -238,16 +257,17 @@ const MAX_PASSES = Number(process.env.HB_TEX_PASSES || 8);
 const RERUN = /Rerun to get|has changed\.|Label\(s\) may have changed/;
 let argset = RUN_ARGSETS[0];
 let ok = false;
-for (let pass = 1; pass <= MAX_PASSES; pass++) {
+let pass = 0;
+for (; pass < MAX_PASSES; pass++) {
   const logMark = log.length;
-  console.log(`texlive.js: pdflatex pass ${pass}`);
+  console.log(`texlive.js: pdflatex pass ${pass + 1}`);
   let r;
   try {
     r = send('run', argset.concat([MAIN]));
   } catch (e) {
     r = { error: String(e && e.message || e) };
   }
-  if (r && r.error && pass === 1) {
+  if (r && r.error && pass === 0) {
     // try the remaining argument spellings before giving up
     for (const alt of RUN_ARGSETS.slice(1)) {
       console.log('texlive.js: retrying with ' + alt[0]);
@@ -256,6 +276,14 @@ for (let pass = 1; pass <= MAX_PASSES; pass++) {
     }
   }
   if (r && r.error) console.error('worker error: ' + r.error);
+  const thisPass = log.slice(logMark);
+  if (!thisPass.length && pass > 0) {
+    console.error('texlive.js: FATAL -- pass ' + (pass + 1) +
+      ' produced no output; the engine refused the second run.');
+    console.error('texlive.js: the PDF on disk is from pass ' + pass +
+      ' and is NOT converged (its ToC and cross-references are stale).');
+    process.exit(1);
+  }
   const pdf = send('FS_readFile', ['/' + MAIN.replace(/\.tex$/, '.pdf')]);
   if (pdf && typeof pdf.result === 'string' && pdf.result.startsWith('%PDF')) {
     fs.writeFileSync(OUT, Buffer.from(pdf.result, 'latin1'));
@@ -266,13 +294,21 @@ for (let pass = 1; pass <= MAX_PASSES; pass++) {
     console.error(log.slice(-400).join('\n').split('\n').slice(-70).join('\n'));
     break;
   }
-  // stop as soon as a pass is clean -- nothing left to settle
-  const thisPass = log.slice(logMark);
-  if (!thisPass.some((l) => RERUN.test(l))) {
-    console.log(`texlive.js: converged after ${pass} pass(es)`);
+  // harvest the write products so the next pass can read them
+  for (const name of JOBNAMES) {
+    try {
+      const rr = send('FS_readFile', ['/' + name]);
+      if (rr && typeof rr.result === 'string') carry[name] = rr.result;
+    } catch (e) { /* not written yet */ }
+  }
+  const needsRerun = thisPass.some((l) => RERUN.test(l));
+  if (needsRerun && pass + 1 < MAX_PASSES) {
+    bootWorker();                       // fresh engine; aux/toc re-injected inside
+  } else {
+    if (needsRerun) console.log('texlive.js: still not converged at the pass ceiling');
+    else console.log(`texlive.js: converged after ${pass + 1} pass(es)`);
     break;
   }
-  if (pass === MAX_PASSES) console.log('texlive.js: still not converged at the pass ceiling');
 }
 
 if (!ok || !fs.existsSync(OUT)) {

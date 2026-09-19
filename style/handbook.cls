@@ -13,7 +13,7 @@
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
-\LoadClass[11pt,twoside,openright]{book}
+\LoadClass[11pt,twoside,openany]{book}
 
 %% ---------------------------------------------------------------------
 %% 1. Optional packages
