@@ -86,7 +86,7 @@ already contributed to it.
 | `T-15-01` | stable | B4, B3 | The Crowd as Evidence | The Appeals | 511 |
 | `T-15-02` | stable | B4 | Uncertainty and Similarity | The Appeals | 447 |
 | `T-15-03` | stable | B3 | The Belief Market | The Appeals | 614 |
-| `T-15-04` | stable | B3 | The Fantasy Floor | The Appeals | 673 |
+| `T-15-04` | stable | B3 | The Fantasy Floor | The Appeals | 685 |
 | `T-16-01` | stable | B4, B1, B3 | Concession and Retreat | Argument and Demonstration | 567 |
 | `T-16-02` | stable | B1 | Doing Their Thinking | Argument and Demonstration | 517 |
 | `T-16-03` | stable | B1 | Refuse the Argument | Argument and Demonstration | 584 |
@@ -117,7 +117,7 @@ already contributed to it.
 | `T-22-01` | stable | B4, B3 | The Liking Handle | Working the Hearts | 542 |
 | `T-22-02` | stable | B4 | Borrowed Warmth | Working the Hearts | 469 |
 | `T-22-03` | stable | B4 | The Familiar Face | Working the Hearts | 652 |
-| `T-22-04` | stable | B3 | The Soothing Mirror | Working the Hearts | 662 |
+| `T-22-04` | stable | B3 | The Soothing Mirror | Working the Hearts | 670 |
 | `T-23-01` | stable | B4 | Reading a Seeded Room | Detection | 472 |
 | `T-23-02` | stable | B4, B6 | Manufactured Rapport | Detection | 490 |
 | `T-23-03` | stable | B4 | Testing a Claimed Credential | Detection | 491 |

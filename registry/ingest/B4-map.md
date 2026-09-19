@@ -243,3 +243,6 @@ fifth source that covers the ground better.
   `file:` field of B4's register block. See `books/README.md`.
 * Rule R4: B4 is `rank: primary`, so it may originate claims. Rule R11: every
   B4 citation requires a dossier in `sources/B4/`.
+* 2026-09-19 (manual pass) --- free-sample dossier precision fix: the personalisation
+  evidence is the veterans' address-label mailing (18 to 35 percent); the smile belongs
+  to the sample-table attendant. Substance unchanged.

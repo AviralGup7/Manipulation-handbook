@@ -122,3 +122,8 @@ to power, an image, a symbol, and a reversal.
   T-02-03 and T-12-03 repaired (stale source-count phrase; street proverb de-attributed
   from B3 --- this edition's text contains no Corleone passage). No dossier changes; the
   remaining sampled entries verified grounded against the corpus.
+* 2026-09-19 (manual pass, script-free) --- full-text reads of Laws 13, 14, 32, 44 and
+  B1 Tactics 8, 11, 14 against entries: T-22-04 repaired (the Ivan--Simeon mirror: the
+  insult mirrored was the boyars', Simeon was the instrument) and T-15-04 repaired (the
+  law's closing concession is staged reality, the homespun Lincoln, not a seeded grain
+  of truth). T-05-02 verified grounded.
