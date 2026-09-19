@@ -197,7 +197,12 @@ Overleaf) but never hand-edited.
 R7.2 **[enforced]** `validate.py` regenerates them in memory and fails if the
 committed copies differ. Run `make index` before committing.
 
-R7.3 The `.tex` sources and the generated index live in the repository, not in a
+R7.3 **[enforced]** Every `\input` must resolve to a real file, and every
+managed file must be reachable from `main.tex`. A dangling `\input` is the most
+common first-compile failure in a book assembled from hundreds of small files;
+an unreachable entry is a file that silently never gets published.
+
+R7.4 The `.tex` sources and the generated index live in the repository, not in a
 scratch directory. Anything that must survive belongs in git; anything that can
 be regenerated and is third-party copyright (extracted corpus text, PDFs'
 intermediate output) is gitignored.

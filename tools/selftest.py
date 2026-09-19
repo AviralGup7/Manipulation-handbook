@@ -332,6 +332,26 @@ def case_overwrite_refused(root: str) -> None:
     assert rc != 0, f"new_book reused an existing id:\n{out}"
 
 
+def case_r18_dangling_input(root: str) -> None:
+    """A dangling \\input must fail, and an unreachable entry must fail."""
+    sub(root, "main.tex", "\\input{back/colophon}",
+        "\\input{back/colophon}\n\\input{back/does-not-exist}")
+    rc, out = validate(root)
+    assert rc != 0 and "R18" in out, f"a dangling \\input was accepted:\n{out[-800:]}"
+
+    sub(root, "main.tex", "\n\\input{back/does-not-exist}", "")
+    rc, out = validate(root)
+    assert rc == 0, f"still failing after the dangling input was removed:\n{out[-800:]}"
+
+    # an entry pointed at the wrong chapter becomes unreachable from the index
+    sub(root, "topics/c01/T-01-02.tex", "%% @chapter: c01", "%% @chapter: c09")
+    rc, _ = build(root)
+    assert rc == 0
+    rc, out = validate(root)
+    assert rc != 0 and ("R18" in out or "R2" in out), \
+        f"an unreachable entry was accepted:\n{out[-800:]}"
+
+
 # ---------------------------------------------------------------------------
 CASES: List[Tuple[str, str, Callable[[str], None]]] = [
     ("baseline",       "the repo passes its own gate",                       case_baseline),
@@ -348,6 +368,7 @@ CASES: List[Tuple[str, str, Callable[[str], None]]] = [
     ("R12",            "layout commands are kept out of content",            case_r12_layout),
     ("R13",            "broken LaTeX is caught",                             case_r13_tex),
     ("R14",            "a stale generated index is caught",                  case_r14_stale),
+    ("R18",            "dangling \\input and orphans are caught",            case_r18_dangling_input),
     ("scaffold",       "scaffolds refuse to overwrite",                      case_overwrite_refused),
 ]
 

@@ -27,6 +27,8 @@ Exit code 0 = clean, 1 = errors (do not commit), warnings never fail a build.
     R15  no near-verbatim runs copied from the source PDFs (if corpus present)
     R16  no two entries covering the same ground under different titles
     R17  no draft markers in a `stable` entry
+    R18  every \\input resolves and every managed file is reachable
+         from main.tex (the usual first-compile failure)
 """
 
 from __future__ import annotations
@@ -478,6 +480,52 @@ def check_structure(repo: Repo, rep: Report) -> None:
                         "directory for a book that is not in registry/books.yaml")
 
 
+def check_inputs(repo: Repo, rep: Report) -> None:
+    """R18 -- every \\input/\\include must resolve, and every managed file
+    must be reachable from main.tex. A dangling \\input is the single most
+    common first-compile failure in a project assembled from many files."""
+    seen: Set[str] = set()
+    queue = ["main.tex"]
+    reachable: Set[str] = set()
+    while queue:
+        relp = queue.pop()
+        absp = os.path.join(ROOT, relp)
+        if not os.path.exists(absp):
+            if not os.path.exists(absp + ".tex"):
+                rep.err("R18", relp, "file does not exist")
+                continue
+            relp = relp + ".tex"
+            absp = absp + ".tex"
+        if relp in reachable:
+            continue
+        reachable.add(relp)
+        try:
+            with open(absp, "r", encoding="utf-8") as fh:
+                text = fh.read()
+        except Exception as exc:
+            rep.err("R18", relp, f"unreadable: {exc}")
+            continue
+        for m in re.finditer(r"\\(?:input|include)\{([^}]*)\}", text):
+            target = m.group(1).strip()
+            if target.startswith("style/") or target in ("registry/books.yaml",):
+                continue
+            cand = target if target.endswith(".tex") else target + ".tex"
+            if not os.path.exists(os.path.join(ROOT, cand)):
+                rep.err("R18", relp, f"\\input{{{target}}} does not resolve")
+            elif cand not in seen:
+                seen.add(cand)
+                queue.append(cand)
+
+    # orphan check: a managed file nothing points at
+    for m in repo.all:
+        if m.kind == "source" and m.status == "skeleton":
+            continue                      # scaffolded but not yet merged
+        if m.rel.replace(os.sep, "/") not in reachable:
+            rep.err("R18", m.rel,
+                    "not reachable from main.tex -- it will never be typeset "
+                    "(run 'make index', or check its @status/@chapter)")
+
+
 def main(argv: List[str]) -> int:
     corpus = None
     args = list(argv)
@@ -509,6 +557,7 @@ def main(argv: List[str]) -> int:
     check_verbatim(repo, rep, corpus)
     check_duplicates(repo, rep)
     check_stable(repo, rep)
+    check_inputs(repo, rep)
 
     print(f"scanned: {len(repo.parts)} parts, {len(repo.chapters)} chapters, "
           f"{len(repo.topics)} entries, {len(repo.dossiers)} dossiers, "
