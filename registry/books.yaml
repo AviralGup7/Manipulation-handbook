@@ -83,9 +83,32 @@
   notes: >
     Empirical layer. Where B1 gives street tactics and B3 gives strategy, B4 gives the laboratory mechanism underneath each: the automatic compliance pattern, the trigger feature that fires it, and the field evidence. Strongest on reciprocation (including unequal exchange and concession), commitment escalation, social proof under uncertainty and similarity, liking by association, authority by symbol, and scarcity including reactance. Adds no new tactic names; it supplies causal depth to topics that already exist, so ingestion is almost entirely additive dossier work.
 
+- id: B5
+  rank: primary
+  weight: 85
+  status: active
+  title: "Never Split the Difference"
+  author: "Chris Voss (with Tahl Raz)"
+  year: 2016
+  publisher: "HarperBusiness"
+  file: "books/E001005.pdf"
+  structure: "10 chapters: The New Rules; Be a Mirror; Label Their Pain; Beware Yes / Master No; Get a That's Right; Bend Their Reality; Create the Illusion of Control; Guarantee Execution; Bargain Hard; Find the Black Swan. Appendix: preparing a negotiation one-sheet."
+  short: "Voss, Never Split the Difference (2016)"
+  notes: >
+    Negotiation-domain practitioner source: FBI hostage-negotiation method
+    backed by the behavioural-economics literature (Kahneman/Tversky on loss
+    aversion and anchoring). Strongest on turn-by-turn interaction structure,
+    which makes its material slot directly into `application` and `feedback`;
+    on detection (ch. 8, spotting the liar, the 7-38-55 rule); and on
+    refusal-side technique (the power of "No", calibrated questions), which
+    feeds the defence chapters. Where B3 gives strategy and B4 the laboratory
+    trigger, B5 gives the live interaction protocol. Weight 85: primary, but
+    its claims are domain-bound (high-stakes bargains), so strategic claims
+    still defer to B3 and mechanism claims to B4/B5 on their own ground.
+
 # NEXT BOOK GOES HERE. Do not renumber the ones above.
 # ---------------------------------------------------------------------
-# - id: B5
+# - id: B6
 #   rank: primary
 #   weight: 80
 #   status: active
@@ -96,5 +119,5 @@
 #   file: "books/....pdf"
 #   structure: "..."
 #   short: "..."
-#   notes: >
+#   notes: >>
 #     ...

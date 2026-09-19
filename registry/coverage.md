@@ -14,6 +14,7 @@ already contributed to it.
 | B2 | secondary | 20 | Art of Manipulation (condensed study summary of B1) | Bookey | 2025 | 1 |
 | B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 31 |
 | B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 29 |
+| B5 | primary | 85 | Never Split the Difference | Chris Voss (with Tahl Raz) | 2016 | 11 |
 
 ## Entries
 
@@ -37,13 +38,16 @@ already contributed to it.
 | `T-04-04` | stable | B1, B3 | The Self-Audit | Load-Bearing Points | 442 |
 | `T-05-01` | stable | B1 | The Real Objection | Motives Before Words | 451 |
 | `T-05-02` | stable | B1, B3 | Follow the Interest | Motives Before Words | 432 |
+| `T-05-03` | planned | B5 | The Black Swan | Motives Before Words | 43 |
 | `T-06-01` | stable | B1 | Protest Too Much | Tells and Consistency | 429 |
 | `T-06-02` | stable | B1 | The Two-Tellings Test | Tells and Consistency | 450 |
 | `T-06-03` | stable | B1 | The Third-Party Lie Rule | Tells and Consistency | 464 |
 | `T-06-04` | stable | B1, B3, B4 | Behaviour Over Declaration | Tells and Consistency | 486 |
-| `T-07-01` | stable | B3 | Posing as a Friend | Gathering Information | 426 |
+| `T-06-05` | planned | B5 | The Three Channels | Tells and Consistency | 44 |
+| `T-07-01` | stable | B3, B5 | Posing as a Friend | Gathering Information | 453 |
 | `T-07-02` | stable | B3, B1 | The Indirect Question | Gathering Information | 412 |
 | `T-07-03` | stable | B1 | The Three-Second Read | Gathering Information | 453 |
+| `T-07-04` | stable | B5 | The Mirror | Gathering Information | 547 |
 | `T-08-01` | stable | B3 | Do Not Offend the Wrong Person | Judging Who You Are Dealing With | 483 |
 | `T-08-02` | stable | B1, B3 | The Engagement Decision | Judging Who You Are Dealing With | 454 |
 | `T-09-01` | stable | B3 | A Reputation You Built on Purpose | Reputation | 555 |
@@ -56,15 +60,18 @@ already contributed to it.
 | `T-13-01` | stable | B4 | Manufactured Consensus | Concealment and Indirection | 454 |
 | `T-13-02` | planned | B1 | Weakness as a Mask | Concealment and Indirection | 36 |
 | `T-13-04` | planned | B3 | The Cutout | Concealment and Indirection | 34 |
-| `T-14-01` | stable | B4 | The Automatic Response | Framing and Controlled Choice | 530 |
+| `T-14-01` | stable | B4, B5 | The Automatic Response | Framing and Controlled Choice | 560 |
 | `T-14-02` | stable | B4 | The Contrast Principle | Framing and Controlled Choice | 489 |
 | `T-14-03` | stable | B4 | The Small First Yes | Framing and Controlled Choice | 510 |
 | `T-14-04` | stable | B4 | The Four Amplifiers | Framing and Controlled Choice | 485 |
+| `T-14-07` | stable | B5 | The Label | Framing and Controlled Choice | 547 |
+| `T-14-08` | stable | B5 | The Calibrated Question | Framing and Controlled Choice | 547 |
 | `T-15-01` | stable | B4 | The Crowd as Evidence | The Appeals | 467 |
 | `T-15-02` | stable | B4 | Uncertainty and Similarity | The Appeals | 447 |
 | `T-16-01` | stable | B4 | Concession and Retreat | Argument and Demonstration | 518 |
 | `T-16-02` | planned | B1 | Doing Their Thinking | Argument and Demonstration | 35 |
 | `T-16-03` | planned | B1 | Refuse the Argument | Argument and Demonstration | 36 |
+| `T-16-05` | stable | B5 | The Summary That Gets "That's Right" | Argument and Demonstration | 520 |
 | `T-17-01` | planned | B3 | Master Timing | Delivery | 35 |
 | `T-17-02` | planned | B3 | Bold Entry | Delivery | 37 |
 | `T-18-01` | stable | B4 | The Symbols of Authority | Appearance and Compliance | 515 |
@@ -83,8 +90,11 @@ already contributed to it.
 | `T-24-01` | stable | B4 | Refusing an Unauthorised Debt | Inoculation and Refusal | 535 |
 | `T-24-02` | stable | B4 | A Commitment You Did Not Choose | Inoculation and Refusal | 499 |
 | `T-24-03` | stable | B4 | Refusing a Deadline | Inoculation and Refusal | 502 |
+| `T-24-05` | stable | B5 | The Safety of No | Inoculation and Refusal | 560 |
 | `T-25-01` | stable | B4 | The Reneged Price | Money and Contracts | 491 |
 | `T-25-02` | planned | B3 | The Free Lunch | Money and Contracts | 35 |
+| `T-25-03` | stable | B5 | The Anchor | Money and Contracts | 555 |
+| `T-25-04` | planned | B5 | The Ackerman Plan | Money and Contracts | 47 |
 | `T-26-02` | planned | B1 | The Ordered Exit | Exit and Aftermath | 36 |
 | `T-27-01` | planned | B1 | The Bill for the Method | What You Get Out of Using People | 41 |
 
@@ -105,3 +115,6 @@ already contributed to it.
 - `B3-T-21-02` -- TODO chapter / section / pages in the source (unique: no)
 - `B3-T-21-03` -- TODO chapter / section / pages in the source (unique: no)
 - `B3-T-25-02` -- TODO chapter / section / pages in the source (unique: no)
+- `B5-T-05-03` -- TODO chapter / section / pages in the source (unique: no)
+- `B5-T-06-05` -- TODO chapter / section / pages in the source (unique: no)
+- `B5-T-25-04` -- TODO chapter / section / pages in the source (unique: no)
