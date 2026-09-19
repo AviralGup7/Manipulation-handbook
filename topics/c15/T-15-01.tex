@@ -15,40 +15,47 @@
 %% @status: stable
 %% @sources: B4
 %% @updated: 2026-09-19
+%% @allow-rewrite: slot migration to the seven-question format (docs/RULES.md section 2)
 
 \topic{T-15-01}{The Crowd as Evidence}{What many people do is treated as proof that it is correct}
+
 
 \begin{core}
 People settle questions they cannot answer by looking at what other people are doing. The number doing it is read as evidence about the thing itself rather than as evidence about the number. Whoever controls the apparent number controls the conclusion.
 \end{core}
+
 \begin{mechanism}
 The inference is usually sound. If many people are doing something, they probably have information you do not, and following them is cheaper than investigating. That is why the shortcut persists: it is correct often enough to be worth keeping, and it is the only available answer to questions where personal expertise runs out.
 
 The weakness is that the inference treats the crowd's behaviour as independent sampling. It almost never is. Each member is also watching the others, so what looks like a hundred separate confirmations is frequently one uncertain person copied ninety-nine times. The evidence is not multiplied by the count; it is the same weak signal, repeated. Once that is seen, the technique is obvious: the number does not have to be produced by conviction, only displayed.
 \end{mechanism}
-\begin{tells}
+
+\begin{application}
+  \item Make the number visible: queues, counts, testimonials, subscriptions, names. The display does the work; the substance does not have to match it.
+  \item Show the crowd rather than describing it. A witnessed number is worth several asserted ones.
+  \item Recruit a few people first and let the copying supply the rest.
+  \item Time the display to the moment of decision, when the counterpart has least capacity to investigate.
+\end{application}
+
+\begin{feedback}
   \item Your reason for believing something is how many people appear to believe it.
   \item The count is visible but the individuals behind it are not.
   \item Nobody you ask can say why they are doing it, only that everyone is.
   \item Dissent is absent rather than answered.
   \item The crowd appears at the moment a decision is needed and not before.
-\end{tells}
-\begin{moves}
-  \item Make the number visible: queues, counts, testimonials, subscriptions, names. The display does the work; the substance does not have to match it.
-  \item Show the crowd rather than describing it. A witnessed number is worth several asserted ones.
-  \item Recruit a few people first and let the copying supply the rest.
-  \item Time the display to the moment of decision, when the counterpart has least capacity to investigate.
-\end{moves}
-\begin{counters}
+\end{feedback}
+
+\begin{failure}
+Manufacturing a crowd is fragile and frequently discoverable. Once the display is known to be staged, everything else you assert inherits the doubt, which is a much larger loss than the single transaction. It is also the technique most exposed to a simple question --- why are you doing this? --- because the answer is usually that everyone else is, and everyone else has the same answer.
+\end{failure}
+
+\begin{countermeasures}
   \item Ask how many of them decided independently. One source copied widely is not a consensus.
   \item Find the first person and ask them why. The chain usually terminates quickly, in someone with no more information than you.
   \item Compare against a base rate rather than against the display. What proportion of people normally do this?
   \item Look for the absent dissent. A crowd with no visible disagreement has usually had its disagreement removed.
   \item Decide privately before seeing the number, then treat any change in your view as a thing to explain.
-\end{counters}
-\begin{cost}
-Manufacturing a crowd is fragile and frequently discoverable. Once the display is known to be staged, everything else you assert inherits the doubt, which is a much larger loss than the single transaction. It is also the technique most exposed to a simple question --- why are you doing this? --- because the answer is usually that everyone else is, and everyone else has the same answer.
-\end{cost}
+\end{countermeasures}
 
 \sources{B4}
 \seesources

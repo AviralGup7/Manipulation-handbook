@@ -11,7 +11,7 @@ format has exactly one implementation.
     topic("T-02-01", "c02", 10, "Affect Control", "Subtitle",
           sources=["B3"],
           slots=[("core", "..."), ("mechanism", "..."),
-                 ("tells", ["...", "..."]), ...],
+                 ("feedback", ["...", "..."]), ...],
           seealso="T-02-03")
 
     dossier("B3", "T-02-01", "Affect Control", "Law 39, pp. 325--332",
@@ -34,7 +34,7 @@ from hb_lib import DIR_SOURCES, DIR_TOPICS, rel   # noqa: E402
 
 TODAY = os.environ.get("HB_DATE", "2026-09-19")
 
-LIST_SLOTS = ("tells", "moves", "counters", "distilled", "unique", "terms")
+LIST_SLOTS = ("application", "feedback", "countermeasures", "distilled", "unique", "terms")
 
 TOPIC_HEADER = """\
 %% =====================================================================

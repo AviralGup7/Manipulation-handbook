@@ -36,10 +36,10 @@ That maps one-to-one onto slots that already exist:
 | B4's argument move | handbook slot |
 |---|---|
 | the compliance pattern and its trigger cue | `mechanism` |
-| observable signs a target can watch for | `tells` |
-| conditions under which the principle fails | `cost` |
-| the defence, including redirecting the technique's own force | `counters` |
-| the field setting it was observed in | `field` |
+| observable signs a target can watch for | `feedback` |
+| conditions under which the principle fails | `failure` |
+| the field setting it was observed in | `conditions` |
+| the defence, including redirecting the technique's own force | `countermeasures` |
 
 So ingestion splits into two kinds of work, and neither one edits a sentence
 that B1 or B3 already wrote:
@@ -205,7 +205,11 @@ is cited by every later chapter. Each chapter is a separate batch:
 6. ch. 6 → `T-18-01`, `T-18-02`, `T-23-03`  ✔ done (see revision below)
 7. ch. 7 → `T-10-01`, `T-10-02`, `T-10-03`, `T-24-03`  ✔ done
 
-### Revisions to this map
+### Revisions
+
+* 2026-09-19 — slot mapping re-aimed at the seven-question entry format
+  (docs/RULES.md R2): signs→`feedback`, failure conditions→`failure`,
+  defence→`countermeasures`, field setting→`conditions`. to this map
 
 Mappings are proposals, and two were revised on contact with the entries
 rather than forced through:

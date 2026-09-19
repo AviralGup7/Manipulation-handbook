@@ -242,6 +242,10 @@ def case_churn_rewrite(root: str) -> None:
     """A wholesale rewrite of an entry must fail the churn guard."""
     path = "topics/c01/T-01-01.tex"
     text = read(root, path)
+    # the scratch rewrite must not inherit the migration's @allow-rewrite
+    # sanction -- an unsanctioned rewrite is what this guarantee tests.
+    text = "\n".join(l for l in text.splitlines()
+                      if not l.startswith("%% @allow-rewrite:"))
     body_start = text.index("\\topic{")
     rewritten = text[:body_start] + (
         "\\topic{T-01-01}{Completely Different Title}{New strapline}\n\n"
@@ -249,10 +253,11 @@ def case_churn_rewrite(root: str) -> None:
         "the original wording whatsoever, written from scratch.\n\\end{core}\n\n"
         "\\begin{mechanism}\nA brand new mechanism section with different content\n"
         "and different sentences throughout.\n\\end{mechanism}\n\n"
-        "\\begin{tells}\n  \\item a different tell\n\\end{tells}\n\n"
-        "\\begin{moves}\n  \\item a different move\n\\end{moves}\n\n"
-        "\\begin{counters}\n  \\item a different counter\n\\end{counters}\n\n"
-        "\\begin{cost}\nDifferent cost text entirely.\n\\end{cost}\n\n"
+        "\\begin{conditions}\nDifferent conditions text entirely.\n\\end{conditions}\n\n"
+        "\\begin{application}\n  \\item a different move\n\\end{application}\n\n"
+        "\\begin{feedback}\n  \\item a different sign\n\\end{feedback}\n\n"
+        "\\begin{failure}\nDifferent failure text entirely.\n\\end{failure}\n\n"
+        "\\begin{countermeasures}\n  \\item a different counter\n\\end{countermeasures}\n\n"
         "\\sources{B1, B3}\n\\seesources\n")
     write(root, path, rewritten)
     rc, out = guard(root)
@@ -283,10 +288,10 @@ def case_r5_slot_order(root: str) -> None:
     mech = re.search(r"\\begin\{mechanism\}.*?\\end\{mechanism\}\n", t, re.S).group(0)
     t2 = t.replace(mech, "", 1)
     t2 = t2.replace("\\end{core}\n", "\\end{core}\n\n" + mech, 1)  # still in order
-    # now deliberately break it: move `cost` above `tells`
-    lim = re.search(r"\\begin\{cost\}.*?\\end\{cost\}\n", t, re.S).group(0)
+    # now deliberately break it: move `failure` above `feedback`
+    lim = re.search(r"\\begin\{failure\}.*?\\end\{failure\}\n", t, re.S).group(0)
     t3 = t.replace(lim, "", 1)
-    t3 = t3.replace("\\begin{tells}", lim + "\\begin{tells}", 1)
+    t3 = t3.replace("\\begin{feedback}", lim + "\\begin{feedback}", 1)
     write(root, path, t3)
     rc, out = validate(root)
     assert rc != 0 and "R5" in out, f"slot order was not enforced:\n{out[-800:]}"
@@ -318,7 +323,7 @@ def case_r12_layout(root: str) -> None:
     """A layout command in a content file must fail."""
     path = "topics/c01/T-01-02.tex"
     t = read(root, path)
-    t = t.replace("\\end{cost}", "\\end{cost}\n\\vspace{6pt}\\newpage", 1)
+    t = t.replace("\\end{failure}", "\\end{failure}\n\\vspace{6pt}\\newpage", 1)
     write(root, path, t)
     rc, out = validate(root)
     assert rc != 0 and ("R12" in out or "R13" in out), \

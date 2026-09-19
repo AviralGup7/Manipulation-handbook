@@ -136,9 +136,10 @@ Dossiers add `@book`, `@topic`, `@locator`, `@unique: yes|no`,
 ## Style, in one paragraph
 
 Second person or neutral declarative, present tense, concrete behaviour rather
-than feelings. Slots in canonical order: `core → mechanism → tells → moves →
-counters → cost → field → sources → seesources → seealso`. `core` is
-mandatory. `counters` gets as much room as `moves`. Under 700 words per entry,
+than feelings. Slots in canonical order: `core → mechanism → conditions →
+application → feedback → failure → countermeasures → sources → seesources →
+seealso`. `core` is mandatory. `countermeasures` gets as much room as
+`application`. Under 700 words per entry,
 comfortably under 560. No `\vspace`, no `\newpage`, no colour, no centring —
 layout lives in `style/`. Sources are cited with `\src{B1}` inline and
 `\sources{B1, B3}` at the end.

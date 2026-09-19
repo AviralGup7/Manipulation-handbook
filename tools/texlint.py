@@ -34,15 +34,15 @@ KNOWN_ENVS = {
     "table", "figure", "titlepage", "abstract", "lrbox", "sloppypar",
     "thebibliography", "appendix", "filecontents", "comment",
     # entry.sty
-    "hbbox", "core", "mechanism", "tells", "moves", "counters",
-    "field", "cost", "distilled", "unique", "terms", "quotable",
+    "hbbox", "core", "mechanism", "conditions", "application", "feedback",
+    "failure", "countermeasures", "distilled", "unique", "terms", "quotable",
     "partblurb", "chapterblurb",
 }
 
 LIST_ENVS = {"itemize", "enumerate", "description", "list", "trivlist",
              "thebibliography",
              # entry.sty slots that open a list internally
-             "tells", "moves", "counters", "distilled", "unique", "terms"}
+             "application", "feedback", "countermeasures", "distilled", "unique", "terms"}
 
 # Layout commands that must never appear in a content file (rule R12).
 BANNED_LAYOUT = [

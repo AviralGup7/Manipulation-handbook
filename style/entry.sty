@@ -6,8 +6,9 @@
 %%  book looks, change this file -- never a content file.
 %%
 %%  Canonical slot order (docs/RULES.md R5):
-%%     \topic -> core -> mechanism -> tells -> moves -> counters -> cost
-%%             -> field -> sources -> seesources -> seealso
+%%     \topic -> core -> mechanism -> conditions -> application
+%%             -> feedback -> failure -> countermeasures
+%%             -> sources -> seesources -> seealso
 %%  All slots optional except `core`; order enforced by tools/validate.py.
 %% =====================================================================
 \NeedsTeXFormat{LaTeX2e}
@@ -123,21 +124,21 @@
 \newenvironment{mechanism}{\hbslot{Mechanism}\ignorespaces}{\par}
 
 %% TELLS -- how to recognise it in the wild.
-\newenvironment{tells}{\hbslot{Tells}\begin{itemize}\ignorespaces}{\end{itemize}}
+\newenvironment{feedback}{\hbslot{Feedback}\begin{itemize}\ignorespaces}{\end{itemize}}
 
 %% MOVES -- how it is executed. Short, numbered, imperative.
-\newenvironment{moves}{\hbslot{Moves}\begin{enumerate}\ignorespaces}{\end{enumerate}}
+\newenvironment{application}{\hbslot{Application}\begin{enumerate}\ignorespaces}{\end{enumerate}}
 
 %% COUNTERS -- defence, reversal, inoculation.
-\newenvironment{counters}{\hbslot{Counters}\begin{itemize}\ignorespaces}{\end{itemize}}
+\newenvironment{countermeasures}{\hbslot{Countermeasures}\begin{itemize}\ignorespaces}{\end{itemize}}
 
 %% COST -- when it fails, what it costs, blowback, legality.
 %% Named `cost`, not `limits`: \limits is a TeX primitive and
 %% \newenvironment{limits} would clash with it (rule R13b).
-\newenvironment{cost}{\hbslot{Cost}\ignorespaces}{\par}
+\newenvironment{failure}{\hbslot{Failure modes}\ignorespaces}{\par}
 
 %% FIELD -- a concrete modern illustration written for this handbook.
-\newenvironment{field}{\begin{hbbox}\hbslot{Field note}}{\end{hbbox}}
+\newenvironment{conditions}{\begin{hbbox}\hbslot{Conditions}}{\end{hbbox}}
 
 %% ---------------------------------------------------------------------
 %% Provenance

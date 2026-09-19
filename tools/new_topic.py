@@ -54,21 +54,25 @@ TEMPLATE = """\
 {mechanism}
 \\end{{mechanism}}
 
-\\begin{{tells}}
-  \\item {tell}
-\\end{{tells}}
+\\begin{{conditions}}
+{conditions}
+\\end{{conditions}}
 
-\\begin{{moves}}
+\\begin{{application}}
   \\item {move}
-\\end{{moves}}
+\\end{{application}}
 
-\\begin{{counters}}
+\\begin{{feedback}}
+  \\item {feedback}
+\\end{{feedback}}
+
+\\begin{{failure}}
+{failure}
+\\end{{failure}}
+
+\\begin{{countermeasures}}
   \\item {counter}
-\\end{{counters}}
-
-\\begin{{cost}}
-{cost}
-\\end{{cost}}
+\\end{{countermeasures}}
 
 \\sources{{{sources}}}
 \\seesources
@@ -128,8 +132,9 @@ def main() -> int:
         sources=srcs or "TODO", today=_dt.date.today().isoformat(),
         maxwords=700, core="\\TODO{one to three sentences: the whole entry}",
         mechanism="\\TODO{why this works on a person}",
-        tell="\\TODO{observable sign}", move="\\TODO{step}",
-        counter="\\TODO{defence}", cost="\\TODO{when it fails / what it costs}",
+        conditions="\\TODO{when it works, when it is weak}",
+        feedback="\\TODO{observable sign it is landing}", move="\\TODO{step}",
+        counter="\\TODO{defence}", failure="\\TODO{how it fails, backlash}",
         seealso=tex_escape(args.seealso) or "\\TODO{id}",
     )
     with open(path, "w", encoding="utf-8") as fh:

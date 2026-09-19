@@ -74,29 +74,35 @@ filenames and directory names (`check_ids`).
 R2.1 **[enforced]** Slot order is:
 
 ```
-core → mechanism → tells → moves → counters → cost → field
+core → mechanism → conditions → application → feedback
+     → failure → countermeasures
      → sources → seesources → seealso
 ```
 
-All optional except **`core`**. Never invent a new slot; if the existing six
-cannot hold a fact, the fact does not belong in this handbook.
+All optional except **`core`**. Never invent a new slot; if the seven cannot
+hold a fact, the fact does not belong in this handbook. (2026-09-19: replaced
+`core → mechanism → tells → moves → counters → cost → field` — the old set
+had three slots answering overlapping questions. The mapping was a pure
+rename-plus-reorder: `field`→`conditions`, `moves`→`application`,
+`tells`→`feedback`, `cost`→`failure`, `counters`→`countermeasures`.)
 
-R2.2 What each slot is for:
+R2.2 Each slot answers exactly one question, and no two slots answer the same
+one:
 
 | Slot | Question it answers | Shape |
 |------|--------------------|-------|
-| `core` | What is this, irreducibly? | 1–3 sentences, boxed |
-| `mechanism` | Why does it work on a person? | 1 short paragraph |
-| `tells` | How do I see it being used? | bullets, observable behaviour |
-| `moves` | How is it done? | numbered, imperative, ≤6 steps |
-| `counters` | How do I refuse it? | bullets, equal weight to `moves` |
-| `cost` | When does it fail, and what does it cost? | 1 short paragraph |
-| `field` | A modern illustration | optional, **written by us**, never lifted |
+| `core` | What is the phenomenon? | 1–3 sentences, boxed |
+| `mechanism` | Why does it work — what psychological or social process causes the effect? | 1 short paragraph |
+| `conditions` | When is it likely to work; when does it weaken; what variables change the outcome? | small boxed note |
+| `application` | How does the mechanism appear in an actual interaction — observable behaviour and interaction structure, never theatrical scripts? | numbered steps, ≤6 |
+| `feedback` | What observable changes say the interaction is succeeding, failing, or producing resistance? | bullets, live signals |
+| `failure` | How does it fail — what makes people suspicious, what creates backlash, what makes the target disengage? | 1 short paragraph |
+| `countermeasures` | How can the same mechanism be recognized and resisted? | bullets, equal weight to `application` |
 
-R2.3 `counters` is not decoration. An entry that teaches only the offensive
+R2.3 `countermeasures` is not decoration. An entry that teaches only the offensive
 half is incomplete and will be rejected.
 
-R2.4 `cost` must be honest. Every technique here has a failure mode. If you
+R2.4 `failure` must be honest. Every technique here has a failure mode. If you
 cannot find one, you have not understood the technique.
 
 ---
@@ -290,8 +296,8 @@ R9.2 Do not paste source prose into an entry "to clean up later". It will not be
 cleaned up later.
 
 R9.3 Entries describing conduct that is illegal in many jurisdictions (fraud,
-extortion, blackmail, coercion) must state that in `cost`, and must carry
-`counters` of equal or greater length than `moves`.
+extortion, blackmail, coercion) must state that in `failure`, and must carry
+`countermeasures` of equal or greater length than `application`.
 
 R9.4 The handbook's stated purpose is defensive competence. That framing lives
 in `front/notice.tex` and is not optional.
