@@ -60,6 +60,11 @@ Rules for the sentence you add:
   generated (`\hbchapterstate{n}`), never hand-authored. Authored, it went
   stale the moment a chapter gained its first entry, and the PDF printed that
   sentence above three printed entries.
+* **R21** — an ingest map never plans an entry id that is already written.
+  B4's merge took fourteen ids the B1/B3 maps had reserved, so the plan of
+  record disagreed with the tree. Disposition vocabulary (`merged` /
+  `additive` / `written` / `new` / `planned`) is checked against the tree;
+  renumber and record a revision, never silently re-point.
 * Counts are generated everywhere — front matter, colophon, README. Never
   hand-write a number that the tree already knows.
 

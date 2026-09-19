@@ -172,6 +172,24 @@ or to a named minority view.
 R5.7 Do not re-ingest. If a dossier already exists for (book, entry), append to
 it — do not create a second file.
 
+R5.8 **[enforced]** A mapping table must not plan an entry id that is already
+written. Maps reserve ids before anything is written, and a later book's merge
+can take a reserved id for a different idea — B4 did this to fourteen rows
+across the B1 and B3 maps. A map that disagrees with the tree is worse than no
+map: it is the plan of record. `tools/validate.py` enforces a disposition
+vocabulary against the tree:
+
+| Disposition | Meaning | R5.8 requires |
+|---|---|---|
+| `merged` / `additive` | the source's material is in that entry | id exists |
+| `written` | planned as new, and since written | id exists |
+| `new` / `planned` | deliberately unwritten | id must **not** exist |
+
+A row saying `new` while pointing at an occupied id is drift: either the plan
+was fulfilled (re-mark it `written`) or another book took the id for a
+different idea (renumber it to the next free id in the chapter, and record the
+revision in the map).
+
 ---
 
 ## 6. Layout

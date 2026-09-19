@@ -105,18 +105,29 @@ INGESTION.md).
 
 ## Mapping table
 
-`additive` = a B4 dossier is filed against an entry that already exists, and
-the entry's prose changes only by addition. `new` = B4 is the primary source
-for an entry that has not been written yet.
+Disposition vocabulary — rule R21 enforces it against the tree, so a map
+cannot silently drift out of date:
+
+| disposition | meaning | R21 requires |
+|---|---|---|
+| `merged` | the source's material is already in that entry | id exists |
+| `additive` | a dossier was filed and the entry gained prose by addition | id exists |
+| `written` | planned as new, and since written | id exists |
+| `new` | planned as new, **not yet written** | id must NOT exist |
+| `planned` | reserved for later, deliberately unwritten | id must NOT exist |
+
+A row that says `new` but points at an occupied id is the drift this catches:
+either the plan was fulfilled and the row should say `written`, or another book
+took the id for a different idea and the row must be renumbered.
 
 ### ch. 1 — Weapons of Influence (pp. 13–42)
 
 | material | → entry | disposition |
 |---|---|---|
-| automatic compliance; a cue fires a whole routine | `T-14-01` | **new** (c14) |
+| automatic compliance; a cue fires a whole routine | `T-14-01` | written (c14) |
 | why the operating minority succeeds: most responses are not deliberated | `T-01-01` | additive |
 | influence vs manipulation vs persuasion, mechanism view | `T-01-02` | additive |
-| perceptual contrast; the decoy second option | `T-14-02` | **new** (c14) |
+| perceptual contrast; the decoy second option | `T-14-02` | written (c14) |
 | the epilogue's "instant" acceleration of the same frame | `T-14-01` | merged into the same entry |
 
 ### ch. 2 — Reciprocation (pp. 43–86)
@@ -124,10 +135,10 @@ for an entry that has not been written yet.
 | material | → entry | disposition |
 |---|---|---|
 | the favour as a load-bearing obligation | `T-04-02` | additive (B4 becomes the mechanism authority) |
-| debt created without being asked for | `T-19-01` | **new** (c19) |
-| unequal exchange: a small gift buys a large concession | `T-19-02` | **new** (c19) |
-| rejection-then-retreat; the reciprocal concession | `T-16-01` | **new** (c16) |
-| refusing a debt you did not authorise | `T-24-01` | **new** (c24) |
+| debt created without being asked for | `T-19-01` | written (c19) |
+| unequal exchange: a small gift buys a large concession | `T-19-02` | written (c19) |
+| rejection-then-retreat; the reciprocal concession | `T-16-01` | written (c16) |
+| refusing a debt you did not authorise | `T-24-01` | written (c24) |
 | the sample as a purchase already begun | `T-25-02` | **planned** (c25) |
 
 ### ch. 3 — Commitment and Consistency (pp. 87–125)
@@ -135,19 +146,19 @@ for an entry that has not been written yet.
 | material | → entry | disposition |
 |---|---|---|
 | a stated position is defended regardless of its origin | `T-06-04` | additive |
-| the small first yes | `T-14-03` | **new** (c14) |
-| written, active, public, effortful — the four amplifiers | `T-14-04` | **new** (c14) |
-| the price that changes after the commitment is made | `T-25-01` | **new** (c25) — written first, so it took the first free id |
-| spotting a commitment you did not choose | `T-24-02` | **new** (c24) |
+| the small first yes | `T-14-03` | written (c14) |
+| written, active, public, effortful — the four amplifiers | `T-14-04` | written (c14) |
+| the price that changes after the commitment is made | `T-25-01` | written (c25) — written first, so it took the first free id |
+| spotting a commitment you did not choose | `T-24-02` | written (c24) |
 
 ### ch. 4 — Social Proof (pp. 126–156)
 
 | material | → entry | disposition |
 |---|---|---|
-| the crowd as evidence | `T-15-01` | **new** (c15) |
-| uncertainty and similarity: the two conditions that switch it on | `T-15-02` | **new** (c15) |
-| a manufactured consensus; planted audiences | `T-13-01` | **new** (c13) |
-| reading a room that has been seeded | `T-23-01` | **new** (c23) |
+| the crowd as evidence | `T-15-01` | written (c15) |
+| uncertainty and similarity: the two conditions that switch it on | `T-15-02` | written (c15) |
+| a manufactured consensus; planted audiences | `T-13-01` | written (c13) |
+| reading a room that has been seeded | `T-23-01` | written (c23) |
 | reputation as accumulated social proof | `T-09-01` | **planned** (c09) |
 | bystander diffusion | `T-21-03` | **planned** (c21) |
 
@@ -155,29 +166,29 @@ for an entry that has not been written yet.
 
 | material | → entry | disposition |
 |---|---|---|
-| liking as a handle, and its five components | `T-22-01` | **new** (c22) |
-| association and borrowed warmth | `T-22-02` | **new** (c22) |
+| liking as a handle, and its five components | `T-22-01` | written (c22) |
+| association and borrowed warmth | `T-22-02` | written (c22) |
 | flattery works on the person who knows it is flattery | `T-04-03` | additive |
 | familiarity manufactured on purpose | `T-22-03` | **planned** (c22) |
-| spotting manufactured rapport | `T-23-02` | **new** (c23) |
+| spotting manufactured rapport | `T-23-02` | written (c23) |
 
 ### ch. 6 — Authority (pp. 178–204)
 
 | material | → entry | disposition |
 |---|---|---|
-| the symbols of authority, separable from the substance | `T-18-01` | **new** (c18) |
-| titles, uniform, trappings | `T-18-02` | **new** (c18) |
+| the symbols of authority, separable from the substance | `T-18-01` | written (c18) |
+| titles, uniform, trappings | `T-18-02` | written (c18) |
 | deference to a claimed credential | `T-08-01` | additive |
-| testing a credential before deferring | `T-23-03` | **new** (c23) |
+| testing a credential before deferring | `T-23-03` | written (c23) |
 
 ### ch. 7 — Scarcity (pp. 205–210)
 
 | material | → entry | disposition |
 |---|---|---|
-| value as a function of availability | `T-10-01` | **new** (c10) |
-| the reactance trigger: a loss of freedom is defended | `T-10-02` | **new** (c10) |
-| limited numbers, deadlines, and newness | `T-10-03` | **new** (c10) |
-| refusing a deadline | `T-24-03` | **new** (c24) |
+| value as a function of availability | `T-10-01` | written (c10) |
+| the reactance trigger: a loss of freedom is defended | `T-10-02` | written (c10) |
+| limited numbers, deadlines, and newness | `T-10-03` | written (c10) |
+| refusing a deadline | `T-24-03` | written (c24) |
 | absence as deliberate scarcity | `T-10-02` | cross-reference to B3 law 16 |
 
 ## Sequencing

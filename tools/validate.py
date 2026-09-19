@@ -372,6 +372,64 @@ def check_texlint(repo: Repo, rep: Report) -> None:
 STATE_NOTICE = "not yet written"
 
 
+MAP_ROW = re.compile(r"^\|(.+)\|\s*$")
+MAP_ID = re.compile(r"`(T-\d\d-\d\d)`")
+PLANNED = re.compile(r"\*\*(planned|new)\*\*|\b(planned|new)\b", re.I)
+DONE = re.compile(r"merged|additive|partly", re.I)
+
+
+def check_ingest_maps(repo: Repo, rep: Report) -> None:
+    """R21 -- an ingest map must not plan an entry id that is already written.
+
+    Maps reserve entry ids before anything is written. When a later book is
+    merged it can take a reserved id for a different idea, and the map then
+    silently disagrees with the tree -- which is worse than no map, because it
+    is the plan of record. B4's merge did exactly this to 14 rows across
+    B1-map.md and B3-map.md.
+
+    A row may reference a written entry only if it says so: merged, additive or
+    partly. A row that still says planned or new must point at free ids.
+    """
+    d = os.path.join(ROOT, "registry", "ingest")
+    if not os.path.isdir(d):
+        return
+    written = {tid: t.title for tid, t in repo.topics.items()}
+    for fn in sorted(os.listdir(d)):
+        if not fn.endswith("-map.md"):
+            continue
+        path = os.path.join(d, fn)
+        with open(path, "r", encoding="utf-8") as fh:
+            lines = fh.read().splitlines()
+        in_table = False
+        for n, line in enumerate(lines, start=1):
+            m = MAP_ROW.match(line)
+            if not m:
+                in_table = False
+                continue
+            cells = m.group(1).split("|")
+            if len(cells) < 2:
+                continue
+            if set(cells[0].strip()) <= set("-: "):
+                in_table = True          # separator row
+                continue
+            if not in_table:
+                continue                 # header row
+            disp = cells[-1]
+            ids = MAP_ID.findall(line)
+            if not ids:
+                continue
+            stale = [i for i in ids if i in written]
+            if not stale:
+                continue
+            if PLANNED.search(disp) and not DONE.search(disp):
+                for i in stale:
+                    rep.err("R21", "registry/ingest/%s:%d" % (fn, n),
+                            "plans `%s` as new, but it is already written as "
+                            "'%s' -- renumber it, or change the disposition to "
+                            "`additive` if this source deepens that entry"
+                            % (i, written[i]))
+
+
 def check_chapter_state(repo: Repo, rep: Report) -> None:
     """R20 -- the chapter-state notice must be generated, never authored.
 
@@ -604,6 +662,7 @@ def main(argv: List[str]) -> int:
     check_inputs(repo, rep)
     check_style(repo, rep)
     check_chapter_state(repo, rep)
+    check_ingest_maps(repo, rep)
 
     print(f"scanned: {len(repo.parts)} parts, {len(repo.chapters)} chapters, "
           f"{len(repo.topics)} entries, {len(repo.dossiers)} dossiers, "
