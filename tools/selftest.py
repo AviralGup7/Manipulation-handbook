@@ -308,6 +308,26 @@ def case_r6_length(root: str) -> None:
     assert rc != 0 and "R6" in out, f"the length ceiling was not enforced:\n{out[-800:]}"
 
 
+def case_r23_combines(root: str) -> None:
+    """R23 -- a case that weaves an entry which does not exist is caught;
+    so is a case carrying source-citation apparatus."""
+    v, out = validate(root)
+    assert v == 0, f"baseline broken: {out}"
+    relp = os.path.join("cases", "C-01.tex")
+    t = read(root, relp)
+    t = t.replace("@combines: T-04-02,", "@combines: T-99-99,", 1)
+    assert "T-99-99" in t, "combine edit did not land"
+    write(root, relp, t)
+    v, out = validate(root)
+    assert v != 0 and "R23" in out, f"fake combine not caught: {out[:400]}"
+    # restore, then plant forbidden citation apparatus
+    t = read(root, relp)
+    t = t.replace("@combines: T-99-99,", "@combines: T-04-02,", 1)
+    t = t.replace("\\end{lesson}", "\\end{lesson}\n\\sources{B3}", 1)
+    write(root, relp, t)
+    v, out = validate(root)
+    assert v != 0 and "R23" in out, f"\\sources in a case not caught: {out[:400]}"
+
 def case_r7_filler(root: str) -> None:
     """A banned filler phrase must fail."""
     path = "topics/c01/T-01-03.tex"
@@ -417,6 +437,7 @@ CASES: List[Tuple[str, str, Callable[[str], None]]] = [
     ("R13",            "broken LaTeX is caught",                             case_r13_tex),
     ("R14",            "a stale generated index is caught",                  case_r14_stale),
     ("R18",            "dangling \\input and orphans are caught",            case_r18_dangling_input),
+    ("R23",             "case lattice integrity is enforced",                 case_r23_combines),
     ("scaffold",       "scaffolds refuse to overwrite",                      case_overwrite_refused),
 ]
 

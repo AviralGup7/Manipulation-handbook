@@ -37,6 +37,8 @@ KNOWN_ENVS = {
     "hbbox", "core", "mechanism", "conditions", "application", "feedback",
     "failure", "countermeasures", "distilled", "unique", "terms", "quotable",
     "partblurb", "chapterblurb",
+    # case.sty
+    "story", "lattice", "lesson",
 }
 
 LIST_ENVS = {"itemize", "enumerate", "description", "list", "trivlist",

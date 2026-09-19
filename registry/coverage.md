@@ -144,6 +144,18 @@ already contributed to it.
 | `T-28-01` | stable | B3 | Assume Formlessness | Self-Mastery | 669 |
 | `T-28-02` | stable | B3 | The Goal Line | Self-Mastery | 602 |
 
+## Case interludes
+
+Narratives that weave existing entries against one situation. No new doctrine; every move names its entry.
+
+| case | title | after part | combines | words |
+|------|-------|------------|----------|-------|
+| `C-01` | The Patient Investor | P3 | 6 | 485 |
+| `C-02` | The Conference Keynote | P4 | 6 | 521 |
+| `C-03` | The Neighbourhood Favour | P5 | 5 | 492 |
+| `C-04` | The Fake Job Offer | P6 | 6 | 481 |
+| `C-05` | The Practitioner's Bill | P7 | 5 | 484 |
+
 ## Un-filed dossiers (source material not yet merged)
 
 - `B3-T-13-04` -- TODO chapter / section / pages in the source (unique: no)

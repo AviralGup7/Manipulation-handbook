@@ -30,6 +30,9 @@ Exit code 0 = clean, 1 = errors (do not commit), warnings never fail a build.
     R18  every \\input resolves and every managed file is reachable
          from main.tex (the usual first-compile failure)
     R19  style files never redefine a TeX primitive or kernel command
+    R23  case integrity: ids/headers well-formed, positioned at an
+         existing part, weaving 4-6 existing entries, slots in order,
+         and no source-citation apparatus (cases carry no new claims)
     R20  the chapter-state notice is generated, never hand-authored
 """
 
@@ -46,14 +49,18 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import build_index                                              # noqa: E402
 import texlint                                                  # noqa: E402
-from hb_lib import (DIR_COMPILED, DIR_SOURCES, DIR_TOPICS, ID_RE_CHAPTER,  # noqa: E402
-                    ID_RE_PART, ID_RE_SOURCE, ID_RE_TOPIC, ROOT,
+from hb_lib import (CASE_SLOT_ORDER, DIR_COMPILED, DIR_SOURCES,           # noqa: E402
+                    DIR_TOPICS, ID_RE_CASE,
+                    ID_RE_CHAPTER, ID_RE_PART, ID_RE_SOURCE, ID_RE_TOPIC, ROOT,
                     DOSSIER_MANDATORY_SLOTS, DOSSIER_SLOT_ORDER,
                     MANDATORY_SLOTS, SLOT_ORDER, Managed, Repo, rel)
 
 MAX_WORDS = 700        # hard ceiling for one entry
 SOFT_WORDS = 560       # above this you get a warning
 MIN_WORDS_STABLE = 45  # below this an entry is a stub pretending to be done
+CASE_MAX_WORDS = 1000  # hard ceiling for one case interlude
+CASE_SOFT_WORDS = 850  # above this a case is eating the part it follows
+CASE_MIN_WORDS = 300   # below this a case is a stub, not a narrative
 
 FILLER = [
     "in today's", "in todays fast", "fast-paced world", "it is important to note",
@@ -121,7 +128,7 @@ def check_headers(repo: Repo, rep: Report) -> None:
         for key in ("kind", "id"):
             if not m.meta.get(key):
                 rep.err("R1", w, f"missing '@{key}' in header")
-        if not m.meta.get("title") and m.kind in ("part", "chapter", "topic"):
+        if not m.meta.get("title") and m.kind in ("part", "chapter", "topic", "case"):
             rep.err("R1", w, "missing '@title' in header")
         if m.kind != "part" and not m.meta.get("status"):
             rep.err("R1", w, "missing '@status' in header")
@@ -174,6 +181,12 @@ def check_ids(repo: Repo, rep: Report) -> None:
             rep.err("R2", m.rel, f"dossier id {did!r} must look like B1-T-01-01")
         if os.path.basename(m.path) != f"{did}.tex":
             rep.err("R2", m.rel, f"dossier file must be named {did}.tex")
+    for cid, m in repo.cases.items():
+        if not ID_RE_CASE.match(cid):
+            rep.err("R2", m.rel, f"case id {cid!r} must look like C-01")
+        else:
+            if m.rel.replace(os.sep, "/") != f"cases/{cid}.tex":
+                rep.err("R2", m.rel, f"case file must be named cases/{cid}.tex")
 
 
 def check_books(repo: Repo, rep: Report) -> None:
@@ -255,9 +268,25 @@ def check_length(repo: Repo, rep: Report) -> None:
                     f"{n} words is too thin to call 'stable' "
                     f"(minimum {MIN_WORDS_STABLE}) -- mark it @status: draft")
 
+    for c in repo.cases.values():
+        if c.status != "stable":
+            continue
+        n = c.word_count()
+        if n > CASE_MAX_WORDS:
+            rep.err("R6", c.rel,
+                    f"{n} words > {CASE_MAX_WORDS}: a case interlude is a "
+                    "scene, not a novella -- cut situation or moves")
+        elif n > CASE_SOFT_WORDS:
+            rep.warn("R6", c.rel,
+                     f"{n} words is above the {CASE_SOFT_WORDS} case comfort band")
+        elif n < CASE_MIN_WORDS:
+            rep.err("R6", c.rel,
+                    f"{n} words is too thin for a case interlude "
+                    f"(minimum {CASE_MIN_WORDS}) -- mark it @status: draft")
+
 
 def check_filler(repo: Repo, rep: Report) -> None:
-    for m in repo.topics.values():
+    for m in list(repo.topics.values()) + list(repo.cases.values()):
         p = prose_of(m).lower()
         for phrase in FILLER:
             if phrase in p:
@@ -506,7 +535,7 @@ def check_verbatim(repo: Repo, rep: Report, corpus: Optional[str]) -> None:
                       errors="replace") as fh:
                 src_text[fn] = norm_words(fh.read())
     N = 9   # consecutive matching words is never a coincidence
-    for t in repo.topics.values():
+    for t in list(repo.topics.values()) + list(repo.cases.values()):
         words = norm_words(prose_of(t)).split()
         for i in range(len(words) - N):
             run = " ".join(words[i:i + N])
@@ -544,8 +573,61 @@ def check_duplicates(repo: Repo, rep: Report) -> None:
                          f"('{titles[i][1]}') -- check they are not the same idea")
 
 
+
+def check_cases(repo: Repo, rep: Report) -> None:
+    """R23 -- case interludes are synthesis, not doctrine. Each case must
+    sit at an existing part, weave 4-6 existing written entries, keep its
+    slots in order (story -> lattice -> lesson), and carry no source
+    citation apparatus: a case that cites a source is making a new claim,
+    which belongs in an entry with a dossier."""
+    for cid, m in repo.cases.items():
+        for key in ("after-part", "combines"):
+            if not m.meta.get(key):
+                rep.err("R23", m.rel, f"missing '@{key}' in header")
+        ap = m.meta.get("after-part", "")
+        if ap and ap not in repo.parts:
+            rep.err("R23", m.rel, f"@after-part {ap!r} is not an existing part")
+        raw = m.meta.get("combines", "")
+        comb = [x.strip() for x in raw.split(",") if x.strip()] if raw else []
+        if not (4 <= len(comb) <= 6):
+            rep.err("R23", m.rel,
+                    f"@combines must list 4-6 entries, got {len(comb)}")
+        if len(set(comb)) != len(comb):
+            rep.err("R23", m.rel, "@combines lists an entry twice")
+        for tid in comb:
+            t = repo.topics.get(tid)
+            if t is None:
+                rep.err("R23", m.rel,
+                        f"@combines names {tid!r}, which does not exist")
+            elif t.status not in ("stable", "draft"):
+                rep.err("R23", m.rel,
+                        f"@combines names {tid!r}, which is not written "
+                        f"(status {t.status!r})")
+        slots = m.slots()
+        for req in ("story", "lattice", "lesson"):
+            if req not in slots:
+                rep.err("R23", m.rel, f"missing case slot '{req}'")
+        order = [x for x in slots if x in CASE_SLOT_ORDER]
+        if order != sorted(order, key=CASE_SLOT_ORDER.index):
+            rep.err("R23", m.rel, "case slots out of order: " + " -> ".join(order))
+        for banned in ("sources", "seesources"):
+            if banned in slots:
+                rep.err("R23", m.rel,
+                        f"case uses \{banned} -- cases carry no source claims")
+        # the \case macro call must agree with the header (drift guard)
+        mm = re.search(r"\\case\{([^}]*)\}\{([^}]*)\}", m.body)
+        if not mm:
+            rep.err("R23", m.rel, "no \\case{...}{...}{...} head found in body")
+        else:
+            if mm.group(1).strip() != cid:
+                rep.err("R23", m.rel,
+                        f"\\case id {mm.group(1)!r} disagrees with header {cid!r}")
+            if mm.group(2).strip() != m.title.strip():
+                rep.err("R23", m.rel,
+                        f"\\case title disagrees with @title header")
+
 def check_stable(repo: Repo, rep: Report) -> None:
-    for t in repo.topics.values():
+    for t in list(repo.topics.values()) + list(repo.cases.values()):
         if t.status != "stable":
             continue
         for marker in ("\\TODO", "\\GAP"):
@@ -724,6 +806,7 @@ def main(argv: List[str]) -> int:
     check_generated(repo, rep)
     check_verbatim(repo, rep, corpus)
     check_duplicates(repo, rep)
+    check_cases(repo, rep)
     check_stable(repo, rep)
     check_inputs(repo, rep)
     check_style(repo, rep)

@@ -118,6 +118,8 @@ def gen_booknames(repo: Repo) -> str:
                f"{len(repo.chapters)} chapters}}")
     n_active = sum(1 for b in repo.books if b.get("status") == "active")
     out.append(f"\\newcommand{{\\hbbookcount}}{{{n_active}}}")
+    n_cases = sum(1 for c in repo.cases.values() if c.status == "stable")
+    out.append(f"\\newcommand{{\\hbcasecount}}{{{n_cases}}}")
     return "\n".join(out) + "\n"
 
 
@@ -152,6 +154,10 @@ def gen_index(repo: Repo) -> str:
             if planned:
                 ids = ", ".join(t.id for t in planned)
                 out.append(f"%% deferred to the build-state appendix: {ids}")
+        # case interludes positioned at the end of this part
+        for c in repo.cases_after_part(pid):
+            out.append(f"%% ---- case {c.id}: {c.title} ----")
+            out.append(f"\\input{{{rel(c.path)[:-4]}}}")
         out.append("")
     if not repo.parts:
         out.append("%% no parts declared yet -- nothing to typeset")
@@ -242,6 +248,20 @@ def gen_coverage_tex(repo: Repo) -> str:
         out.append("\\end{itemize}")
         out.append("\\par\\endgroup")
         out.append("")
+    cases = sorted(repo.cases.values(), key=lambda c: c.id)
+    if cases:
+        out.append("\\section*{Case interludes}")
+        out.append("\\begingroup\\small")
+        out.append("\\begin{itemize}")
+        for c in cases:
+            comb = [x.strip() for x in c.meta.get("combines", "").split(",") if x.strip()]
+            out.append(f"\\item \\textbf{{{c.id} {tex_escape(c.title)}}} --- "
+                       f"after {c.meta.get('after-part','?')}; "
+                       f"weaves {len(comb)} entries: "
+                       + ", ".join(f"\\texttt{{{x}}}" for x in comb))
+        out.append("\\end{itemize}")
+        out.append("\\par\\endgroup")
+        out.append("")
     out.append("\\begingroup\\footnotesize\\hbcolor{hbmuted}")
     out.append("$\\bullet$ published\\quad $\\circ$ draft\\quad "
                "$\\cdot$ planned scaffolding\\par\\endgroup")
@@ -277,6 +297,16 @@ def gen_coverage_md(repo: Repo) -> str:
                 L.append(f"| `{t.id}` | {t.status or '?'} | "
                          f"{', '.join(t.sources) or '--'} | {t.title} | "
                          f"{ch.title} | {t.word_count()} |")
+    L.append("")
+    L.append("## Case interludes\n")
+    L.append("Narratives that weave existing entries against one situation. "
+             "No new doctrine; every move names its entry.\n")
+    L.append("| case | title | after part | combines | words |")
+    L.append("|------|-------|------------|----------|-------|")
+    for c in sorted(repo.cases.values(), key=lambda x: x.id):
+        comb = [x.strip() for x in c.meta.get("combines", "").split(",") if x.strip()]
+        L.append(f"| `{c.id}` | {c.title} | {c.meta.get('after-part','?')} "
+                 f"| {len(comb)} | {c.word_count()} |")
     L.append("")
     L.append("## Un-filed dossiers (source material not yet merged)\n")
     orphans = [d for d in repo.dossiers.values()

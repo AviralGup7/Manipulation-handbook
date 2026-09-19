@@ -39,11 +39,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DIR_TOPICS = os.path.join(ROOT, "topics")
 DIR_SOURCES = os.path.join(ROOT, "sources")
+DIR_CASES = os.path.join(ROOT, "cases")
 DIR_COMPILED = os.path.join(ROOT, "registry", "compiled")
 DIR_PARTS = os.path.join(DIR_TOPICS, "_parts")
 BOOKS_YAML = os.path.join(ROOT, "registry", "books.yaml")
 
-KINDS = ("part", "chapter", "topic", "source")
+KINDS = ("part", "chapter", "topic", "source", "case")
 STATUSES = ("stable", "draft", "planned", "distilled", "skeleton", "retired")
 
 # Slot order inside a published topic. Enforced by validate.py (rule R5).
@@ -57,10 +58,15 @@ MANDATORY_SLOTS = ["core"]
 DOSSIER_SLOT_ORDER = ["distilled", "unique", "terms", "quotable"]
 DOSSIER_MANDATORY_SLOTS = ["distilled"]
 
+# Case interlude slot order. Enforced by validate.py (rule R23).
+CASE_SLOT_ORDER = ["story", "lattice", "lesson"]
+CASE_MANDATORY_SLOTS = ["story", "lattice", "lesson"]
+
 ID_RE_TOPIC = re.compile(r"^T-(\d{2})-(\d{2})$")
 ID_RE_CHAPTER = re.compile(r"^c(\d{2})$")
 ID_RE_PART = re.compile(r"^P(\d{1,2})$")
 ID_RE_SOURCE = re.compile(r"^(B\d+)-(T-\d{2}-\d{2})$")
+ID_RE_CASE = re.compile(r"^C-(\d{2})$")
 
 HEADER_RE = re.compile(r"^\s*%%\s*@([a-z][a-z0-9-]*)\s*:\s*(.*?)\s*$")
 
@@ -111,7 +117,8 @@ class Managed:
         found: List[Tuple[int, str]] = []
         for m in re.finditer(r"\\begin\{([a-zA-Z*]+)\}", self.body):
             name = m.group(1)
-            if name in SLOT_ORDER or name in DOSSIER_SLOT_ORDER:
+            if (name in SLOT_ORDER or name in DOSSIER_SLOT_ORDER
+                    or name in CASE_SLOT_ORDER):
                 found.append((m.start(), name))
         for m in re.finditer(r"\\(sources|seesources|seealso)\b", self.body):
             found.append((m.start(), m.group(1)))
@@ -189,6 +196,7 @@ class Repo:
         self.chapters: Dict[str, Managed] = {}
         self.topics: Dict[str, Managed] = {}
         self.dossiers: Dict[str, Managed] = {}
+        self.cases: Dict[str, Managed] = {}
         self.books: List[Dict[str, str]] = []
         self.all: List[Managed] = []
         self.problems: List[str] = []
@@ -211,6 +219,8 @@ class Repo:
                 repo._add(path, "topic", repo.topics, strict)
         for path in _walk_tex(DIR_SOURCES) if os.path.isdir(DIR_SOURCES) else []:
             repo._add(path, "source", repo.dossiers, strict)
+        for path in _walk_tex(DIR_CASES) if os.path.isdir(DIR_CASES) else []:
+            repo._add(path, "case", repo.cases, strict)
         return repo
 
     def _add(self, path: str, expect: str, bucket: Dict[str, Managed],
@@ -260,6 +270,13 @@ class Repo:
     def dossiers_for(self, tid: str) -> List[Managed]:
         out = [d for d in self.dossiers.values() if d.meta.get("topic") == tid]
         return sorted(out, key=lambda d: d.meta.get("book", ""))
+
+    def cases_after_part(self, pid: str) -> List[Managed]:
+        """Case interludes positioned at the end of a part, in @order."""
+        out = [c for c in self.cases.values()
+               if c.meta.get("after-part") == pid
+               and c.status == "stable"]
+        return sorted(out, key=lambda c: (int(c.meta.get("order", 9999)), c.id))
 
     def ordered_parts(self) -> List[Managed]:
         return sorted(self.parts.values(),

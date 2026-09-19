@@ -1,0 +1,65 @@
+%% style/case.sty -- the case interlude apparatus.
+%%
+%% A case is a registry-managed narrative that runs several existing
+%% entries against one situation. It is typeset between parts (see
+%% tools/build_index.py, which places each case after the part named
+%% in its '@after-part' header). Cases carry NO new doctrine: every
+%% analytical move in a case must name the entry doing the work.
+%%
+%% Apparatus:
+%%   \case{ID}{Title}{strapline}  -- unnumbered interlude head, ToC entry
+%%   story     environment        -- the situation, in narrative order
+%%   lattice   environment        -- the moves, each labelled with its entry
+%%   \casemove{beat}{T-id}        -- one move; title resolved from titles.tex
+%%   lesson    environment        -- what only the combination shows
+
+%% ---------------------------------------------------------------------
+%% \case{ID}{Title}{strapline}
+%% ---------------------------------------------------------------------
+\newcommand{\case}[3]{%
+  \clearpage
+  \hbphantomsection
+  \addcontentsline{toc}{chapter}{Case: #2}%
+  \markboth{Case: #2}{Case: #2}%
+  \par\addvspace{10mm}%
+  \noindent{\footnotesize\scshape\hbcolor{hbmuted}Case #1}\\[2mm]
+  {\huge\bfseries #2\par}%
+  \vspace{2mm}%
+  \noindent{\rule{\linewidth}{0.6pt}}\par
+  \vspace{2mm}%
+  \if\relax\detokenize{#3}\relax\else
+    {\large\itshape\hbcolor{hbmuted}#3\par}\vspace{4pt}%
+  \fi}
+
+%% ---------------------------------------------------------------------
+%% STORY -- the situation. Narrative order, no analysis: the analysis
+%% happens in the lattice, on purpose, so the reader feels the events
+%% first and sees the machinery second.
+%% ---------------------------------------------------------------------
+\newenvironment{story}{\par\addvspace{8pt}\begingroup
+  \setlength{\parskip}{4.5pt plus 1pt}\ignorespaces}
+  {\par\endgroup\addvspace{6pt}}
+
+%% ---------------------------------------------------------------------
+%% LATTICE -- the moves. One \casemove per beat, in story order.
+%% ---------------------------------------------------------------------
+\newenvironment{lattice}{\par\addvspace{7pt}\noindent
+  {\footnotesize\scshape\hbcolor{hbmuted}The lattice.}\par
+  \begin{itemize}\setlength{\itemsep}{5pt}\ignorespaces}
+  {\end{itemize}\par\addvspace{4pt}}
+
+%% \casemove{beat}{T-id} -- the beat in plain words, then the entry doing
+%% the work, title resolved at render time (rule R22: no bare ids reach
+%% the reader). A missing lookup degrades to the id, visibly.
+\newcommand{\casemove}[2]{\item \textbf{#1.}\hspace{0.55em}%
+  \ifcsname hbtitle@#2\endcsname
+    {\footnotesize\hbcolor{hbmuted}via \textit{\csname hbtitle@#2\endcsname} (#2).}\par
+  \else
+    {\footnotesize\hbcolor{hbmuted}via (#2) --- lookup missing.}\par
+  \fi\ignorespaces}
+
+%% ---------------------------------------------------------------------
+%% LESSON -- what only the combination shows. Boxed, like a core slot.
+%% ---------------------------------------------------------------------
+\newenvironment{lesson}{\begin{hbbox}\hbslot{What the lattice shows}}
+  {\end{hbbox}}
