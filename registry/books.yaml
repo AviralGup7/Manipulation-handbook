@@ -1,0 +1,84 @@
+# =====================================================================
+# registry/books.yaml -- THE SOURCE REGISTER  (append-only)
+# ---------------------------------------------------------------------
+# One block per ingested source. Adding a book = appending a block here
+# plus creating sources/<ID>/ files. Never edit an existing block's `id`.
+# Never delete a block. Retire a source with `status: retired` and keep it.
+#
+# Fields:
+#   id        short tag used everywhere in the book (B1, B2, ...). IMMUTABLE.
+#   rank      primary | secondary | tertiary
+#             primary   -> may originate claims
+#             secondary -> may only corroborate a primary source; never
+#                          originates a claim (validator enforces this)
+#             tertiary  -> reference/background, never cited in entries
+#   weight    tie-break priority when two sources conflict (higher wins)
+#   status    active | retired
+#   short     label printed in the entry footer
+# =====================================================================
+
+- id: B1
+  rank: primary
+  weight: 90
+  status: active
+  title: "The Art of Manipulation"
+  author: "R. B. Sparkman"
+  year: 1978
+  publisher: "Cope Allied Publishing / Dial Press"
+  file: "The Art Of Manipulation - R B Sparkman.pdf"
+  structure: "16 chapters: framing chapter, Tactics 1-14, cost chapter"
+  short: "Sparkman, Art of Manipulation (1978)"
+  notes: >
+    Street-derived tactic manual. Strongest on character typologies,
+    financial-dealing defence, the unargue method, and ingratitude handling.
+
+- id: B2
+  rank: secondary
+  weight: 20
+  status: active
+  title: "Art of Manipulation (condensed study summary of B1)"
+  author: "Bookey"
+  year: 2025
+  publisher: "Bookey"
+  file: "Art Of Manipulation PDF.pdf"
+  structure: "15 chapters mirroring B1"
+  short: "Bookey summary of Sparkman"
+  notes: >
+    Corroborating witness for B1 only. Used to check that no B1 chapter was
+    missed during ingestion. Must never originate a claim; the validator
+    rejects a topic whose @sources lists B2 without B1.
+
+- id: B3
+  rank: primary
+  weight: 95
+  status: active
+  title: "The 48 Laws of Power"
+  author: "Robert Greene"
+  year: 1998
+  publisher: "Viking / Penguin"
+  file: "The+48+Laws+Of+Power_compressed.pdf"
+  structure: >
+    Preface + 48 laws. Each law: judgement, transgression(s), observance(s),
+    keys to power, image, symbol, reversal.
+  short: "Greene, 48 Laws of Power (1998)"
+  notes: >
+    Strategic layer. Strongest on reputation, attention, dependence, timing,
+    concealment, courtiership and the reversal device. Historical anecdote is
+    the bulk of its length and is stripped on ingestion.
+
+# ---------------------------------------------------------------------
+# NEXT BOOK GOES HERE. Do not renumber the ones above.
+# ---------------------------------------------------------------------
+# - id: B4
+#   rank: primary
+#   weight: 80
+#   status: active
+#   title: "..."
+#   author: "..."
+#   year: 0000
+#   publisher: "..."
+#   file: "....pdf"
+#   structure: "..."
+#   short: "..."
+#   notes: >
+#     ...

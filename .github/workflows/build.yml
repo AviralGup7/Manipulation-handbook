@@ -1,0 +1,60 @@
+name: build
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # churn_guard needs history
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Policy gate
+        run: python3 tools/validate.py
+
+      - name: No-wholesale-rewrite gate
+        run: |
+          BASE="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            BASE="HEAD"
+          fi
+          python3 tools/churn_guard.py --base "$BASE" || \
+            python3 tools/churn_guard.py --base HEAD
+
+      - name: Self-test (prove the guarantees hold)
+        run: python3 tools/selftest.py
+
+  pdf:
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended \
+            texlive-latex-extra texlive-fonts-recommended latexmk
+
+      - name: Typeset
+        run: |
+          make index
+          latexmk -pdf -interaction=nonstopmode -halt-on-error \
+                  -file-line-error main.tex
+
+      - name: Upload handbook.pdf
+        uses: actions/upload-artifact@v4
+        with:
+          name: handbook-pdf
+          path: handbook.pdf
+          if-no-files-found: error

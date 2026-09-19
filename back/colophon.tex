@@ -1,0 +1,44 @@
+%% back/colophon.tex -- hand-written, stable.
+\chapter*{Colophon}
+\hbtopicmark{COLOPHON}
+
+\begingroup\small
+
+\textbf{What this repository is.} A book whose body is a few hundred small
+\LaTeX\ files, and whose build system is written so that adding a fourth,
+fifth or fortieth source cannot damage the first three. The reading order is
+generated from the metadata header of each file, so no index is ever
+hand-maintained and no file is ever edited merely to make room for another.
+
+\textbf{The two layers.} \texttt{topics/} holds the book: one idea per file,
+fixed slot structure, curated synthesis. \texttt{sources/} holds the evidence:
+one file per source per entry, append-only, never rewritten, with the
+material found in only one source explicitly flagged. A flagged contribution
+cannot be dropped from an entry --- the build fails if anyone tries. That is
+the mechanism by which an early source survives a later one being better on
+the same subject.
+
+\textbf{Why the files are small.} Quality degrades with length, in human and
+in machine writing alike. Repetition arrives, the voice drifts, and material
+already written gets paraphrased back at itself. An entry that will not fit in
+700 words is two entries, and splitting it is cheaper than repairing the
+drift afterwards.
+
+\textbf{The rules.} \texttt{docs/RULES.md} is the constitution and is
+versioned. \texttt{AGENTS.md} is the short form for automated writers.
+\texttt{tools/validate.py} enforces the machine-checkable subset;
+\texttt{tools/churn\_guard.py} enforces the no-wholesale-rewrite rule against
+git history. Nothing important is left to memory.
+
+\textbf{State of the build.} This edition contains Parts I and II in full and
+the scaffolding for Parts III to VII. The outstanding work is itemised in the
+preceding appendix and in \texttt{registry/coverage.md}, both generated, so
+neither can disagree with the book.
+
+\textbf{Typesetting.} \texttt{style/handbook.cls} and \texttt{style/entry.sty}
+hold every visual decision, and load each optional package behind a
+conditional so that the book compiles on a bare \TeX\ Live installation. No
+content file contains a layout command. To change how the book looks, change
+those two files.
+
+\par\endgroup
