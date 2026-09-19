@@ -1,0 +1,32 @@
+# --- LaTeX build debris (never commit) ---
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.idx
+*.ind
+*.ilg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.pyc
+__pycache__/
+build_tmp/
+tmp/
+.venv/
+
+# --- extracted source text: large + third-party copyright; keep OUT of git ---
+registry/corpus/
+*.extracted.txt
+
+# --- the compiled PDF is a deliverable, so it is NOT ignored ---

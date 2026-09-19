@@ -1,0 +1,66 @@
+%% =====================================================================
+%%  main.tex -- THE ONLY FILE YOU COMPILE.
+%%
+%%  You should never need to edit this file. The reading order of the whole
+%%  handbook is generated from the entry headers by:
+%%
+%%        make index        (or: python3 tools/build_index.py)
+%%
+%%  which rewrites registry/compiled/index.tex. Adding a book, a chapter or
+%%  an entry therefore never touches this file.  See docs/INGESTION.md.
+%% =====================================================================
+\documentclass[a5paper]{style/handbook}
+\usepackage{style/entry}
+
+%% Generated: \bookname{B1}, \bookauthor{B1}, \bookyear{B1}, ...
+\input{registry/compiled/booknames.tex}
+\input{registry/compiled/counts.tex}
+
+\makeatletter
+\newcommand{\hbmainpagestyle}{%
+  \@ifundefined{ps@fancy}{\pagestyle{plain}}{\pagestyle{fancy}}}
+\makeatother
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty}
+
+\input{front/titlepage}
+\input{front/notice}
+\input{front/how-to-read}
+\input{front/contents-note}
+
+{\small
+\setlength{\parskip}{2pt}
+\tableofcontents}
+
+\mainmatter
+\hbmainpagestyle
+
+%% ---------------------------------------------------------------------
+%% The body: Parts -> Chapters -> Entries.  GENERATED FILE, DO NOT EDIT.
+%% ---------------------------------------------------------------------
+\input{registry/compiled/index}
+
+%% ---------------------------------------------------------------------
+%% Back matter
+%% ---------------------------------------------------------------------
+\appendix
+\hbmainpagestyle
+\chapter{Source Dossiers}
+\label{app:dossiers}
+\begin{partblurb}
+One file per book per entry, filed in ingest order and never rewritten.
+This appendix is the audit trail: it shows what each source contributed and
+flags the material that exists in only one book and must never be dropped.
+\end{partblurb}
+%% GENERATED FILE, DO NOT EDIT.
+\input{registry/compiled/dossiers}
+
+%% GENERATED FILE, DO NOT EDIT.
+\input{registry/compiled/coverage}
+
+\input{back/colophon}
+
+\end{document}

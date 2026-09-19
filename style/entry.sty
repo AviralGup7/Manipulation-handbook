@@ -1,0 +1,186 @@
+%% =====================================================================
+%%  entry.sty  --  THE ENTRY DSL
+%% ---------------------------------------------------------------------
+%%  This file is the ONE place where the handbook's fixed FORMAT lives.
+%%  Content files use only the commands defined here. To change how the
+%%  book looks, change this file -- never a content file.
+%%
+%%  Canonical slot order (docs/RULES.md R5):
+%%     \topic -> core -> mechanism -> tells -> moves -> counters -> cost
+%%             -> field -> sources -> seesources -> seealso
+%%  All slots optional except `core`; order enforced by tools/validate.py.
+%% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{style/entry}[2026/09/19 v1.0 Handbook entry DSL]
+
+%% ---------------------------------------------------------------------
+%% Book-register accessors.
+%% The DATA lives in registry/compiled/booknames.tex as
+%%   \expandafter\newcommand\csname hb@book@B1@name\endcsname{...}
+%% because a control word cannot contain a digit: \booknameB1 would be
+%% read by TeX as \booknameB followed by the character 1.
+%% ---------------------------------------------------------------------
+\newcommand{\hbbookfield}[2]{%
+  \expandafter\ifx\csname hb@book@#1@#2\endcsname\relax
+    \textbf{?#1}%
+  \else
+    \csname hb@book@#1@#2\endcsname
+  \fi}
+\newcommand{\bookname}[1]{\hbbookfield{#1}{name}}
+\newcommand{\bookauthor}[1]{\hbbookfield{#1}{author}}
+\newcommand{\bookyear}[1]{\hbbookfield{#1}{year}}
+\newcommand{\bookshort}[1]{\hbbookfield{#1}{short}}
+
+\newif\ifhbxcolor \hbxcolorfalse
+\@ifpackageloaded{xcolor}{\hbxcolortrue}{}
+\ifhbxcolor\else
+  \IfFileExists{xcolor.sty}{\RequirePackage{xcolor}\hbxcolortrue}{}
+\fi
+
+\ifhbxcolor
+  \providecolor{hbink}{gray}{0.10}
+  \providecolor{hbmuted}{gray}{0.42}
+  \providecolor{hbrule}{gray}{0.72}
+  \providecolor{hbtint}{gray}{0.945}
+  \providecolor{hbaccent}{rgb}{0.44,0.10,0.10}
+  \providecommand{\hbcolor}[1]{\color{#1}}
+\else
+  \providecommand{\hbcolor}[1]{}
+\fi
+
+%% ---------------------------------------------------------------------
+%% Low-level box. Hand-rolled from minipage + \fcolorbox so it never
+%% depends on framed / mdframed / tcolorbox.
+%% ---------------------------------------------------------------------
+\newsavebox{\hbboxsave}
+\newlength{\hbboxwd}
+\newenvironment{hbbox}{%
+  \par\addvspace{4pt}%
+  \setlength{\hbboxwd}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}%
+  \begin{lrbox}{\hbboxsave}%
+  \begin{minipage}{\hbboxwd}%
+    \setlength{\parskip}{3.5pt plus 1pt minus 0.5pt}%
+    \setlength{\parindent}{0pt}%
+    \small\hbcolor{hbink}\ignorespaces}%
+  {\end{minipage}\end{lrbox}%
+  \begingroup\fboxsep=5.5pt\fboxrule=0.5pt
+  \noindent
+  \ifhbxcolor\fcolorbox{hbrule}{hbtint}{\usebox{\hbboxsave}}%
+  \else\fbox{\usebox{\hbboxsave}}\fi
+  \endgroup\par\addvspace{5pt}}
+
+%% Slot head: small caps, accented, run alone on its line.
+\newcommand{\hbslot}[1]{%
+  \par\addvspace{5pt}\noindent
+  {\footnotesize\bfseries\hbcolor{hbaccent}\MakeUppercase{#1}}%
+  \par\nobreak\addvspace{1.5pt}\ignorespaces}
+
+%% ---------------------------------------------------------------------
+%% \topic{ID}{Title}{Subtitle}
+%% ---------------------------------------------------------------------
+\newcommand{\topic}[3]{%
+  \@ifundefined{needspace}{}{\needspace{5\baselineskip}}%
+  \hbphantomsection
+  \section[{#2}]{#2}%
+  \label{#1}%
+  \hbtopicmark{\MakeUppercase{#2}}%
+  \gdef\hbcurrenttopicid{#1}%
+  \if\relax\detokenize{#3}\relax\else
+    {\hbcolor{hbmuted}\itshape #3}\par\vspace{1pt}%
+  \fi}
+\newcommand{\hbcurrenttopicid}{}
+
+%% Chapter head + optional italic strapline.
+\newcommand{\chaphead}[2]{\chapter[{#1}]{#1}%
+  \if\relax\detokenize{#2}\relax\else
+    {\hbcolor{hbmuted}\itshape #2}\par\vspace{6pt}\fi}
+
+\newenvironment{partblurb}{\par\vspace{2pt}\begingroup\small\itshape
+  \hbcolor{hbmuted}\ignorespaces}{\par\endgroup\vspace{8pt}}
+%% Chapter state notice.
+%% Emitted by tools/build_index.py with the number of published entries in
+%% the chapter, so it cannot go stale: a chapter that acquires its first
+%% entry stops printing "not yet written" without anyone editing anything.
+%% Hand-authoring this notice in a _meta.tex is what rule R20 forbids.
+\newcommand{\hbchapterstate}[1]{%
+  \ifnum#1=0
+    \begin{chapterblurb}
+    Entries in this chapter are not yet written. The scaffolding is in place;
+    see the State of the Build appendix for what is outstanding.
+    \end{chapterblurb}
+  \fi}
+
+\newenvironment{chapterblurb}{\par\begingroup\small\itshape
+  \hbcolor{hbmuted}\ignorespaces}{\par\endgroup\vspace{6pt}}
+
+%% ---------------------------------------------------------------------
+%% THE SLOTS
+%% ---------------------------------------------------------------------
+%% CORE -- the irreducible claim. MANDATORY. 1-3 sentences.
+\newenvironment{core}{\begin{hbbox}\hbslot{Core}}{\end{hbbox}}
+
+%% MECHANISM -- why this works on a human being.
+\newenvironment{mechanism}{\hbslot{Mechanism}\ignorespaces}{\par}
+
+%% TELLS -- how to recognise it in the wild.
+\newenvironment{tells}{\hbslot{Tells}\begin{itemize}\ignorespaces}{\end{itemize}}
+
+%% MOVES -- how it is executed. Short, numbered, imperative.
+\newenvironment{moves}{\hbslot{Moves}\begin{enumerate}\ignorespaces}{\end{enumerate}}
+
+%% COUNTERS -- defence, reversal, inoculation.
+\newenvironment{counters}{\hbslot{Counters}\begin{itemize}\ignorespaces}{\end{itemize}}
+
+%% COST -- when it fails, what it costs, blowback, legality.
+%% Named `cost`, not `limits`: \limits is a TeX primitive and
+%% \newenvironment{limits} would clash with it (rule R13b).
+\newenvironment{cost}{\hbslot{Cost}\ignorespaces}{\par}
+
+%% FIELD -- a concrete modern illustration written for this handbook.
+\newenvironment{field}{\begin{hbbox}\hbslot{Field note}}{\end{hbbox}}
+
+%% ---------------------------------------------------------------------
+%% Provenance
+%% ---------------------------------------------------------------------
+%% \src{B1} -- inline tag naming the book a claim came from.
+\newcommand{\src}[1]{\textsuperscript{\hbcolor{hbmuted}\scriptsize[#1]}}
+
+%% \sources{...} -- entry-level attribution printed under the slot stack.
+%% Must match the @sources header field exactly (enforced by validate.py).
+\newcommand{\sources}[1]{\par\vspace{2pt}\noindent
+  {\footnotesize\hbcolor{hbmuted}Drawn from: #1\par}\vspace{1pt}}
+
+%% Cross-references. \xref prints the entry number, or ?ID if unresolved.
+\newcommand{\xref}[1]{\@ifundefined{r@#1}{\textbf{[#1]}}{\ref{#1}}}
+\newcommand{\seealso}[1]{\par\vspace{3pt}\noindent{\footnotesize
+  \hbcolor{hbmuted}\textbf{See also:} #1\par}}
+\newcommand{\seesources}{\par\vspace{3pt}\noindent{\footnotesize
+  \hbcolor{hbmuted}Source dossiers for this entry are filed in Appendix~A.\par}}
+
+%% ---------------------------------------------------------------------
+%% SOURCE-DOSSIER DSL  (Layer A -- append-only, docs/RULES.md R8)
+%% ---------------------------------------------------------------------
+\newcommand{\dossier}[4]{%
+  \hbphantomsection
+  \subsection*{#1\ \textbar\ #2}%
+  \label{dos-#1-#2}%
+  {\footnotesize\hbcolor{hbmuted}#3 \textbullet\ locator: #4\par}\vspace{3pt}}
+
+\newenvironment{distilled}{\hbslot{Distilled}\begin{itemize}\ignorespaces}
+                           {\end{itemize}}
+%% UNIQUE -- material found in this book and nowhere else. PROTECTED.
+%% validate.py refuses to let a topic drop this book from \sources while a
+%% UNIQUE block still exists for it. That is the anti-overwrite guarantee.
+\newenvironment{unique}{\begin{hbbox}\hbslot{Unique to this source}
+  \begin{itemize}\ignorespaces}{\end{itemize}\end{hbbox}}
+\newenvironment{terms}{\hbslot{Vocabulary}\begin{itemize}\ignorespaces}
+                      {\end{itemize}}
+\newenvironment{quotable}{\hbslot{Quotable}\ignorespaces}{\par}
+
+%% ---------------------------------------------------------------------
+%% Draft markers (must be absent from any entry with @status: stable)
+%% ---------------------------------------------------------------------
+\newcommand{\TODO}[1]{\hbcolor{hbaccent}\textbf{[TODO: #1]}}
+\newcommand{\GAP}{\TODO{gap}}
+
+\endinput
