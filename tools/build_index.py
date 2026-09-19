@@ -145,6 +145,10 @@ def gen_dossiers(repo: Repo) -> str:
             block = []
             for t in topics:
                 ds = repo.dossiers_for(t.id)
+                # skeleton dossiers are scaffolds, not content: their bodies
+                # are TODO templates and must never be typeset into the book
+                ds = [d for d in ds
+                      if getattr(d, "status", "") != "skeleton"]
                 if not ds:
                     continue
                 block.append(f"\\subsection*{{{t.id}\\ \\textbar\\ "

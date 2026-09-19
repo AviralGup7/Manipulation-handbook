@@ -33,7 +33,7 @@ already contributed to it.
 | `T-03-01` | stable | B3 | The Five Dangerous Marks | Character Types | 467 |
 | `T-03-02` | stable | B1 | The Operator Profile | Character Types | 427 |
 | `T-04-01` | stable | B3 | The Thumbscrew | Load-Bearing Points | 422 |
-| `T-04-02` | stable | B1, B3, B4 | The Favour Debt | Load-Bearing Points | 556 |
+| `T-04-02` | stable | B1, B3, B4 | The Favour Debt | Load-Bearing Points | 550 |
 | `T-04-03` | stable | B3, B1, B4 | Vanity as a Handle | Load-Bearing Points | 494 |
 | `T-04-04` | stable | B1, B3 | The Self-Audit | Load-Bearing Points | 442 |
 | `T-05-01` | stable | B1 | The Real Objection | Motives Before Words | 451 |
