@@ -12,7 +12,7 @@ already contributed to it.
 |----|------|---|-------|--------|------|----------|
 | B1 | primary | 90 | The Art of Manipulation | R. B. Sparkman | 1978 | 19 |
 | B2 | secondary | 20 | Art of Manipulation (condensed study summary of B1) | Bookey | 2025 | 1 |
-| B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 19 |
+| B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 22 |
 | B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 29 |
 
 ## Entries
@@ -46,6 +46,9 @@ already contributed to it.
 | `T-07-03` | stable | B1 | The Three-Second Read | Gathering Information | 453 |
 | `T-08-01` | stable | B3 | Do Not Offend the Wrong Person | Judging Who You Are Dealing With | 483 |
 | `T-08-02` | stable | B1, B3 | The Engagement Decision | Judging Who You Are Dealing With | 454 |
+| `T-09-01` | stable | B3 | A Reputation You Built on Purpose | Reputation | 555 |
+| `T-09-02` | stable | B3 | Bearing Sets the Price | Reputation | 559 |
+| `T-09-03` | stable | B3 | The Inherited Shadow | Reputation | 536 |
 | `T-10-01` | stable | B4 | Value as a Function of Availability | Attention, Absence and Scarcity | 490 |
 | `T-10-02` | stable | B4 | The Reactance Trigger | Attention, Absence and Scarcity | 532 |
 | `T-10-03` | stable | B4 | Limited Numbers and Deadlines | Attention, Absence and Scarcity | 516 |

@@ -32,11 +32,11 @@ to power, an image, a symbol, and a reversal.
 | law | → entry | disposition |
 |---|---|---|
 | preface — power as amoral | `T-01-03` | merged |
-| 1 — never outshine the master | `T-04-03`; `T-09-02` | partly merged / **planned** |
+| 1 — never outshine the master | `T-04-03` additive; `T-09-02` written |
 | 2 — friends and enemies | `T-12-03` | **planned** |
 | 3 — conceal your intentions | `T-13-03` | **planned** |
 | 4 — say less than necessary | `T-06-04`; `T-13-03` | partly merged / **planned** |
-| 5 — reputation | `T-09-01` | **planned** |
+| 5 — reputation | `T-09-01` | written |
 | 6 — court attention | `T-10-04` | **planned** |
 | 7 — others do the work, you take the credit | `T-05-02`; `T-12-04` | partly merged / **planned** |
 | 8 — make people come to you | `T-14-05` | **planned** |
@@ -65,14 +65,14 @@ to power, an image, a symbol, and a reversal.
 | 31 — control the options | `T-14-05`, `T-14-06` | **planned** |
 | 32 — play to fantasies | `T-15-03` | **planned** |
 | 33 — the thumbscrew | `T-04-01`, `T-04-04` | merged |
-| 34 — act like a king | `T-09-02` | **planned** |
+| 34 — act like a king | `T-09-02` | written |
 | 35 — master timing | `T-02-03`; `T-17-01` | partly merged / **planned** |
 | 36 — disdain what you cannot have | `T-08-02`; `T-21-03` | partly merged / **planned** |
 | 37 — compelling spectacles | `T-10-06`; `T-17-05` | **planned** |
 | 38 — think as you like, behave like others | `T-18-04` | **planned** |
 | 39 — stir up waters | `T-02-01`, `T-04-03`; `T-21-04` | partly merged / **planned** |
 | 40 — despise the free lunch | `T-04-02`; `T-25-02` | partly merged / **planned** |
-| 41 — avoid a great man's shoes | `T-09-03` | **planned** |
+| 41 — avoid a great man's shoes | `T-09-03` | written |
 | 42 — strike the shepherd | `T-21-05` | **planned** |
 | 43 — work on hearts and minds | `T-01-02`, `T-02-01`; `T-22-01` | additive: dossier pending for each |
 | 44 — the mirror effect | `T-22-03` | **planned** |
@@ -92,6 +92,9 @@ to power, an image, a symbol, and a reversal.
 
 ## Revisions
 
+* 2026-09-19 — laws 5, 1+34 and 41 written as `T-09-01`, `T-09-02`, `T-09-03`
+  (chapter c09), each with a Layer A dossier; the law-1 residual beyond the
+  vanity additive is the two-sided pricing rule, not a re-ingestion of `T-04-03`.
 * 2026-09-19 — renumbered 11 planned rows whose ids B4's merge had taken
   (`T-13-01`, `T-10-01`, `T-14-01/02`, `T-10-02`, `T-19-02`, `T-18-02`,
   `T-15-02`, `T-10-01`, `T-22-02`); each now points at the next free id in its

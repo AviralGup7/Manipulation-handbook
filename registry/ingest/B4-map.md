@@ -159,7 +159,7 @@ took the id for a different idea and the row must be renumbered.
 | uncertainty and similarity: the two conditions that switch it on | `T-15-02` | written (c15) |
 | a manufactured consensus; planted audiences | `T-13-01` | written (c13) |
 | reading a room that has been seeded | `T-23-01` | written (c23) |
-| reputation as accumulated social proof | `T-09-01` | **planned** (c09) |
+| reputation as accumulated social proof | `T-09-01` | additive: dossier pending (c09) |
 | bystander diffusion | `T-21-03` | **planned** (c21) |
 
 ### ch. 5 — Liking (pp. 157–177)
