@@ -66,6 +66,30 @@ def gen_titles(repo: Repo) -> str:
     return "\n".join(out) + "\n"
 
 
+def gen_sourceslist(repo: Repo) -> str:
+    out = [BANNER]
+    out.append("%% The reader-facing source register, emitted from")
+    out.append("%% registry/books.yaml (rule: the front matter never")
+    out.append("%% hand-lists sources -- a hand list is how B4 and B5")
+    out.append("%% went missing from it).\n")
+    out.append("\\begingroup\\small")
+    out.append("\\begin{itemize}")
+    for b in repo.books:
+        if b.get("status") != "active":
+            continue
+        name = tex_escape(str(b.get("author", "") or b["id"]))
+        title = tex_escape(str(b.get("title", "")))
+        year = tex_escape(str(b.get("year", "")))
+        contrib = tex_escape(str(b.get("contributed", "") or ""))
+        line = f"\\item[\\textbf{{{b['id']}}}] {name}, \\emph{{{title}}} ({year})."
+        if contrib:
+            line += " Contributed: " + contrib
+        out.append(line)
+    out.append("\\end{itemize}")
+    out.append("\\par\\endgroup")
+    return "\n".join(out) + "\n"
+
+
 def gen_booknames(repo: Repo) -> str:
     out = [BANNER]
     out.append("%% Book register, emitted from registry/books.yaml.")
@@ -293,6 +317,7 @@ def main() -> int:
         os.path.join(DIR_COMPILED, "booknames.tex"): gen_booknames(repo),
         os.path.join(DIR_COMPILED, "titles.tex"): gen_titles(repo),
         os.path.join(DIR_COMPILED, "counts.tex"): gen_counts(repo),
+        os.path.join(DIR_COMPILED, "sources.tex"): gen_sourceslist(repo),
         os.path.join(DIR_COMPILED, "index.tex"): gen_index(repo),
         os.path.join(DIR_COMPILED, "dossiers.tex"): gen_dossiers(repo),
         os.path.join(DIR_COMPILED, "coverage.tex"): gen_coverage_tex(repo),

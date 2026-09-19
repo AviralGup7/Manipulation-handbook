@@ -1,8 +1,8 @@
 # Ingest record — B1 · Sparkman, *The Art of Manipulation* (1978)
 
-**Status: partially ingested.** Chapters covered by Parts I–II are mapped and
-merged. The tactic chapters belonging to Parts III–VI are mapped but not yet
-written; see the table below.
+**Status: substantially ingested.** Chapters covered by Parts I–II are mapped and
+merged. Every tactic chapter's mapped entries are now written except where a row
+below still says planned (`T-16-04`, `T-19-03` and the additive pendings).
 
 Source shape: one framing chapter, fourteen numbered tactics, one closing cost
 chapter. 181 PDF pages, of which roughly two-thirds are first-person anecdote.
@@ -21,25 +21,27 @@ chapter. 181 PDF pages, of which roughly two-thirds are first-person anecdote.
 |---|---|---|
 | ch. 1 — five percent of people manipulate the rest | `T-01-01`, `T-01-04`, `T-01-05` | merged |
 | Tactic 1 — character types to watch out for | `T-03-02`, `T-06-01`, `T-06-02`, `T-06-03`, `T-06-04` | merged |
-| Tactic 2 — how to make a slave out of a person | `T-11-01` (dependence) | scaffolded |
-| Tactic 3 — the world is rife with favoritism | `T-05-02`; `T-12-01` (patrons) | partly merged / **planned** |
-| Tactic 4 — the essence of manipulation ("I don't need you") | `T-11-01`, `T-04-02` | **planned** / partly merged |
-| Tactic 5 — the meek shall manipulate; never know much | `T-02-02`, `T-08-02`; `T-13-02` | merged / scaffolded |
+| Tactic 2 — how to make a slave out of a person | `T-11-01` (dependence) | written |
+| Tactic 3 — the world is rife with favoritism | `T-05-02`; `T-12-01` (patrons) | partly merged / written |
+| Tactic 4 — the essence of manipulation ("I don't need you") | `T-11-01`, `T-11-02`, `T-04-02` | written / partly merged |
+| Tactic 5 — the meek shall manipulate; never know much | `T-02-02`, `T-08-02`; `T-13-02` | merged / written |
 | Tactic 6 — picking a person apart; real motives | `T-05-01`, `T-07-02`, `T-07-03`, `T-04-04` | merged |
 | Tactic 7 — the Guernsey vs. the Brahma | `T-02-05` | merged |
 | Tactic 8 — avoiding being taken in financial dealings | `T-05-02`; `T-25-01` | additive: dossier pending for `T-25-01` |
-| Tactic 9 — manipulating a person's thinking | `T-16-02` | scaffolded |
-| Tactic 10 — win ninety-five percent of your arguments | `T-08-02`; `T-16-01`, `T-16-03` | additive pending for `T-08-02`, `T-16-01`; `T-16-03` scaffolded |
+| Tactic 9 — manipulating a person's thinking | `T-16-02` | written |
+| Tactic 10 — win ninety-five percent of your arguments | `T-08-02`; `T-16-01`, `T-16-03` | additive pending for `T-08-02`, `T-16-01`; `T-16-03` written |
 | Tactic 11 — manipulate a person against his will; the unargue technique | `T-16-04` | **planned** |
-| Tactic 12 — a little pressure has its place, but seldom | `T-19-03`, `T-20-01` | **planned** |
-| Tactic 13 — if all else fails, try the dirty way | `T-20-02` | **planned** |
-| Tactic 14 — how to squelch ingratitude before it starts | `T-04-02`; `T-26-01` | partly merged / **planned** |
-| ch. 16 — what you get out of using people | `T-01-04`; `T-27-01` | partly merged / scaffolded |
+| Tactic 12 — a little pressure has its place, but seldom | `T-19-03`, `T-20-01` | partly written; **planned** |
+| Tactic 13 — if all else fails, try the dirty way | `T-20-02` | written |
+| Tactic 14 — how to squelch ingratitude before it starts | `T-04-02`; `T-26-01` | partly merged / written |
+| ch. 16 — what you get out of using people | `T-01-04`; `T-27-01`, `T-27-02` | partly merged / written |
 
 ## Open items
 
-* Tactic 2 and Tactic 4 both feed `T-11-01`; they must be filed as two dossiers
-  against one entry, not merged into one dossier.
+* Tactic 2 and Tactic 4 both fed `T-11-01` and are filed as two dossiers against
+  that entry; Tactic 4's need-posture half later took the new slot `T-11-02`.
+* Still unwritten from this book: `T-16-04` (the Unargue technique) and the
+  fear half of Tactic 12 (`T-19-03`).
 * Tactic 13 describes conduct that is criminal in most jurisdictions. It is
   admitted for recognition purposes only and must carry a `failure` slot that
   says so.
@@ -53,3 +55,8 @@ chapter. 181 PDF pages, of which roughly two-thirds are first-person anecdote.
   (B4 took `T-19-01` for an uninvited-debt entry); Tactic 8's and Tactic 10's
   additive halves re-marked after B4 wrote those entries. Drift of this kind
   is now rule R21.
+* 2026-09-19 — the mapped tactic chapters written: Tactics 2, 3, 5, 9, 12
+  (pressure half), 13, 14 and ch. 16. Tactic 4's never-need-them posture took
+  the new c11 slot `T-11-02`; ch. 16's selectivity finding took the new c27
+  slot `T-27-02`. B3's Law-11 claim on `T-11-02` re-pointed to `T-11-03`
+  (see B3 map).

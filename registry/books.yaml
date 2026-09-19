@@ -28,6 +28,7 @@
   file: "books/The Art Of Manipulation - R B Sparkman.pdf"
   structure: "16 chapters: framing chapter, Tactics 1-14, cost chapter"
   short: "Sparkman, Art of Manipulation (1978)"
+  contributed: "the street-level tactic set (Tactics 1-14), character typologies, the financial-dealings defence, the unargue method, and the closing cost chapter."
   notes: >
     Street-derived tactic manual. Strongest on character typologies,
     financial-dealing defence, the unargue method, and ingratitude handling.
@@ -43,6 +44,7 @@
   file: "books/Art Of Manipulation PDF.pdf"
   structure: "15 chapters mirroring B1"
   short: "Bookey summary of Sparkman"
+  contributed: "a chapter-level outline of B1 used only to cross-check B1 coverage. Secondary witness: where B1 and B2 disagree, B1 wins; B2 never originates a claim."
   notes: >
     Corroborating witness for B1 only. Used to check that no B1 chapter was
     missed during ingestion. Must never originate a claim; the validator
@@ -61,6 +63,7 @@
     Preface + 48 laws. Each law: judgement, transgression(s), observance(s),
     keys to power, image, symbol, reversal.
   short: "Greene, 48 Laws of Power (1998)"
+  contributed: "the 48-law strategic layer: reputation, attention, dependence, courtiership, timing, concealment, conflict doctrine, and the reversal device."
   notes: >
     Strategic layer. Strongest on reputation, attention, dependence, timing,
     concealment, courtiership and the reversal device. Historical anecdote is
@@ -80,6 +83,7 @@
   file: "books/The Psychology of Persuasion.pdf"
   structure: "Intro + 7 chapters: Weapons of Influence; Reciprocation; Commitment and Consistency; Social Proof; Liking; Authority; Scarcity"
   short: "Cialdini, Influence (1984)"
+  contributed: "the laboratory mechanism layer: the automatic compliance patterns, their trigger features, and the field evidence behind reciprocation, commitment, social proof, liking, authority and scarcity."
   notes: >
     Empirical layer. Where B1 gives street tactics and B3 gives strategy, B4 gives the laboratory mechanism underneath each: the automatic compliance pattern, the trigger feature that fires it, and the field evidence. Strongest on reciprocation (including unequal exchange and concession), commitment escalation, social proof under uncertainty and similarity, liking by association, authority by symbol, and scarcity including reactance. Adds no new tactic names; it supplies causal depth to topics that already exist, so ingestion is almost entirely additive dossier work.
 
@@ -94,6 +98,7 @@
   file: "books/E001005.pdf"
   structure: "10 chapters: The New Rules; Be a Mirror; Label Their Pain; Beware Yes / Master No; Get a That's Right; Bend Their Reality; Create the Illusion of Control; Guarantee Execution; Bargain Hard; Find the Black Swan. Appendix: preparing a negotiation one-sheet."
   short: "Voss, Never Split the Difference (2016)"
+  contributed: "the live interaction protocol: mirrors, labels, calibrated questions, the power of No, anchoring and the Ackerman plan, plus the detection doctrine (three channels, black swans)."
   notes: >
     Negotiation-domain practitioner source: FBI hostage-negotiation method
     backed by the behavioural-economics literature (Kahneman/Tversky on loss
