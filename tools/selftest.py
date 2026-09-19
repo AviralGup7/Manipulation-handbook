@@ -96,6 +96,34 @@ def write(root: str, relpath: str, text: str) -> None:
         fh.write(text)
 
 
+def sources_of(root: str, relpath: str) -> List[str]:
+    """Read the current @sources list of a topic file."""
+    m = re.search(r"^%% @sources:\s*(.+)$", read(root, relpath), re.M)
+    assert m, f"{relpath}: no @sources line"
+    return [x.strip() for x in m.group(1).split(",") if x.strip()]
+
+
+def drop_source(root: str, relpath: str, book: str) -> None:
+    """Remove one book from both the header and the footer of a topic.
+
+    Written against the file's *current* contents rather than a hard-coded
+    sources line: the whole point of the architecture is that a new book can be
+    merged in additively, which legitimately changes that line. A test that
+    pins the line would break every time the system worked as designed.
+    """
+    srcs = sources_of(root, relpath)
+    assert book in srcs, f"{relpath}: {book} is not among {srcs}"
+    kept = [b for b in srcs if b != book]
+    t = read(root, relpath)
+    t = re.sub(r"^%% @sources:\s*.+$", "%% @sources: " + ", ".join(kept), t,
+               count=1, flags=re.M)
+    repl = "\\sources{" + ", ".join(kept) + "}"
+    # a lambda, not a string: re.sub would read the backslash in "\sources"
+    # as the start of an escape sequence in the replacement.
+    t = re.sub(r"^\\sources\{[^}]*\}", lambda _m: repl, t, count=1, flags=re.M)
+    write(root, relpath, t)
+
+
 def sub(root: str, relpath: str, old: str, new: str) -> None:
     t = read(root, relpath)
     if old not in t:
@@ -114,21 +142,28 @@ def case_baseline(root: str) -> None:
     assert rc == 0 and "up to date" in out, f"index not reproducible:\n{out}"
 
 
+SCRATCH_BOOK = "B97"   # never a real register id; see case_additive
+
+
 def case_additive(root: str) -> None:
-    """Registering B4 and filing dossiers must change NO existing file."""
+    """Registering a new book and filing dossiers must change NO existing file.
+
+    Uses a scratch id rather than B4 because B4 is now a real source in the
+    register; the point of the test is the *operation*, not the number.
+    """
     before = {p: read(root, p) for p in (
         "main.tex", "style/entry.sty", "style/handbook.cls",
         "topics/c01/T-01-01.tex", "sources/B1/B1-T-01-01.tex",
         "sources/B3/B3-T-01-01.tex", "registry/books.yaml")}
 
     rc, out = run(root, sys.executable, os.path.join(root, "tools", "new_book.py"),
-                  "--id", "B4", "--title", "Test Source", "--author", "Nobody",
+                  "--id", SCRATCH_BOOK, "--title", "Test Source", "--author", "Nobody",
                   "--year", "2011", "--rank", "primary", "--weight", "85",
                   "--short", "Test Source")
     assert rc == 0, f"new_book failed:\n{out}"
 
     rc, out = run(root, sys.executable, os.path.join(root, "tools", "new_dossier.py"),
-                  "--book", "B4", "--topic", "T-01-01",
+                  "--book", SCRATCH_BOOK, "--topic", "T-01-01",
                   "--locator", "ch.1, pp.1-9", "--unique", "yes")
     assert rc == 0, f"new_dossier failed:\n{out}"
 
@@ -142,8 +177,8 @@ def case_additive(root: str) -> None:
     for line in before["registry/books.yaml"].splitlines():
         if line.strip() and not line.lstrip().startswith("#"):
             assert line in after, f"books.yaml lost a line: {line[:60]}"
-    assert "- id: B4" in after, "B4 was not registered"
-    assert os.path.exists(os.path.join(root, "sources/B4/B4-T-01-01.tex")), \
+    assert f"- id: {SCRATCH_BOOK}" in after, f"{SCRATCH_BOOK} was not registered"
+    assert os.path.exists(os.path.join(root, f"sources/{SCRATCH_BOOK}/{SCRATCH_BOOK}-T-01-01.tex")), \
         "dossier was not created"
 
 
@@ -168,10 +203,7 @@ def case_r10_protected(root: str) -> None:
     """Dropping a book that contributed UNIQUE material must fail the build."""
     rc, _ = validate(root)
     assert rc == 0, "baseline should pass"
-    sub(root, "topics/c01/T-01-01.tex",
-        "%% @sources: B1, B3", "%% @sources: B3")
-    sub(root, "topics/c01/T-01-01.tex",
-        "\\sources{B1, B3}", "\\sources{B3}")
+    drop_source(root, "topics/c01/T-01-01.tex", "B1")
     rc, out = validate(root)
     assert rc != 0, "R10 did not fire: a book with unique material was dropped"
     assert "R10" in out, f"expected an R10 error, got:\n{out[-800:]}"
@@ -179,8 +211,10 @@ def case_r10_protected(root: str) -> None:
 
 def case_r11_no_dossier(root: str) -> None:
     """Citing a source with no filed dossier must fail."""
+    srcs = sources_of(root, "topics/c01/T-01-02.tex")
     sub(root, "topics/c01/T-01-02.tex",
-        "%% @sources: B1, B3", "%% @sources: B1, B3, B9")
+        "%% @sources: " + ", ".join(srcs),
+        "%% @sources: " + ", ".join(srcs + ["B9"]))
     rc, out = validate(root)
     assert rc != 0 and ("R11" in out or "R3" in out), \
         f"a citation with no evidence was accepted:\n{out[-800:]}"
@@ -188,8 +222,7 @@ def case_r11_no_dossier(root: str) -> None:
 
 def case_r4_secondary(root: str) -> None:
     """An entry sourced only from a secondary source must fail."""
-    sub(root, "topics/c01/T-01-04.tex",
-        "%% @sources: B1, B2", "%% @sources: B2")
+    drop_source(root, "topics/c01/T-01-04.tex", "B1")
     rc, out = validate(root)
     assert rc != 0 and "R4" in out, \
         f"a secondary-only entry was accepted:\n{out[-800:]}"
@@ -209,7 +242,7 @@ def case_churn_rewrite(root: str) -> None:
         "\\begin{tells}\n  \\item a different tell\n\\end{tells}\n\n"
         "\\begin{moves}\n  \\item a different move\n\\end{moves}\n\n"
         "\\begin{counters}\n  \\item a different counter\n\\end{counters}\n\n"
-        "\\begin{limits}\nDifferent limits text entirely.\n\\end{limits}\n\n"
+        "\\begin{cost}\nDifferent cost text entirely.\n\\end{cost}\n\n"
         "\\sources{B1, B3}\n\\seesources\n")
     write(root, path, rewritten)
     rc, out = guard(root)
@@ -240,8 +273,8 @@ def case_r5_slot_order(root: str) -> None:
     mech = re.search(r"\\begin\{mechanism\}.*?\\end\{mechanism\}\n", t, re.S).group(0)
     t2 = t.replace(mech, "", 1)
     t2 = t2.replace("\\end{core}\n", "\\end{core}\n\n" + mech, 1)  # still in order
-    # now deliberately break it: move `limits` above `tells`
-    lim = re.search(r"\\begin\{limits\}.*?\\end\{limits\}\n", t, re.S).group(0)
+    # now deliberately break it: move `cost` above `tells`
+    lim = re.search(r"\\begin\{cost\}.*?\\end\{cost\}\n", t, re.S).group(0)
     t3 = t.replace(lim, "", 1)
     t3 = t3.replace("\\begin{tells}", lim + "\\begin{tells}", 1)
     write(root, path, t3)
@@ -275,7 +308,7 @@ def case_r12_layout(root: str) -> None:
     """A layout command in a content file must fail."""
     path = "topics/c01/T-01-02.tex"
     t = read(root, path)
-    t = t.replace("\\end{limits}", "\\end{limits}\n\\vspace{6pt}\\newpage", 1)
+    t = t.replace("\\end{cost}", "\\end{cost}\n\\vspace{6pt}\\newpage", 1)
     write(root, path, t)
     rc, out = validate(root)
     assert rc != 0 and ("R12" in out or "R13" in out), \

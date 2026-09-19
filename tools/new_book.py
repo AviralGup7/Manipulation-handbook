@@ -6,8 +6,12 @@ new_book.py -- register a new source and scaffold its dossier directory.
         --title "Influence: The Psychology of Persuasion" \
         --author "Robert B. Cialdini" --year 1984 \
         --publisher "HarperBusiness" --rank primary --weight 85 \
-        --file "influence.pdf" \
+        --file "books/influence.pdf" \
         --short "Cialdini, Influence (1984)"
+
+The --file path is relative to the repository root. Source scans live in
+books/ and nowhere else; see books/README.md. If a bare filename is given it
+is placed under books/ automatically.
 
 What it does, and only this:
   1. appends a block to registry/books.yaml   (append-only)
@@ -53,7 +57,9 @@ def main() -> int:
     ap.add_argument("--author", default="")
     ap.add_argument("--year", default="")
     ap.add_argument("--publisher", default="")
-    ap.add_argument("--file", default="")
+    ap.add_argument("--file", default="",
+                    help="source scan, relative to the repo root; a bare "
+                         "filename is placed under books/")
     ap.add_argument("--structure", default="")
     ap.add_argument("--short", default="")
     ap.add_argument("--rank", default="primary",
@@ -65,6 +71,9 @@ def main() -> int:
     if not re.fullmatch(r"B\d+", args.id):
         print("error: --id must look like B4", file=sys.stderr)
         return 2
+
+    if args.file and "/" not in args.file:
+        args.file = os.path.join("books", args.file)
 
     repo = Repo.scan(strict=False)
     if repo.book(args.id):

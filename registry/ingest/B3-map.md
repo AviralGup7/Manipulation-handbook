@@ -21,7 +21,7 @@ to power, an image, a symbol, and a reversal.
 ## What was kept that is structurally distinctive
 
 * The **reversal** device — each law states when it should be broken. This
-  handbook carries the same content in the `limits` slot of every entry, which
+  handbook carries the same content in the `cost` slot of every entry, which
   is why no entry here is allowed to be missing one.
 * The **transgression / observance** argument form: a rule justified by what
   happened to those who broke it and to those who kept it. Recorded as unique
@@ -87,5 +87,5 @@ to power, an image, a symbol, and a reversal.
   its own dossier file — `B3-T-04-03.tex` and `B3-T-22-01.tex` are separate
   files even though they draw on the same law.
 * The reversal sections must be read for every law before its entry is written.
-  They are the source's own `limits` slot and skipping them produces entries
+  They are the source's own `cost` slot and skipping them produces entries
   that overstate.

@@ -17,7 +17,7 @@ python3 tools/new_book.py \
   --author "Robert B. Cialdini" \
   --year 1984 \
   --publisher "HarperBusiness" \
-  --file "influence.pdf" \
+  --file "books/influence.pdf" \
   --rank primary \
   --weight 85 \
   --short "Cialdini, Influence (1984)" \
@@ -113,7 +113,7 @@ python3 tools/new_topic.py --chapter c14 --title "Escalating Commitments" \
   --sources B4 --status draft
 ```
 
-Fill the slots. Mark `@status: stable` only when `counters` and `limits` are
+Fill the slots. Mark `@status: stable` only when `counters` and `cost` are
 both real.
 
 ### 4b. An existing entry — **surgical edit only**
@@ -122,7 +122,7 @@ Open `topics/cNN/T-..-...tex` and make the smallest change that carries the new
 material:
 
 * add a bullet to `tells` / `moves` / `counters`;
-* add a sentence to `mechanism` or `limits`;
+* add a sentence to `mechanism` or `cost`;
 * add the new book to the header `@sources` **and** to the `\sources{}` line
   (they must match — validated);
 * add `\src{B4}` inline only where the new source specifically differs.
@@ -132,7 +132,7 @@ Then set `@integrated: yes` in the dossier and bump the entry's `@updated`.
 **Never:** re-order the slots, rewrite the `core` block wholesale, restate the
 whole entry in the new source's framing, or delete a bullet whose only support
 is another book's dossier. If the new source genuinely supersedes an old claim,
-the old claim moves to `limits` as a named minority view — it is not deleted.
+the old claim moves to `cost` as a named minority view — it is not deleted.
 
 `make guard` enforces this: more than 40% of an entry's lines changing fails the
 build unless you add `@allow-rewrite: <reason>` to the header. That escape hatch

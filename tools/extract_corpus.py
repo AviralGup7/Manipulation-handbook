@@ -71,6 +71,8 @@ def normalise(pdf: str, text_path: str) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(ROOT, "registry", "corpus"))
+    ap.add_argument("--only", default="",
+                    help="extract a single source id (e.g. B4) instead of all")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
 
@@ -80,6 +82,8 @@ def main() -> int:
         return 1
     done = 0
     for b in books:
+        if args.only and b["id"] != args.only:
+            continue
         f = b.get("file") or ""
         pdf = f if os.path.isabs(f) else os.path.join(ROOT, f)
         if not f or not os.path.exists(pdf):

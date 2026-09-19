@@ -74,7 +74,7 @@ filenames and directory names (`check_ids`).
 R2.1 **[enforced]** Slot order is:
 
 ```
-core → mechanism → tells → moves → counters → limits → field
+core → mechanism → tells → moves → counters → cost → field
      → sources → seesources → seealso
 ```
 
@@ -90,13 +90,13 @@ R2.2 What each slot is for:
 | `tells` | How do I see it being used? | bullets, observable behaviour |
 | `moves` | How is it done? | numbered, imperative, ≤6 steps |
 | `counters` | How do I refuse it? | bullets, equal weight to `moves` |
-| `limits` | When does it fail, and what does it cost? | 1 short paragraph |
+| `cost` | When does it fail, and what does it cost? | 1 short paragraph |
 | `field` | A modern illustration | optional, **written by us**, never lifted |
 
 R2.3 `counters` is not decoration. An entry that teaches only the offensive
 half is incomplete and will be rejected.
 
-R2.4 `limits` must be honest. Every technique here has a failure mode. If you
+R2.4 `cost` must be honest. Every technique here has a failure mode. If you
 cannot find one, you have not understood the technique.
 
 ---
@@ -129,7 +129,7 @@ R4.2 **[enforced]** Filler is banned by an explicit phrase list in
 it requires a reason.
 
 R4.3 No moral preamble and no moral postscript inside an entry. The ethical
-position is stated once, in the front matter, and in each entry's `limits`.
+position is stated once, in the front matter, and in each entry's `cost`.
 Hedging every paragraph is exactly the padding this handbook exists to remove.
 
 R4.4 Concrete beats abstract. Name the behaviour, not the feeling.
@@ -166,7 +166,7 @@ may corroborate but **never originate**. An entry citing only secondary sources
 fails.
 
 R5.6 Conflicts are resolved by `weight`, and the resolution is recorded in the
-entry, not hidden. Higher weight wins the main text; the loser goes to `limits`
+entry, not hidden. Higher weight wins the main text; the loser goes to `cost`
 or to a named minority view.
 
 R5.7 Do not re-ingest. If a dossier already exists for (book, entry), append to
@@ -185,6 +185,13 @@ R6.2 Consequence: the look of the entire book can be changed by editing two
 files, and no content file can break the build by inventing formatting.
 
 R6.3 Front matter (`front/`, `back/`) is exempt and may use layout directly.
+
+R6.4 **[enforced]** Style files must never define a command or environment whose
+name collides with a TeX primitive or a LaTeX kernel command. `tools/texlint.py`
+holds the reserved-name list. This is not hypothetical: the sixth slot was
+originally named `limits`, and `\newenvironment{limits}` silently redefines the
+`\limits` primitive, which breaks every math display in the book. It is now
+named `cost`. Namespace all new macros `\hb...` and they are exempt.
 
 ---
 
@@ -240,7 +247,7 @@ R9.2 Do not paste source prose into an entry "to clean up later". It will not be
 cleaned up later.
 
 R9.3 Entries describing conduct that is illegal in many jurisdictions (fraud,
-extortion, blackmail, coercion) must state that in `limits`, and must carry
+extortion, blackmail, coercion) must state that in `cost`, and must carry
 `counters` of equal or greater length than `moves`.
 
 R9.4 The handbook's stated purpose is defensive competence. That framing lives

@@ -13,13 +13,14 @@ already contributed to it.
 | B1 | primary | 90 | The Art of Manipulation | R. B. Sparkman | 1978 | 19 |
 | B2 | secondary | 20 | Art of Manipulation (condensed study summary of B1) | Bookey | 2025 | 1 |
 | B3 | primary | 95 | The 48 Laws of Power | Robert Greene | 1998 | 19 |
+| B4 | primary | 85 | Influence: The Psychology of Persuasion | Robert B. Cialdini | 1984 | 9 |
 
 ## Entries
 
 | entry | status | sources | title | chapter | words |
 |-------|--------|---------|-------|---------|-------|
-| `T-01-01` | stable | B1, B3 | The Five-Percent Premise | What Manipulation Actually Is | 416 |
-| `T-01-02` | stable | B1, B3 | Three Different Activities | What Manipulation Actually Is | 410 |
+| `T-01-01` | stable | B1, B3, B4 | The Five-Percent Premise | What Manipulation Actually Is | 460 |
+| `T-01-02` | stable | B1, B3, B4 | Three Different Activities | What Manipulation Actually Is | 443 |
 | `T-01-03` | stable | B3 | Power as an Amoral Instrument | What Manipulation Actually Is | 418 |
 | `T-01-04` | stable | B1, B2 | Intent Is the Only Ethical Switch | What Manipulation Actually Is | 419 |
 | `T-01-05` | stable | B1, B3 | Results Are the Only Test | What Manipulation Actually Is | 344 |
@@ -31,7 +32,7 @@ already contributed to it.
 | `T-03-01` | stable | B3 | The Five Dangerous Marks | Character Types | 467 |
 | `T-03-02` | stable | B1 | The Operator Profile | Character Types | 427 |
 | `T-04-01` | stable | B3 | The Thumbscrew | Load-Bearing Points | 422 |
-| `T-04-02` | stable | B1, B3 | The Favour Debt | Load-Bearing Points | 481 |
+| `T-04-02` | stable | B1, B3, B4 | The Favour Debt | Load-Bearing Points | 556 |
 | `T-04-03` | stable | B3, B1 | Vanity as a Handle | Load-Bearing Points | 439 |
 | `T-04-04` | stable | B1, B3 | The Self-Audit | Load-Bearing Points | 442 |
 | `T-05-01` | stable | B1 | The Real Objection | Motives Before Words | 451 |
@@ -45,6 +46,12 @@ already contributed to it.
 | `T-07-03` | stable | B1 | The Three-Second Read | Gathering Information | 453 |
 | `T-08-01` | stable | B3 | Do Not Offend the Wrong Person | Judging Who You Are Dealing With | 483 |
 | `T-08-02` | stable | B1, B3 | The Engagement Decision | Judging Who You Are Dealing With | 454 |
+| `T-14-01` | stable | B4 | The Automatic Response | Framing and Controlled Choice | 530 |
+| `T-14-02` | stable | B4 | The Contrast Principle | Framing and Controlled Choice | 489 |
+| `T-16-01` | stable | B4 | Concession and Retreat | Argument and Demonstration | 518 |
+| `T-19-01` | stable | B4 | The Uninvited Debt | Guilt, Fear and Obligation | 546 |
+| `T-19-02` | stable | B4 | Unequal Exchange | Guilt, Fear and Obligation | 511 |
+| `T-24-01` | stable | B4 | Refusing an Unauthorised Debt | Inoculation and Refusal | 535 |
 
 ## Un-filed dossiers (source material not yet merged)
 

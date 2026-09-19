@@ -59,7 +59,7 @@ Moving a mind without moving a muscle.
 
 ## Part V — PRESSURE  (`P5`)
 
-Hard tactics. Highest cost, highest blowback. Read `limits` twice here.
+Hard tactics. Highest cost, highest blowback. Read `cost` twice here.
 
 | ch | chapter | holds |
 |----|---------|-------|

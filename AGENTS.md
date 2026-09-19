@@ -67,7 +67,7 @@ Dossiers add `@book`, `@topic`, `@locator`, `@unique: yes|no`,
 
 Second person or neutral declarative, present tense, concrete behaviour rather
 than feelings. Slots in canonical order: `core → mechanism → tells → moves →
-counters → limits → field → sources → seesources → seealso`. `core` is
+counters → cost → field → sources → seesources → seealso`. `core` is
 mandatory. `counters` gets as much room as `moves`. Under 700 words per entry,
 comfortably under 560. No `\vspace`, no `\newpage`, no colour, no centring —
 layout lives in `style/`. Sources are cited with `\src{B1}` inline and

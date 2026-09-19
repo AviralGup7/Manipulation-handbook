@@ -9,7 +9,7 @@
 %%    must never contain layout commands (docs/RULES.md, rule R12).
 %% =====================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{handbook}[2026/09/19 v1.0 The Manipulation Handbook class]
+\ProvidesClass{style/handbook}[2026/09/19 v1.0 The Manipulation Handbook class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
@@ -29,9 +29,16 @@
                   headheight=14pt,footskip=11mm]{geometry}}{}
 
 \IfFileExists{xcolor.sty}{\RequirePackage{xcolor}\hbcolortrue}{}
-\IfFileExists{lmodern.sty}{\RequirePackage{lmodern}}{}
-\IfFileExists{fontenc.sty}{\RequirePackage[T1]{fontenc}}{}
-\IfFileExists{textcomp.sty}{\RequirePackage{textcomp}}{}
+%% Latin Modern / T1 are only usable if their font metrics actually exist.
+%% A minimal TeX tree (or a WASM build) may ship fontenc.sty and lmodern.sty
+%% but no EC or TS1 metrics, and a missing .tfm is a fatal error, not a
+%% warning. Probe for the metrics themselves, not the package files.
+\IfFileExists{lmodern.sty}{%
+  \IfFileExists{ecrm1000.tfm}{\RequirePackage{lmodern}}{}}{}
+\IfFileExists{fontenc.sty}{%
+  \IfFileExists{ecrm1000.tfm}{\RequirePackage[T1]{fontenc}}{}}{}
+\IfFileExists{textcomp.sty}{%
+  \IfFileExists{tcrm1000.tfm}{\RequirePackage{textcomp}}{}}{}
 \IfFileExists{microtype.sty}{\RequirePackage[protrusion=true,expansion=false]{microtype}}{}
 \IfFileExists{enumitem.sty}{\RequirePackage{enumitem}\hbenumitemtrue}{}
 \IfFileExists{ragged2e.sty}{\RequirePackage[newcommands]{ragged2e}}{}
@@ -120,21 +127,21 @@
 \newcommand{\hbtopicmark}[1]{\markboth{}{#1}}
 
 %% ---------------------------------------------------------------------
-%% 7. hyperref (loaded last, inside \AtBeginDocument)
+%% 7. hyperref. Loaded at the END OF THE PREAMBLE, not inside
+%%    \AtBeginDocument: loading it there makes it emit material before
+%%    \begin{document} and produces "Missing \begin{document}".
 %% ---------------------------------------------------------------------
-\AtBeginDocument{%
-  \IfFileExists{hyperref.sty}{%
-    \hbhyperreftrue
-    \ifhbcolor
-      \RequirePackage[colorlinks=true,linkcolor=hblink,urlcolor=hblink,
-        citecolor=hblink,pdftitle={The Manipulation Handbook},
-        bookmarksnumbered=true,bookmarksopen=true,
-        bookmarksopenlevel=1]{hyperref}%
-    \else
-      \RequirePackage[hidelinks,pdftitle={The Manipulation Handbook},
-        bookmarksnumbered=true]{hyperref}%
-    \fi}{}%
-}
+\IfFileExists{hyperref.sty}{%
+  \hbhyperreftrue
+  \ifhbcolor
+    \RequirePackage[colorlinks=true,linkcolor=hblink,urlcolor=hblink,
+      citecolor=hblink,pdftitle={The Manipulation Handbook},
+      bookmarksnumbered=true,bookmarksopen=true,
+      bookmarksopenlevel=1]{hyperref}%
+  \else
+    \RequirePackage[hidelinks,pdftitle={The Manipulation Handbook},
+      bookmarksnumbered=true]{hyperref}%
+  \fi}{}
 \newcommand{\hbphantomsection}{\@ifundefined{phantomsection}{}{\phantomsection}}
 
 %% ---------------------------------------------------------------------

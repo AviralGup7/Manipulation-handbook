@@ -70,7 +70,7 @@ the merged book read as one book.
 \begin{tells}     how to see it being used         (bullets)   \end{tells}
 \begin{moves}     how it is executed               (numbered)  \end{moves}
 \begin{counters}  how to refuse it — equal weight  (bullets)   \end{counters}
-\begin{limits}    when it fails and what it costs              \end{limits}
+\begin{cost}    when it fails and what it costs              \end{cost}
 
 \sources{B1, B3}  \seesources  \seealso{T-04-03}
 ```

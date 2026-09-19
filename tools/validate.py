@@ -29,6 +29,7 @@ Exit code 0 = clean, 1 = errors (do not commit), warnings never fail a build.
     R17  no draft markers in a `stable` entry
     R18  every \\input resolves and every managed file is reachable
          from main.tex (the usual first-compile failure)
+    R19  style files never redefine a TeX primitive or kernel command
 """
 
 from __future__ import annotations
@@ -367,6 +368,23 @@ def check_texlint(repo: Repo, rep: Report) -> None:
             (rep.err if sev == "error" else rep.warn)("R13", f"{m.rel}:{n}", msg)
 
 
+def check_style(repo: Repo, rep: Report) -> None:
+    """R19 -- style files must not redefine TeX primitives or kernel commands."""
+    for sub in ("style",):
+        d = os.path.join(ROOT, sub)
+        if not os.path.isdir(d):
+            continue
+        for fn in sorted(os.listdir(d)):
+            if not fn.endswith((".sty", ".cls")):
+                continue
+            path = os.path.join(d, fn)
+            with open(path, "r", encoding="utf-8") as fh:
+                text = fh.read()
+            for sev, n, msg in texlint.lint_style(text):
+                (rep.err if sev == "error" else rep.warn)(
+                    "R19", f"{sub}/{fn}:{n}", msg)
+
+
 def check_generated(repo: Repo, rep: Report) -> None:
     expect = {
         os.path.join(DIR_COMPILED, "booknames.tex"): build_index.gen_booknames(repo),
@@ -558,6 +576,7 @@ def main(argv: List[str]) -> int:
     check_duplicates(repo, rep)
     check_stable(repo, rep)
     check_inputs(repo, rep)
+    check_style(repo, rep)
 
     print(f"scanned: {len(repo.parts)} parts, {len(repo.chapters)} chapters, "
           f"{len(repo.topics)} entries, {len(repo.dossiers)} dossiers, "

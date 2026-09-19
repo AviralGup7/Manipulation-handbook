@@ -129,7 +129,7 @@ def dossier(book: str, tid: str, title: str, locator: str,
     parts = [DOSSIER_HEADER.format(book=book, tid=tid, title=title, locator=locator,
                                    status=status, unique="yes" if unique else "no",
                                    integrated=integrated, updated=updated)]
-    parts.append(f"\\dossier{{{book}}}{{{tid}}}{{\\bookshort{book}}}{{{locator}}}\n")
+    parts.append(f"\\dossier{{{book}}}{{{tid}}}{{\\bookshort{{{book}}}}}{{{locator}}}\n")
     parts.extend(_emit_slots([("distilled", list(distilled))]))
     if unique:
         parts.append("")

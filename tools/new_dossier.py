@@ -38,7 +38,7 @@ TEMPLATE = """\
 %% @integrated: no
 %% @updated: {today}
 
-\\dossier{{{book}}}{{{topic}}}{{\\bookshort{book}}}{{{locator}}}
+\\dossier{{{book}}}{{{topic}}}{{\\bookshort{{book}}}}{{{locator}}}
 
 \\begin{{distilled}}
   \\item {point}

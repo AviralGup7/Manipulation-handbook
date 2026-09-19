@@ -29,7 +29,7 @@ The sources spend most of their length on material this handbook removes:
 |-----|-----|
 | Historical anecdote and case narrative | Not transferable. Where a case *is* the lesson, it becomes a two-sentence `field` note written by us. |
 | Repetition of the same point in three registers | The sources do this for emphasis; it reads as padding. |
-| Moral throat-clearing before a tactic | Stated once in the front matter and once per entry in `limits`. |
+| Moral throat-clearing before a tactic | Stated once in the front matter and once per entry in `cost`. |
 | Justification of the book's own premise | The reader is already here. |
 | Author biography and provenance storytelling | Goes in `registry/books.yaml`. |
 | Transitional paragraphs between sections | The slot structure is the transition. |
@@ -88,7 +88,7 @@ What the target does. Prefer answers that work without confronting the person
 (delay, reframe, refer to a third party, require writing) over answers that
 require winning an argument — those usually fail.
 
-### `limits` — one short paragraph
+### `cost` — one short paragraph
 Failure modes, cost to the user, blowback, and illegality where relevant.
 
 ### `field` — optional
@@ -172,9 +172,9 @@ Chapter titles name a subject. Part titles name a movement of the argument.
   \item ...
 \end{counters}
 
-\begin{limits}
+\begin{cost}
 ...
-\end{limits}
+\end{cost}
 
 \sources{B1, B3}
 \seesources

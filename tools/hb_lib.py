@@ -49,7 +49,7 @@ STATUSES = ("stable", "draft", "planned", "distilled", "skeleton", "retired")
 # Slot order inside a published topic. Enforced by validate.py (rule R5).
 SLOT_ORDER = [
     "core", "mechanism", "tells", "moves", "counters",
-    "limits", "field", "sources", "seesources", "seealso",
+    "cost", "field", "sources", "seesources", "seealso",
 ]
 MANDATORY_SLOTS = ["core"]
 

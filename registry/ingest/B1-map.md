@@ -41,7 +41,7 @@ chapter. 181 PDF pages, of which roughly two-thirds are first-person anecdote.
 * Tactic 2 and Tactic 4 both feed `T-11-01`; they must be filed as two dossiers
   against one entry, not merged into one dossier.
 * Tactic 13 describes conduct that is criminal in most jurisdictions. It is
-  admitted for recognition purposes only and must carry a `limits` slot that
+  admitted for recognition purposes only and must carry a `cost` slot that
   says so.
 * The cost chapter (16) is the book's own corrective and should be written
   early in Part VII rather than last, so that Parts III–V are read with it in

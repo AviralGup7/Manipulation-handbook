@@ -44,13 +44,17 @@ BODY_STATUSES = ("stable", "draft")
 # ---------------------------------------------------------------------------
 def gen_booknames(repo: Repo) -> str:
     out = [BANNER]
-    out.append("%% Book register, emitted from registry/books.yaml\n")
+    out.append("%% Book register, emitted from registry/books.yaml.")
+    out.append("%% Accessors (\\bookname{B1} etc.) are defined in style/entry.sty.")
+    out.append("%% \\csname is required because a TeX control word cannot contain a")
+    out.append("%% digit: \\booknameB1 would be read as \\booknameB followed by 1.\n")
     for b in repo.books:
         bid = b["id"]
-        out.append(f"\\newcommand{{\\bookname{bid}}}{{{tex_escape(b.get('title',''))}}}")
-        out.append(f"\\newcommand{{\\bookauthor{bid}}}{{{tex_escape(b.get('author',''))}}}")
-        out.append(f"\\newcommand{{\\bookyear{bid}}}{{{tex_escape(b.get('year',''))}}}")
-        out.append(f"\\newcommand{{\\bookshort{bid}}}{{{tex_escape(b.get('short', bid))}}}")
+        for field, key in (("name", "title"), ("author", "author"),
+                           ("year", "year"), ("short", "short")):
+            val = tex_escape(str(b.get(key, "") or bid))
+            out.append(f"\\expandafter\\newcommand\\csname hb@book@{bid}@{field}"
+                       f"\\endcsname{{{val}}}")
     out.append("")
     out.append("%% Front-matter counters")
     out.append("\\newcommand{\\hbedition}{1}")
@@ -217,6 +221,33 @@ def gen_coverage_md(repo: Repo) -> str:
 
 
 # ---------------------------------------------------------------------------
+def gen_counts(repo: Repo) -> str:
+    """Plain-number macros, available in the preamble.
+
+    These MUST be literals rather than counters incremented during
+    typesetting: the title page and the colophon quote them before the
+    body is read, so any counter would still hold its initial value.
+    """
+    published = [t for t in repo.topics.values()
+                 if t.status in BODY_STATUSES]
+    contrib = sum(1 for t in published if len(set(t.sources)) >= 2)
+    stats = {
+        "hbpartcount": len(repo.parts),
+        "hbchaptercount": len(repo.chapters),
+        "hbtopiccount": len(published),
+        "hbdossiercount": len(repo.dossiers),
+        "hbcontribcount": contrib,
+    }
+    out = [BANNER,
+           "%% Statistics quoted by front/ and back/. Literals, not counters:",
+           "%% the title page is typeset before the body, so a counter would",
+           "%% still read zero there.", ""]
+    for k, v in stats.items():
+        out.append(f"\\expandafter\\def\\csname {k}\\endcsname{{{v}}}")
+    out.append("")
+    return "\n".join(out)
+
+
 def main() -> int:
     repo = Repo.scan(strict=False)
     if repo.problems:
@@ -229,6 +260,7 @@ def main() -> int:
     os.makedirs(DIR_COMPILED, exist_ok=True)
     targets = {
         os.path.join(DIR_COMPILED, "booknames.tex"): gen_booknames(repo),
+        os.path.join(DIR_COMPILED, "counts.tex"): gen_counts(repo),
         os.path.join(DIR_COMPILED, "index.tex"): gen_index(repo),
         os.path.join(DIR_COMPILED, "dossiers.tex"): gen_dossiers(repo),
         os.path.join(DIR_COMPILED, "coverage.tex"): gen_coverage_tex(repo),

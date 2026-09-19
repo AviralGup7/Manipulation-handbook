@@ -66,9 +66,9 @@ TEMPLATE = """\
   \\item {counter}
 \\end{{counters}}
 
-\\begin{{limits}}
-{limits}
-\\end{{limits}}
+\\begin{{cost}}
+{cost}
+\\end{{cost}}
 
 \\sources{{{sources}}}
 \\seesources
@@ -129,7 +129,7 @@ def main() -> int:
         maxwords=700, core="\\TODO{one to three sentences: the whole entry}",
         mechanism="\\TODO{why this works on a person}",
         tell="\\TODO{observable sign}", move="\\TODO{step}",
-        counter="\\TODO{defence}", limits="\\TODO{when it fails / what it costs}",
+        counter="\\TODO{defence}", cost="\\TODO{when it fails / what it costs}",
         seealso=tex_escape(args.seealso) or "\\TODO{id}",
     )
     with open(path, "w", encoding="utf-8") as fh:
@@ -168,7 +168,7 @@ DOSSIER_TEMPLATE = """\
 %% @integrated: no
 %% @updated: {today}
 
-\\dossier{{{book}}}{{{id}}}{{\\bookshort{book}}}{{TODO locator}}
+\\dossier{{{book}}}{{{id}}}{{\\bookshort{{book}}}}{{TODO locator}}
 
 \\begin{{distilled}}
   \\item TODO what this source actually says, compressed and in our words

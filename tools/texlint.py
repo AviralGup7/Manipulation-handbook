@@ -33,8 +33,8 @@ KNOWN_ENVS = {
     "table", "figure", "titlepage", "abstract", "lrbox", "sloppypar",
     "thebibliography", "appendix", "filecontents", "comment",
     # entry.sty
-    "hbbox", "core", "mechanism", "tells", "moves", "counters", "limits",
-    "field", "distilled", "unique", "terms", "quotable",
+    "hbbox", "core", "mechanism", "tells", "moves", "counters",
+    "field", "cost", "distilled", "unique", "terms", "quotable",
     "partblurb", "chapterblurb",
 }
 
@@ -54,6 +54,56 @@ BANNED_LAYOUT = [
 ]
 
 Issue = Tuple[str, int, str]   # (severity, line, message)
+
+# TeX/LaTeX primitives and kernel commands that must never be redefined.
+# \newenvironment{limits} silently collides with the \limits primitive and
+# breaks every math display; this list is what stops that class of bug.
+# Checked only in style/ files, where \newcommand/\newenvironment are legal.
+RESERVED = {
+    "limits", "nolimits", "displaylimits", "end", "par", "item", "relax",
+    "space", "empty", "void", "smallskip", "medskip", "bigskip", "strut",
+    "today", "contents", "index", "glossary", "bibliography", "appendix",
+    "chapter", "section", "subsection", "subsubsection", "paragraph",
+    "subparagraph", "part", "page", "input", "include", "label", "ref",
+    "pageref", "cite", "footnote", "marginpar", "caption", "center",
+    "item", "hline", "toprule", "thanks", "title", "author", "date",
+    "maketitle", "tableofcontents", "document", "abstract", "figure",
+    "table", "quote", "quotation", "verse", "description", "enumerate",
+    "itemize", "verbatim", "array", "tabular", "minipage", "picture",
+    "bf", "it", "rm", "sc", "sf", "tt", "em", "sl",
+    "TeX", "LaTeX", "normalfont", "textbf", "textit", "emph",
+    "hbox", "vbox", "box", "copy", "setbox", "unhbox", "unvbox",
+    "hfil", "vfil", "hfill", "vfill", "hrule", "vrule",
+    "leq", "geq", "neq", "times", "div", "cdot", "sum", "prod", "int",
+    "alpha", "beta", "gamma", "delta", "epsilon", "theta", "lambda",
+    "mu", "pi", "rho", "sigma", "tau", "phi", "chi", "psi", "omega",
+    "infty", "partial", "nabla", "forall", "exists", "prime",
+    "begin", "group", "begingroup", "endgroup", "protect", "allowhyphens",
+    "raggedright", "raggedbottom", "sloppy", "fussy", "clearpage",
+    "newpage", "vspace", "hspace", "rule", "dotfill", "hrulefill",
+    "ldots", "dots", "textbullet", "textperiodcentered", "textendash",
+    "textemdash", "textquoteright", "textquoteleft",
+}
+
+
+def lint_style(text: str, fname: str = "<style>") -> List[Issue]:
+    """Check a style file for definitions that collide with TeX primitives."""
+    issues: List[Issue] = []
+    pat = re.compile(
+        r"\\(?:new|renew|provide)(?:command|environment)\s*\{?\s*\\?([a-zA-Z]+)")
+    for n, line in enumerate(text.splitlines(), start=1):
+        if line.lstrip().startswith("%"):
+            continue
+        for m in pat.finditer(line):
+            name = m.group(1)
+            if name.startswith("hb") or name.startswith("HB"):
+                continue                      # our own namespace
+            if name in RESERVED:
+                issues.append(("error", n,
+                               f"defines '{name}', which collides with a TeX "
+                               "primitive or LaTeX kernel command -- rename it "
+                               "(e.g. the `limits` slot had to become `cost`)"))
+    return issues
 
 
 def _strip_comment(line: str) -> str:

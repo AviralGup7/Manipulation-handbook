@@ -6,12 +6,30 @@
 %%  book looks, change this file -- never a content file.
 %%
 %%  Canonical slot order (docs/RULES.md R5):
-%%     \topic -> core -> mechanism -> tells -> moves -> counters -> limits
+%%     \topic -> core -> mechanism -> tells -> moves -> counters -> cost
 %%             -> field -> sources -> seesources -> seealso
 %%  All slots optional except `core`; order enforced by tools/validate.py.
 %% =====================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{entry}[2026/09/19 v1.0 Handbook entry DSL]
+\ProvidesPackage{style/entry}[2026/09/19 v1.0 Handbook entry DSL]
+
+%% ---------------------------------------------------------------------
+%% Book-register accessors.
+%% The DATA lives in registry/compiled/booknames.tex as
+%%   \expandafter\newcommand\csname hb@book@B1@name\endcsname{...}
+%% because a control word cannot contain a digit: \booknameB1 would be
+%% read by TeX as \booknameB followed by the character 1.
+%% ---------------------------------------------------------------------
+\newcommand{\hbbookfield}[2]{%
+  \expandafter\ifx\csname hb@book@#1@#2\endcsname\relax
+    \textbf{?#1}%
+  \else
+    \csname hb@book@#1@#2\endcsname
+  \fi}
+\newcommand{\bookname}[1]{\hbbookfield{#1}{name}}
+\newcommand{\bookauthor}[1]{\hbbookfield{#1}{author}}
+\newcommand{\bookyear}[1]{\hbbookfield{#1}{year}}
+\newcommand{\bookshort}[1]{\hbbookfield{#1}{short}}
 
 \newif\ifhbxcolor \hbxcolorfalse
 \@ifpackageloaded{xcolor}{\hbxcolortrue}{}
@@ -100,8 +118,10 @@
 %% COUNTERS -- defence, reversal, inoculation.
 \newenvironment{counters}{\hbslot{Counters}\begin{itemize}\ignorespaces}{\end{itemize}}
 
-%% LIMITS -- when it fails, what it costs, blowback.
-\newenvironment{limits}{\hbslot{Limits}\ignorespaces}{\par}
+%% COST -- when it fails, what it costs, blowback, legality.
+%% Named `cost`, not `limits`: \limits is a TeX primitive and
+%% \newenvironment{limits} would clash with it (rule R13b).
+\newenvironment{cost}{\hbslot{Cost}\ignorespaces}{\par}
 
 %% FIELD -- a concrete modern illustration written for this handbook.
 \newenvironment{field}{\begin{hbbox}\hbslot{Field note}}{\end{hbbox}}
