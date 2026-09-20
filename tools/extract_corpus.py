@@ -68,6 +68,20 @@ def normalise(pdf: str, text_path: str) -> None:
         fh.write(t)
 
 
+def with_textfile(src: str, out: str) -> bool:
+    """A registered source may be a plain-text transcript (a paper whose
+    PDF we could not mirror). It becomes the corpus directly, with page
+    markers preserved if the transcript carries them."""
+    try:
+        with open(src, "r", encoding="utf-8", errors="replace") as fh:
+            t = fh.read()
+    except Exception:
+        return False
+    with open(out, "w", encoding="utf-8") as fh:
+        fh.write(t)
+    return True
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(ROOT, "registry", "corpus"))
@@ -90,7 +104,10 @@ def main() -> int:
             print(f"  ~ {b['id']}: source file {f!r} not in the repo -- skipped")
             continue
         out = os.path.join(args.out, f"{b['id']}.txt")
-        ok = with_pdftotext(pdf, out) or with_pypdf(pdf, out)
+        if pdf.lower().endswith(".txt"):
+            ok = with_textfile(pdf, out)
+        else:
+            ok = with_pdftotext(pdf, out) or with_pypdf(pdf, out)
         if not ok:
             print(f"  ~ {b['id']}: no PDF text extractor available "
                   "(install poppler-utils, or: pip install pypdf)")

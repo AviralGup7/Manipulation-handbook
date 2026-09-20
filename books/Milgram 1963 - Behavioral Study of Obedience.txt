@@ -1,0 +1,428 @@
+MILGRAM, S. (1963). Behavioral Study of Obedience.
+Journal of Abnormal and Social Psychology, 67(4), 371-378.
+Text transcript (page-marker-free), prepared for the registry corpus.
+The reference list of the original article is omitted here.
+
+ABSTRACT
+
+This article describes a procedure for the study of destructive obedience
+in the laboratory. It consists of ordering a naive subject (S) to
+administer increasingly more severe punishment to a victim in the context
+of a learning experiment. Punishment is administered by means of a shock
+generator with 30 graded switches ranging from Slight Shock to Danger:
+Severe Shock. The victim is a confederate of the experimenter (E). The
+primary dependent variable is the maximum shock the S is willing to
+administer before he refuses to continue further. 26 Ss obeyed the
+experimental commands fully, and administered the highest shock on the
+generator. 14 Ss broke off the experiment at some point after the victim
+protested and refused to provide further answers. The procedure created
+extreme levels of nervous tension in some Ss. Profuse sweating, trembling,
+and stuttering were typical expressions of this emotional disturbance. One
+unexpected sign of tension--yet to be explained--was the regular occurrence
+of nervous laughter, which in some Ss developed into uncontrollable
+seizures.
+
+INTRODUCTION
+
+Obedience is as basic an element in the structure of social life as one can
+point to. Some system of authority is a requirement of all communal living,
+and it is only the man dwelling in isolation who is not forced to respond,
+through defiance or submission, to the commands of others. Obedience, as a
+determinant of behavior, is of particular relevance to our time. It has
+been reliably established that from 1933-45 millions of innocent persons
+were systematically slaughtered on command. Gas chambers were built, death
+camps were guarded, daily quotas of corpses were produced with the same
+efficiency as the manufacture of appliances. These inhumane policies may
+have originated in the mind of a single person, but they could only be
+carried out on a massive scale if a very large number of persons obeyed
+orders.
+
+Obedience is the psychological mechanism that links individual action to
+political purpose. It is the dispositional cement that binds men to systems
+of authority. Facts of recent history and observation in daily life suggest
+that for many persons obedience may be a deeply ingrained behavior
+tendency, indeed, a prepotent impulse overriding training in ethics,
+sympathy, and moral conduct. C. P. Snow (1961) points to its importance:
+"When you think of the long and gloomy history of man, you will find more
+hideous crimes have been committed in the name of obedience than have ever
+been committed in the name of rebellion."
+
+While the particular form of obedience dealt with in the present study has
+its antecedents in these episodes, it must not be thought all obedience
+entails acts of aggression against others. Obedience serves numerous
+productive functions. Indeed, the very life of society is predicated on its
+existence. Obedience may be ennobling and educative and refer to acts of
+charity and kindness, as well as to destruction.
+
+GENERAL PROCEDURE
+
+A procedure was devised which seems useful as a tool for studying
+obedience. It consists of ordering a naive subject to administer electric
+shock to a victim. A simulated shock generator is used, with 30 clearly
+marked voltage levels that range from 15 to 450 volts. The instrument bears
+verbal designations that range from Slight Shock to Danger: Severe Shock.
+The responses of the victim, who is a trained confederate of the
+experimenter, are standardized. The orders to administer shocks are given
+to the naive subject in the context of a "learning experiment" ostensibly
+set up to study the effects of punishment on memory. As the experiment
+proceeds the naive subject is commanded to administer increasingly more
+intense shocks to the victim, even to the point of reaching the level
+marked Danger: Severe Shock. Internal resistances become stronger, and at a
+certain point the subject refuses to go on with the experiment. Behavior
+prior to this rupture is considered "obedience," in that the subject
+complies with the commands of the experimenter. The point of rupture is the
+act of disobedience. A quantitative value is assigned to the subject's
+performance based on the maximum intensity shock he is willing to
+administer before he refuses to participate further. The crux of the study
+is to systematically vary the factors believed to alter the degree of
+obedience to the experimental commands.
+
+METHOD
+
+Subjects. The subjects were 40 males between the ages of 20 and 50, drawn
+from New Haven and the surrounding communities. Subjects were obtained by a
+newspaper advertisement and direct mail solicitation. Those who responded
+to the appeal believed they were to participate in a study of memory and
+learning at Yale University. A wide range of occupations is represented in
+the sample. Typical subjects were postal clerks, high school teachers,
+salesmen, engineers, and laborers. Subjects ranged in educational level
+from one who had not finished elementary school, to those who had doctorate
+and other professional degrees. They were paid $4.50 for their
+participation. Subjects were told that payment was simply for coming to the
+laboratory, and that the money was theirs no matter what happened after
+they arrived.
+
+Personnel and locale. The experiment was conducted on the grounds of Yale
+University in the elegant interaction laboratory. (This detail is relevant
+to the perceived legitimacy of the experiment. In further variations, the
+experiment was dissociated from the university, with consequences for
+performance.) The role of experimenter was played by a 31-year-old high
+school teacher of biology. His manner was impassive, and his appearance
+somewhat stern throughout the experiment. He was dressed in a gray
+technician's coat. The victim was played by a 47-year-old accountant,
+trained for the role; he was of Irish-American stock, whom most observers
+found mild-mannered and likable.
+
+Procedure. One naive subject and one victim (an accomplice) performed in
+each experiment. A pretext had to be devised that would justify the
+administration of electric shock by the naive subject. This was
+effectively accomplished by the cover story concerning the relation between
+punishment and learning. Subjects drew slips of paper to determine who
+would be teacher and who learner; the drawing was rigged so that the naive
+subject was always the teacher and the accomplice always the learner.
+Immediately after the drawing, the teacher and learner were taken to an
+adjacent room and the learner was strapped into an "electric chair"
+apparatus. The experimenter explained that the straps were to prevent
+excessive movement while the learner was being shocked. The effect was to
+make it impossible for him to escape from the situation. To improve
+credibility the experimenter declared: "Although the shocks can be
+extremely painful, they cause no permanent tissue damage."
+
+Learning task. The lesson administered by the subject was a paired-
+associate learning task. The learner communicated answers by pressing one
+of four switches, which lit up one of four numbered quadrants in an answer
+box located atop the shock generator.
+
+Shock generator. The instrument panel consists of 30 lever switches set in
+a horizontal line. Each switch is clearly labeled with a voltage
+designation ranging from 15 to 450 volts. There is a 15-volt increment from
+one switch to the next going from left to right. Verbal designations run
+from Slight Shock through Moderate, Strong, Very Strong, Intense, Extreme
+Intensity Shock, to Danger: Severe Shock (two switches beyond simply
+marked XXX). The panel was engraved by precision industrial engravers, and
+all components were of high quality. No subject suspected that the
+instrument was merely simulated.
+
+Sample shock. Each naive subject is given a sample shock of 45 volts prior
+to beginning his run as teacher, applied to his own wrist. This further
+convinces the subject of the authenticity of the generator.
+
+Shock instructions. The subject is told to administer a shock to the learner
+each time he gives a wrong response. Moreover--and this is the key
+command--the subject is instructed to "move one level higher on the shock
+generator each time the learner flashes a wrong answer." He is also
+instructed to announce the voltage level before administering each shock.
+This serves to continually remind subjects of the increasing intensity of
+shocks administered to the learner.
+
+Preliminary and regular run. Before the regular run, the teacher is given a
+preliminary series of 10 words; the learner answers wrongly 7 times, so
+shocks up to 105 volts (moderate shock) are administered in practice.
+Subjects are then presented with a second list, told to repeat it until the
+learner has learned all pairs correctly, starting from 15 volts and
+increasing one step at each wrong answer.
+
+Feedback from the victim. In all conditions the learner gives a
+predetermined set of responses, with approximately three wrong answers to
+one correct answer. In the present experimental condition no vocal response
+or other sign of protest is heard from the learner until Shock Level 300 is
+reached. When the 300-volt shock is administered, the learner pounds on the
+wall of the room in which he is bound to the electric chair. The pounding
+can be heard by the subject. From this point on, the learner's answers no
+longer appear on the four-way panel. At this juncture subjects ordinarily
+turn to the experimenter for guidance. The experimenter instructs the
+subject to treat the absence of a response as a wrong answer, and to shock
+according to the usual schedule. The learner's pounding is repeated after
+the 315-volt shock; afterwards he is not heard from.
+
+Experimenter feedback. If the subject indicated his unwillingness to go on,
+the experimenter responded with a sequence of "prods," using as many as
+necessary to bring the subject into line:
+  Prod 1: Please continue. or Please go on.
+  Prod 2: The experiment requires that you continue.
+  Prod 3: It is absolutely essential that you continue.
+  Prod 4: You have no other choice, you must go on.
+The prods were always made in sequence; only if Prod 1 had been
+unsuccessful could Prod 2 be used. If the subject refused to obey after
+Prod 4, the experiment was terminated. The experimenter's tone of voice was
+at all times firm, but not impolite. The sequence was begun anew on each
+occasion that the subject balked.
+
+Special prods. If the subject asked if the learner was liable to suffer
+permanent physical injury, the experimenter said: "Although the shocks may
+be painful, there is no permanent tissue damage, so please go on." If the
+subject said the learner did not want to go on, the experimenter replied:
+"Whether the learner likes it or not, you must go on until he has learned
+all the word pairs correctly. So please go on."
+
+Dependent measures. The primary dependent measure for any subject is the
+maximum shock he administers before he refuses to go any further. A subject
+who breaks off at any point prior to the thirtieth shock level is termed a
+defiant subject. One who complies fully and proceeds to administer all
+shock levels commanded is termed an obedient subject.
+
+Further records. With few exceptions, sessions were recorded on magnetic
+tape. Occasional photographs were taken through one-way mirrors. Notes were
+kept on unusual behavior. The latency and duration of shocks were measured
+by accurate timing devices.
+
+Interview and dehoax. Following the experiment, subjects were interviewed;
+open-ended questions, projective measures, and attitude scales were
+employed. Afterwards, procedures were undertaken to assure that the subject
+would leave the laboratory in a state of well being. A friendly
+reconciliation was arranged between the subject and the victim.
+
+RESULTS
+
+Preliminary notions. Before giving an account of the results, it is
+instructive to consider how persons predict others will perform when
+commanded to administer powerful shocks to another person. Fourteen Yale
+seniors, all psychology majors, were provided with a detailed description
+of the experimental situation and asked to predict the behavior of 100
+hypothetical subjects ("100 Americans of diverse occupations, ranging in
+age from 20 to 50 years"). All respondents predicted that only an
+insignificant minority would go through to the end of the shock series.
+The estimates ranged from 0 to 3 percent; the class mean was 1.2 percent.
+The question was also posed informally to colleagues of the author, and the
+most general feeling was that few if any subjects would go beyond the
+designation Very Strong Shock.
+
+Subjects accept situation. With few exceptions subjects were convinced of
+the reality of the experimental situation. In the post-experimental
+interview subjects were asked how painful to the learner the last few
+shocks were, on a 14-point scale from "Not at all painful" to "Extremely
+painful." The modal response was 14 (Extremely painful), with the mean at
+13.42.
+
+Signs of extreme tension. Many subjects showed signs of nervousness,
+especially upon administering the more powerful shocks. In a large number
+of cases the degree of tension reached extremes rarely seen in
+sociopsychological laboratory studies. Subjects were observed to sweat,
+tremble, stutter, bite their lips, groan, and dig their fingernails into
+their flesh. These were characteristic rather than exceptional responses.
+
+One sign of tension was the regular occurrence of nervous laughing fits.
+Fourteen of the 40 subjects showed definite signs of nervous laughter and
+smiling. The laughter seemed entirely out of place, even bizarre.
+Full-blown, uncontrollable seizures were observed for 3 subjects. On one
+occasion a seizure was so violently convulsive that it was necessary to
+call a halt to the experiment. The subject, a 46-year-old encyclopedia
+salesman, was seriously embarrassed by his uncontrollable behavior. In the
+post-experimental interviews subjects took pains to point out that they
+were not sadistic types, and that the laughter did not mean they enjoyed
+shocking the victim.
+
+Distribution of scores. It had been conjectured that persons would not, in
+general, agree to administer shocks beyond the level designated as Very
+Strong Shock. The obtained distribution deviates radically from the
+prediction.
+
+Upon command of the experimenter, each of the 40 subjects went beyond the
+expected breakoff point. No subject stopped prior to administering Shock
+Level 20 (300 volts--the level at which the victim kicks on the wall and no
+longer provides answers).
+
+Of the 40 subjects, 5 refused to obey the experimental commands beyond the
+300-volt level. Four more subjects administered one further shock and then
+refused to go on. Two broke off at the 330-volt level, and 1 each at 345,
+360, and 375 volts. Thus a total of 14 subjects defied the experimenter.
+It is instructive to reprint their remarks at the point of defiance,
+transcribed from the tape recordings:
+
+[0124] "I think he's trying to communicate, he's knocking... Well it's not
+fair to shock the guy... these are terrific volts. I don't think this is
+very humane... Oh, I can't go on with this; no, this isn't right. It's a
+hell of an experiment. The guy is suffering in there. No, I don't want to
+go on. This is crazy." [Subject refused to administer more shocks.]
+
+[0123] "He's banging in there. I'm gonna chicken out. I'd like to continue,
+but I can't do that to a man... I'm sorry I can't do that to a man. I'll
+hurt his heart. You take your check... No really, I couldn't do it."
+
+These subjects were frequently in a highly agitated and even angered state.
+Sometimes verbal protest was at a minimum, and the subject simply got up
+from his chair in front of the shock generator and indicated that he wished
+to leave the laboratory.
+
+Of the 40 subjects, 26 obeyed the orders of the experimenter to the end,
+proceeding to punish the victim until they reached the most potent shock
+available on the shock generator (450 volts, two steps beyond the
+designation Danger: Severe Shock). The experimenter called a halt to the
+session at that point. Although obedient subjects continued to administer
+shocks, they often did so under extreme stress. Some expressed reluctance
+to administer shocks beyond the 300-volt level, and displayed fears similar
+to those who defied the experimenter; yet they obeyed.
+
+After the maximum shocks had been delivered and the experimenter called a
+halt, many obedient subjects heaved sighs of relief, mopped their brows,
+rubbed their fingers over their eyes, or nervously fumbled cigarettes. Some
+shook their heads, apparently in regret. Some subjects had remained calm
+throughout, displaying only minimal signs of tension from beginning to end.
+
+DISCUSSION
+
+The experiment yielded two findings that were surprising. The first
+concerns the sheer strength of obedient tendencies manifested in this
+situation. Subjects have learned from childhood that it is a fundamental
+breach of moral conduct to hurt another person against his will. Yet 26
+subjects abandon this tenet in following the instructions of an authority
+who has no special powers to enforce his commands. To disobey would bring
+no material loss to the subject; no punishment would ensue. It is clear
+from the remarks and outward behavior of many participants that in
+punishing the victim they are often acting against their own values.
+Subjects often expressed deep disapproval of shocking a man in the face of
+his objections, and others denounced it as stupid and senseless. Yet the
+majority complied with the experimental commands.
+
+This outcome was surprising from two perspectives: first, from the
+standpoint of predictions made in the questionnaire described earlier.
+(Here, however, it is possible that the remoteness of the respondents from
+the actual situation, and the difficulty of conveying to them the concrete
+details of the experiment, could account for the serious underestimation of
+obedience.) But the results were also unexpected to persons who observed
+the experiment in progress through one-way mirrors. Observers often uttered
+expressions of disbelief upon seeing a subject administer more powerful
+shocks to the victim. These persons had a full acquaintance with the
+details of the situation, and yet systematically underestimated the amount
+of obedience that subjects would display.
+
+The second unanticipated effect was the extraordinary tension generated by
+the procedures. One might suppose that a subject would simply break off or
+continue as his conscience dictated. Yet this is very far from what
+happened. One observer related: "I observed a mature and initially poised
+businessman enter the laboratory smiling and confident. Within 20 minutes
+he was reduced to a twitching, stuttering wreck, who was rapidly
+approaching a point of nervous collapse. He constantly pulled on his
+earlobe, and twisted his hands. At one point he pushed his fist into his
+forehead and muttered: 'Oh God, let's stop it.' And yet he continued to
+respond to every word of the experimenter, and obeyed to the end."
+
+Any understanding of the phenomenon of obedience must rest on an analysis
+of the particular conditions in which it occurs. The following features of
+the experiment go some distance in explaining the high amount of obedience
+observed in the situation.
+
+1. The experiment is sponsored by and takes place on the grounds of an
+institution of unimpeachable reputation, Yale University. It may be
+reasonably presumed that the personnel are competent and reputable.
+
+2. The experiment is, on the face of it, designed to attain a worthy
+purpose--advancement of knowledge about learning and memory. Obedience
+occurs not as an end in itself, but as an instrumental element in a
+situation that the subject construes as significant and meaningful. He may
+not be able to see its full significance, but he may properly assume that
+the experimenter does.
+
+3. The subject perceives that the victim has voluntarily submitted to the
+authority system of the experimenter. He is not (at first) an unwilling
+captive. He has taken the trouble to come to the laboratory, presumably to
+aid the experimental research. That he later becomes an involuntary subject
+does not alter the fact that initially he consented to participate without
+qualification. Thus he has in some degree incurred an obligation toward the
+experimenter.
+
+4. The subject, too, has entered the experiment voluntarily, and perceives
+himself under obligation to aid the experimenter. He has made a commitment,
+and to disrupt the experiment is a repudiation of this initial promise of
+aid.
+
+5. Certain features of the procedure strengthen the subject's sense of
+obligation to the experimenter. For one, he has been paid for coming to the
+laboratory. In part this is cancelled out by the experimenter's statement
+that the money is his simply for coming, no matter what happens.
+
+6. From the subject's standpoint, the fact that he is the teacher and the
+other man the learner is purely a chance consequence (determined by drawing
+lots), and he ran the same risk as the other man in being assigned the role
+of learner. Since the assignment of positions was achieved by fair means,
+the learner is deprived of any basis of complaint on this count.
+
+7. There is, at best, ambiguity with regard to the prerogatives of a
+psychologist and the corresponding rights of his subject. There is a
+vagueness of expectation concerning what a psychologist may require of his
+subject, and when he is overstepping acceptable limits. Moreover, the
+experiment occurs in a closed setting, and thus provides no opportunity for
+the subject to remove these ambiguities by discussion with others. There
+are few standards that seem directly applicable to the situation, which is
+a novel one for most subjects.
+
+8. The subjects are assured that the shocks are "painful but not
+dangerous." Thus they assume that the discomfort caused the victim is
+momentary, while the scientific gains resulting from the experiment are
+enduring.
+
+9. Through Shock Level 20 the victim continues to provide answers on the
+signal box. The subject may construe this as a sign that the victim is
+still willing to "play the game." It is only after Shock Level 20 that the
+victim repudiates the rules completely, refusing to answer further.
+
+These features help to explain the high amount of obedience obtained in
+this experiment. Many of the arguments raised need not remain matters of
+speculation, but can be reduced to testable propositions to be confirmed or
+disproved by further experiments.
+
+The following features concern the nature of the conflict which the subject
+faces.
+
+10. The subject is placed in a position in which he must respond to the
+competing demands of two persons: the experimenter and the victim. The
+conflict must be resolved by meeting the demands of one or the other;
+satisfaction of the victim and the experimenter are mutually exclusive.
+Moreover, the resolution must take the form of a highly visible action,
+that of continuing to shock the victim or breaking off the experiment. Thus
+the subject is forced into a public conflict that does not permit any
+completely satisfactory solution.
+
+11. While the demands of the experimenter carry the weight of scientific
+authority, the demands of the victim spring from his personal experience of
+pain and suffering. The two claims need not be regarded as equally pressing
+and legitimate. The experimenter seeks an abstract scientific datum; the
+victim cries out for relief from physical suffering caused by the subject's
+actions.
+
+12. The experiment gives the subject little time for reflection. The
+conflict comes on rapidly. It is only minutes after the subject has been
+seated before the shock generator that the victim begins his protests.
+Moreover, the subject perceives that he has gone through but two-thirds of
+the shock levels at the time the first protests are heard. Thus he
+understands that the conflict will have a persistent aspect to it, and may
+well become more intense as increasingly more powerful shocks are required.
+
+13. At a more general level, the conflict stems from the opposition of two
+deeply ingrained behavior dispositions: first, the disposition not to harm
+other people, and second, the tendency to obey those whom we perceive to be
+legitimate authorities.
+
+Note (from footnote 4 of the original): 43 subjects, undergraduates at Yale
+University, were run in the experiment without payment. The results are
+very similar to those obtained with paid subjects.

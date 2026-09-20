@@ -1,0 +1,479 @@
+Bond, C. F., Jr., & DePaulo, B. M. (2006). Accuracy of Deception Judgments.
+Personality and Social Psychology Review, 10(3), 214-234.
+DOI: 10.1207/s15327957pspr1003_2
+Text transcript (page-marker-free), prepared for the registry corpus.
+The appendix listing and the reference list of the original article are
+omitted here; figure tables are rendered as plain text.
+
+ABSTRACT
+
+We analyze the accuracy of deception judgments, synthesizing research
+results from 206 documents and 24,483 judges. In relevant studies, people
+attempt to discriminate lies from truths in real time with no special aids
+or training. In these circumstances, people achieve an average of 54%
+correct lie-truth judgments, correctly classifying 47% of lies as deceptive
+and 61% of truths as nondeceptive. Relative to cross-judge differences in
+accuracy, mean lie-truth discrimination abilities are nontrivial, with a
+mean accuracy d of roughly .40. This produces an effect that is at roughly
+the 60th percentile in size, relative to others that have been
+meta-analyzed by social psychologists. Alternative indexes of lie-truth
+discrimination accuracy correlate highly with percentage correct, and rates
+of lie detection vary little from study to study. Our meta-analyses reveal
+that people are more accurate in judging audible than visible lies, that
+people appear deceptive when motivated to be believed, and that individuals
+regard their interaction partners as honest. We propose that people judge
+others' deceptions more harshly than their own and that this double
+standard in evaluating deceit can explain much of the accumulated
+literature.
+
+INTRODUCTION
+
+Deception entered Western thought in a telling guise when the author of
+Genesis placed a serpent in the Garden of Eden. By lying, the serpent
+enticed Eve into committing the original sin. Thus deception was enshrined
+as the ultimate source of evil.
+
+Lying has always posed a moral problem. Aristotle wrote that "falsehood is
+in itself mean and culpable"; St. Augustine believed that every lie is a
+sin; and Kant regarded truthfulness as an "unconditional duty which holds
+in all circumstances." Others take a more permissive stance. Aquinas
+countenanced lies told in the service of virtue, and Machiavelli extolled
+deceit in the service of self.
+
+Having been a moral issue for millennia, deception came also to be viewed
+as a legal challenge. The polygraph, the psychological stress evaluator,
+brain fingerprints, EEGs--these have been promoted for their ability to
+divine deception. Yet in the first decade of the 21st century, American
+jurisprudence entrusts lie detection to ordinary citizens. U.S. courts bar
+technological aids to lie detection, and deception experts too. Witnesses
+must appear in person before jurors who are the "sole judges" of the
+witnesses' believability. American jurors are instructed to judge a
+person's truthfulness by considering his or her "demeanor upon the witness
+stand" and "manner of testifying."
+
+In this article, we summarize research on 4,435 individuals' attempts to
+dupe 24,483 others. We offer quantitative measures of deceptive success and
+identify conditions under which people are more and less gullible.
+
+CHARACTERIZATIONS OF DECEPTION
+
+"No mortal can keep a secret. If his lips are silent, he chatters with his
+finger-tips; betrayal oozes out of him at every pore." -- Freud (1905)
+
+With this quotation, Ekman and Friesen (1969) opened a pioneering article
+on the psychology of deception. In their view, liars face challenges. They
+must guard against nonverbal "leakage" of feelings they are trying to
+conceal and must hide their own affective reactions to the act of lying,
+such as guilt, anxiety, and shame. Ekman and Friesen predicted that people
+are most likely to show deception in the legs and feet, less likely to show
+it in the hands, and least likely to show deception in the face--people
+have more ability and motivation to control the face than the feet and
+legs.
+
+Thirty-two years later, Ekman (2001) emphasized the ambiguity of nonverbal
+deception cues. There being no foolproof sign of deceit, many inferences of
+deception are mistaken. Ekman attributes failures at lie detection to many
+factors: poor evolutionary preparation, socialization to overlook lies, the
+psychological benefits of trust, and inadequate feedback from errors.
+
+Buller and Burgoon (1996) proposed a theory for face-to-face deceptive
+interactions. Theoretically, receivers are more likely to perceive a person
+as truthful if they are interacting with that person rather than seeing the
+person on videotape.
+
+DePaulo and colleagues favored a self-presentational perspective on
+deception. In this view, lying is a part of everyday life. People tell lies
+to avoid embarrassment and make positive impressions. Most of these serious
+lies involve a self-presentational stake: the liar's reputation. The signs
+of deception are subtle, and social norms encourage people to accept
+others' representations at face value.
+
+A DOUBLE STANDARD
+
+We offer a new framework for understanding this subject. We believe that
+there is a double standard in evaluating deception.
+
+Our framework begins by noting that people regard truth telling as
+unexceptional. They accept most statements at face value, rarely inquiring
+into the authenticity of what they hear. People come to regard an assertion
+as truthful only after entertaining the possibility that it was deceptive.
+
+There are two perspectives on deception. One is the perspective people
+hold when they themselves are lying; a second is the perspective they bring
+to others' lies. As deceivers, people are practical. They accommodate
+perceived needs by lying. Of course, deceivers rarely regard their own
+falsehoods as lies but as something more innocuous. They exaggerate,
+minimize, and omit. Regarding half-truths and self-editing as necessities
+of social life, deceivers see deception as similar to these sanctioned
+practices. Lies occasion little anxiety, guilt, or shame. They are easy to
+rationalize. To the liar, there is nothing exceptional about lying.
+
+If pragmatic about their own deceptions, people become moralistic when they
+consider others' lies. Then deception is wrong and reflects negatively on
+the deceiver. Indeed, people view duplicity as one of the gravest moral
+failings. In their ratings of 555 personality trait terms, college students
+rate as least desirable the trait of being a liar. Social logic assumes
+that honest people always act honestly; thus, to label a statement a lie is
+to imply that the person who made that statement is a liar. People have a
+prescriptive stereotype of the liar--stricken with shame, wracked by the
+threat of exposure, liars leak signs of their inner torment. They fidget,
+avoid eye contact, and can scarcely bring themselves to speak--a worldwide
+stereotype holds (Global Deception Research Team, 2006). The stereotypic
+reasons for lying are nefarious too.
+
+Implications of the double standard: Perceivers draw on the liar
+stereotype when considering a target's veracity. Targets who most resemble
+the stereotype are most likely to be regarded as liars; those who least
+resemble it are most likely to be believed. One factor affecting resemblance
+would be the stakes surrounding a speaker's credibility. Most lies are
+little. When telling white lies of the sort often studied by researchers,
+people have no reason to appear tormented. Thus they should often be judged
+truthful. Occasionally the stakes of being believed are big. When facing
+huge stakes, people who ruminate over their credibility may come to match
+the liar stereotype. Then they would be judged deceptive, even if they were
+telling the truth.
+
+RESEARCH ON DETECTION ACCURACY
+
+Researchers conduct experiments: they arrange for people to lie and tell
+the truth (senders), and for others to judge the veracity of the resulting
+statements (receivers judging messages). We confine attention to receivers
+who must judge deceit without the aid of polygraphs, fMRIs, or other
+physiological devices--receivers who judge deception from a brief encounter
+with an unfamiliar sender in real time. These judgments are based on verbal
+content and the liar's behavior.
+
+Often, lie detection abilities are expressed as percentage correct.
+Ordinarily, half the messages a receiver encounters are truths and half
+lies; by guessing, a receiver could expect to achieve 50% correct
+classifications. Kraut (1980) offered a statistical summary of results from
+10 such experiments, finding a mean accuracy rate of 57%, and concluded
+that "the accuracy of human lie detectors is low." Vrij (2000), summarizing
+39 studies published after 1980, replicated Kraut's finding: receivers of
+more recent research achieve an average of 56.6% accuracy.
+
+Along with narrative reviews, these statistical summaries have inspired a
+consensus--"it is considered virtually axiomatic... that individuals are at
+best inaccurate at deception detection."
+
+Some meta-analyses expressed accuracy as a standardized mean difference
+(d): DePaulo, Zuckerman, and Rosenthal (1980) calculated a median d of .86
+in 16 early studies; Mattson et al. (2000) found d = 1.07 in 7 studies of
+organizational deception; Zuckerman et al. (1981) found that receivers with
+access to speech regard lies as less credible than truths with a mean d =
+1.14. Compared with reference values (Richard, Bond, & Stokes-Zoota, 2003:
+d of .20 small, .40 medium, .60 large), these would suggest strong
+detection.
+
+There is also a bias to perceive messages as truthful. Zuckerman et al.
+(1981) found a mean d = .86 for the truth-accuracy advantage; Vrij (2000)
+summarized 9 percentage-correct studies finding a strong truth bias--a mean
+of 61.5% truth judgments, 67% accuracy for truths, and 44% accuracy for
+lies.
+
+THIS REVIEW
+
+The largest previous review was based on 39 studies; here we summarize
+evidence from 206 studies. We assess accuracy in terms of percentage
+correct, the standardized mean difference, and alternative indexes (log
+odds ratio and d').
+
+Search and inclusion criteria: computer-based searches through August 2005;
+all English-language reports of original research on the accuracy of
+judgments of lies and truths. Excluded: studies where individuals judged
+only lies or only truths; studies where judges received experimental
+training or instructions on how to detect deception; attention-focusing
+instructions; studies where senders and receivers knew one another prior to
+the study; judgments using systematic aids (polygraph records,
+Criterion-Based Content Analysis, behavior codings from repeated viewings);
+non-English reports; senders or receivers younger than 17; senders
+role-playing an imagined person; implicit deception judgments; judgments of
+affect. 206 documents satisfied the criteria (133 published, 73
+unpublished; dated 1941-2005).
+
+Identifying independent samples: the unit of aggregation is the receiver
+sample; the data set consists of 384 independent receiver samples.
+
+Variables coded: number of senders, number of receivers, percentage
+correct, percentage truth, accuracy standardized mean difference, sender
+motivation, receiver motivation, sender preparation, sender interaction,
+receiver expertise, judgment medium, baseline exposure. Reliabilities on
+quantitative variables were uniformly high (lowest r = .894).
+
+RESULTS
+
+Characteristics of the literature. The documents reported results on
+24,483 receivers' deception judgments of 6,651 messages offered by 4,435
+senders. In a typical study, 41 receivers judged 16 messages; the typical
+message lasted 52 seconds. In most cases the medium was audiovisual (67.4%
+of samples; video-only 12.2%, audio-only 10.9%). About 55% of sender
+samples had no particular motivation to succeed when lying; more than 40%
+were motivated. Receivers were rarely motivated (barely 12%). A little over
+half the samples judged senders who had time to prepare; about 65% judged
+senders who were interacting as they lied. Only 12% of receiver samples
+could claim occupational expertise (2,842 experts: law enforcement
+personnel, judges, psychiatrists, job interviewers, auditors, polygraph
+examiners, federal agents, customs officials, and criminals).
+
+Percentage correct. In 292 samples, receivers classified messages as lies
+or truths. More than three fourths of these means are greater than 50% and
+less than one in seven is greater than 60%. The unweighted mean percentage
+correct lie-truth classification is 53.98%. The highest mean in any sample
+is 73%, the lowest 31%. Means at the first, second, and third quartile are
+50.07%, 53.90%, and 58.00%.
+
+The funnel pattern: variability is high among means based on small numbers
+of judgments and low among means based on large numbers. The observed
+standard deviation in mean percentage correct is only 6.11%. Receiver
+sampling error accounts for 45.29% of the observed between-study variance;
+the true standard deviation across studies is only 4.52%. Weighted
+techniques reveal a mean of 53.46% correct; 95% confidence interval 53.31%
+to 53.59%. This mean is significantly greater than 50% (t(7994) = 39.78, p
+< .0001).
+
+Standardized mean differences. For 107 samples that rated messages on
+multipoint scales, the unweighted mean d was .35 (s = .47); quartiles .09,
+.31, .67; the weighted mean d for lie-truth discrimination is .34 (95% CI
+.31 to .38). This is less than half as large as earlier rated-veracity
+reviews (ds exceeding .85). For dichotomous classifications, the weighted
+mean standardized difference was .42 in 216 samples; binomial-imputed, .40
+in 61 others. Combining all 384 receiver samples: weighted and unweighted
+mean ds of .39 and .49; median .39. Converted to correlations: mean accuracy
+r = .19 (weighted .21). A d of .39 (r of .21) ranks above the 60th
+percentile relative to 474 social psychological effects.
+
+Percentage judged true. In 207 samples, percentage truth classifications
+show an unweighted mean of 56.86% and weighted mean of 55.23%, each
+significantly greater than 50% (95% CI for weighted mean 54.99% to 55.46%).
+There is no relationship between the percentage of truth judgments and the
+percentage of correct classifications across studies (r = -.008).
+
+Stimulus accuracy. Unweighted analyses reveal that people correctly
+classify 61.34% of truthful messages as truthful and 47.55% of deceptive
+messages as deceptive. The greater the percentage of lies correctly
+classified in a study, the lower the percentage of truths correctly
+classified (r = -.53, p < .0001). Cross-study differences result largely
+from differences in response threshold, rather than differences in
+discrimination ability.
+
+Response accuracy. Given that a person has judged a statement truthful,
+what is the likelihood it was in fact truthful; given a lie judgment, the
+likelihood it was actually a lie? Across 187 samples judging equal numbers
+of truths and lies, judgments of truthfulness are less likely to be accurate
+than judgments of deceptiveness: unweighted means 54.12% versus 55.84%,
+t(187) = 5.12, p < .01. The greater the response accuracy of truth
+judgments in a study, the greater the response accuracy of lie judgments
+(r = .80, p < .0001).
+
+Other accuracy measures. The mean log-odds-based analysis implies the odds
+of judging a truthful message truthful are 1.46 times the odds of judging
+a deceptive message truthful (95% CI 1.41-1.51), implying means of 62.30%
+and 47.53% correct for truths and lies respectively. The mean d' is .24
+(median .22); its implied maximum percentage correct is 54.79%, close to
+the 54.45% directly computable. The three accuracy measures are highly
+intercorrelated (percentage correct with log odds ratio r = .979; with d'
+r = .988). Lies are discriminated from truths at levels slightly better
+than flipping a coin.
+
+DETERMINANTS OF ACCURACY
+
+Judges achieve about 54% lie-truth discrimination accuracy on average.
+We examine six factors: (a) deception medium, (b) motivation, (c)
+preparation, (d) baseline exposure, (e) interaction, and (f) receiver
+expertise--each assessed via within-study comparisons, between-study
+comparisons, and statistically adjusted comparisons.
+
+Deception medium. Lie-truth discrimination accuracy is lower if judgments
+are made in a video rather than an audiovisual or audio medium (video vs.
+audiovisual weighted mean d = -.44; video vs. audio d = -.37; video vs.
+written transcript d = -.28; each significant). The levels achieved from
+transcript, audiovisual, and audio presentations do not differ
+significantly from one another. Messages are perceived as less truthful if
+judged from video than audiovisual or audio (ds = -.29 and -.34). Between
+studies: truth classifications--video 52.18%, audio 58.78%, audiovisual
+56.32%; correct classifications--video 50.52%, audio 53.01%, audiovisual
+54.03%; accuracy d--video .077, audio .419, audiovisual .438.
+
+Interpretation: the usual stereotype of a liar is largely visual, hence is
+most strongly evoked by video images of people speaking. Those who can be
+viewed as tormented are judged to be lying, but apparent torment reflects
+many factors other than deceit.
+
+On Ekman and Friesen's hypothesis (more deception cues in the body than the
+face): video-based attempts divided into face-only (k = 15), body-only
+(k = 9), face plus body (k = 29). Detection is unsuccessful when receivers
+see only the sender's face, and similarly unsuccessful with only the body
+(weighted mean accuracy d = .01, -.15, and .12 respectively)--only partial
+support at best.
+
+Motivation. DePaulo's motivational impairment hypothesis: the truths and
+lies of highly motivated senders will be more easily discriminated than
+those of unmotivated senders (unless receivers have only a transcript).
+Experimental evidence: lies are easier to discriminate if told by motivated
+rather than unmotivated senders (weighted mean d = .171, Z = 7.10, p <
+.0001, in 42 experimental effects from 20 studies).
+
+The double-standard hypothesis has a different implication: people who are
+afraid of being disbelieved may come to resemble the stereotypic liar; it
+should matter little whether or not a highly motivated speaker is lying.
+What matters is the speaker's fear of being disbelieved. Between studies:
+motivation to be believed reduces a speaker's apparent honesty (truth
+classifications: no motivation 57.24%, motivation 53.43%). Motivation
+significantly reduces senders' video and audiovisual appearance of
+truthfulness: unmotivated vs. motivated senders classified as truthful by
+54.44% vs. 46.84% of receivers in video-only presentations. Motivation has
+no effect on how truthful a sender sounds. On lie-truth discrimination
+itself, between-study evidence does not indicate that motivation makes
+liars easier to detect (adjusted ds .396 vs. .371, n.s.).
+
+Preparation. 15 studies experimentally manipulated sender preparation time
+(24 effects on accuracy, 10 on truthfulness). Receivers achieve higher
+lie-truth detection accuracy when judging unplanned rather than planned
+messages (weighted mean d = -.144, Z = 4.49, p < .01), and planned messages
+appear more truthful than unplanned messages (weighted mean d = .133, Z =
+2.35, p < .05). Between studies, planned messages appear slightly less
+honest than spontaneous (mixed for accuracy).
+
+Baseline exposure to sender. 21 experimental comparisons of judges who had
+versus had not been previously exposed to the target: baseline exposure
+improves lie-truth discrimination. Receivers achieve a mean of 55.91%
+accuracy when given a baseline exposure versus 52.26% without (within-
+study d = .239). Between studies: exposure 54.22% vs. no exposure 53.35%
+correct; senders familiar to the receiver are likely to be given the
+benefit of the doubt (truth classifications: exposure 58.37% vs. 56.11%).
+Consistent with the double-standard framework, people are reluctant to
+imply that someone familiar to them is a liar.
+
+Interaction. Individuals are judged more truthful by their interaction
+partners than by third-party observers (within studies, weighted mean d =
+.26, Z = 4.10, p < .0001). Between studies: interaction with the receiver
+65.32% truth classifications vs. 54.51% no interaction. Controlled
+experiments show no significant difference in lie-truth discrimination by
+interaction partners versus third-party observers (ds = .286 vs. .209,
+n.s.). The reluctance to attribute deception to interaction partners
+results from an unwanted dispositional implication--insinuating that the
+partner is a liar.
+
+Receiver expertise. In 19 studies, expert and nonexpert receivers judged
+the same messages (20 independent comparisons). This cumulation yields no
+evidence that experts are superior to nonexperts in discriminating lies
+from truths: weighted mean d = -.025 (95% CI -.105 to .055); the direction
+if anything favors nonexperts. No significant difference in truth bias
+either (experts 54.09% vs. nonexperts 55.74% truth judgments). Between
+studies, experts appear more skeptical than nonexperts (52.28% vs. 55.69%
+truth classifications); raw comparisons may suggest an expert advantage in
+discrimination (d .488 vs. .380), but the apparent superiority disappears
+when means are statistically adjusted (adjusted d .388 vs. .387). Experts
+are not good lie detectors: on average they achieve less than 55%
+lie-truth discrimination accuracy.
+
+Publication status. No significant differences between published and
+unpublished studies in discrimination (53.19% vs. 53.75%). Truthfulness
+biases were stronger in unpublished research (56.75% vs. 54.27% truth
+classifications).
+
+DISCUSSION
+
+How successful are people at duping others? Across hundreds of experiments,
+typical rates of lie-truth discrimination are slightly above 50%. For the
+grand mean, 54% is a reasonable estimate.
+
+The ability also corresponds to a nontrivial standardized effect: a mean
+difference of approximately .40 standard deviations, larger than 60% of the
+research phenomena studied by social psychologists.
+
+Truthful messages are more often judged correctly than deceptive messages;
+the percentage of correct judgments in any real-world setting may depend on
+the base rate of deception there. In a setting where virtually no lies were
+told, the literature would suggest a detection rate of roughly 60%; where
+virtually every statement was a lie, a detection rate of, say, 48% might be
+expected. Liars have intuitions about situational trust too: if they can
+choose where to attempt their deceptions, they should opt for settings in
+which targets are most trusting.
+
+People are more inclined to judge deceptive messages as truthful than
+truthful messages as deceptive. Receivers contribute to this truth bias,
+but senders' contributions should also be acknowledged: when people try to
+appear truthful, their efforts are rewarded. Across 206 studies people
+render a mean of some 56% truth judgments; this figure may understate the
+presumption of truth telling in real life, where laboratory judgments are
+forced.
+
+A pattern in the literature: scholars resist the implication that people
+can barely discriminate lies from truths by labelling some methodological
+feature an artifact, correcting it, and announcing uniquely valid findings.
+Occasionally a researcher finds a detection rate of 70% (or so) and
+proclaims a momentous discovery; those rates occur on tests with only a
+small number of messages and are attained by a subset of receivers. From a
+meta-analytic perspective, random variation is the most plausible
+explanation, as the funnel pattern suggests.
+
+We are more impressed by the regularity of the results. Despite decades of
+research effort to maximize the accuracy of deception judgments, detection
+rates rarely budge. Professionals' judgments, interactants' judgments,
+judgments of high-stakes lies, judgments of unsanctioned lies, judgments
+made by long-term acquaintances--all reveal detection rates within a few
+points of 50%. We wonder if it is premature to abort the quest for 90% lie
+detection and accept the conclusion implied by the first 384 research
+samples: that to people who must judge deception in real time with no
+special aids, many lies are undetectable.
+
+Some factors facilitate discrimination and others impede it. Lies are more
+detectable when they can be heard. Facial behaviors provide no indication
+of a speaker's veracity, corroborating the theory that the face is well
+controlled. Judges achieve better discrimination if they have baseline
+exposure to the sender and if the sender is unprepared. People who are
+motivated to be believed look deceptive whether or not they are lying.
+Expert judges may be slightly more skeptical than novices; they make many
+mistakes regardless.
+
+The double standard, discussed: people project onto the deceptive a host of
+morally fueled emotions--anxiety, shame, guilt. Drawing on this stereotype
+to assess others' veracity, people find that the stereotype seldom fits. In
+underestimating the liar's capacity for self-rationalization, judges'
+moralistic stereotype has the unintended effect of enabling successful
+deceit. Because deceptive torment resides primarily in the judge's
+imagination, many lies are mistaken for truths. When torment is perceived,
+it is often not a consequence of deception but of a speaker's motivation to
+be believed. High stakes rarely make people feel guilty about lying; more
+often they allow deceit to be easily rationalized.
+
+People avoid attributing deception to others with whom they are familiar.
+Perhaps the truth bias represents an extension of the self-bias to others
+reminiscent of the self. Expert judges are willing to imply that others are
+liars--but they are rarely sitting in judgment of their peers; self-biases
+do not extend to outsiders.
+
+On deception failures: research participants disbelieve nearly 50% of
+senders' deception attempts and nearly 40% of their attempts at truth
+telling. In the rough actuarial aggregate, liars fail as often as
+detectors. Many people avoid being caught in the act; when asked to
+describe their discovery of a lie, people rarely state that the discovery
+was prompted by behaviors displayed at the time of the attempted deception.
+Rather, they say lie detection took days, weeks, or even months, and
+involved physical evidence or third parties (Park, Levine, McComack,
+Morrison, & Ferrara, 2002).
+
+Skilled liars may be worse relationship partners than people whose lies are
+transparent; inept liars pose no threat insofar as their attempts fail
+before damage is done. Skill at high-stakes deception may be an
+interpersonal liability, and so-called deception failures may in the long
+run be adaptive. The craftiest may cultivate reputations for honesty by
+telling the truth on trivial matters, so that when deceit promises the
+largest reward others have been lulled into unwarranted trust.
+
+Limitations in the evidence: researchers have excluded extra-behavioral
+cues to deception, restricted the time span for pondering, blinded judges
+to motivational contingencies, and neutralized naturally occurring
+correlates of the propensity to lie. Outside the laboratory, additional
+information is important. People differ widely in the propensity to lie,
+and this individual difference may be discernable. Future studies will be
+needed to explore the impact of extrabehavioral information. Perhaps the
+90% lie detection barrier will someday be broken.
+
+In the meantime: yes, people often fail in their efforts to divine
+deception. It is important also to note that research participants often
+fail when trying to dupe others. Perhaps it would be unsurprising if liars
+and would-be detectors had arrived at an equilibrium. If liars were much
+better, truth telling would be less common; if detectors were much better,
+few lies would be attempted.
