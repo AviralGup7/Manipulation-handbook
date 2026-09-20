@@ -17,6 +17,8 @@ already contributed to it.
 | B5 | primary | 85 | Never Split the Difference | Chris Voss (with Tahl Raz) | 2016 | 11 | 11 | 9 |
 | B6 | primary | 85 | In Sheep's Clothing: Understanding and Dealing with Manipulative People | George K. Simon Jr. | 1996 | 9 | 9 | 4 |
 | B7 | primary | 80 | Spy the Lie: How to Spot Deception the CIA Way | Philip Houston, Michael Floyd, with Susan Carnicero | 2012 | 7 | 7 | 4 |
+| B8 | primary | 95 | Accuracy of Deception Judgments | Charles F. Bond, Jr. and Bella M. DePaulo | 2006 | 3 | 3 | 1 |
+| B9 | primary | 95 | Behavioral Study of Obedience | Stanley Milgram | 1963 | 2 | 2 | 1 |
 
 ## Entries
 
@@ -97,10 +99,11 @@ already contributed to it.
 | `T-17-04` | stable | B3 | The Second Self | Delivery | 594 |
 | `T-17-05` | stable | B3 | Staged Grandeur | Delivery | 608 |
 | `T-17-06` | stable | B3 | The Slow Reform | Delivery | 641 |
-| `T-18-01` | stable | B4, B3 | The Symbols of Authority | Appearance and Compliance | 554 |
+| `T-18-01` | stable | B4, B3, B9 | The Symbols of Authority | Appearance and Compliance | 592 |
 | `T-18-02` | stable | B4 | Titles, Uniform and Trappings | Appearance and Compliance | 547 |
 | `T-18-04` | stable | B3 | Behave Like Others | Appearance and Compliance | 555 |
 | `T-18-03` | stable | B3 | The Sucker's Face | Appearance and Compliance | 660 |
+| `T-18-05` | stable | B9 | The Man in the Gray Coat | Appearance and Compliance | 678 |
 | `T-19-01` | stable | B4 | The Uninvited Debt | Guilt, Fear and Obligation | 546 |
 | `T-19-02` | stable | B4 | Unequal Exchange | Guilt, Fear and Obligation | 511 |
 | `T-19-03` | stable | B1 | The Unanswerable Question | Guilt, Fear and Obligation | 637 |
@@ -121,11 +124,12 @@ already contributed to it.
 | `T-23-01` | stable | B4 | Reading a Seeded Room | Detection | 472 |
 | `T-23-02` | stable | B4, B6 | Manufactured Rapport | Detection | 490 |
 | `T-23-03` | stable | B4 | Testing a Claimed Credential | Detection | 491 |
-| `T-23-04` | stable | B6, B7 | The Gut Verdict | Detection | 697 |
-| `T-23-05` | stable | B7 | The Five-Second Window | Detection | 682 |
+| `T-23-04` | stable | B6, B7, B8 | The Gut Verdict | Detection | 699 |
+| `T-23-05` | stable | B7, B8 | The Five-Second Window | Detection | 695 |
 | `T-23-06` | stable | B7 | The Three Lies | Detection | 686 |
 | `T-23-07` | stable | B7 | The Wrath of the Liar | Detection | 694 |
 | `T-23-08` | stable | B7 | The Working Question | Detection | 691 |
+| `T-23-09` | stable | B8 | The Fifty-Four Percent Ceiling | Detection | 648 |
 | `T-24-01` | stable | B4 | Refusing an Unauthorised Debt | Inoculation and Refusal | 535 |
 | `T-24-02` | stable | B4 | A Commitment You Did Not Choose | Inoculation and Refusal | 499 |
 | `T-24-03` | stable | B4 | Refusing a Deadline | Inoculation and Refusal | 502 |

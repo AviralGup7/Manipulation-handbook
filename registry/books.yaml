@@ -143,6 +143,36 @@
   notes: >
     TODO
 
+
+- id: B8
+  rank: primary
+  weight: 95
+  status: active
+  title: "Accuracy of Deception Judgments"
+  author: "Charles F. Bond, Jr. and Bella M. DePaulo"
+  year: 2006
+  publisher: "Personality and Social Psychology Review 10(3), 214-234, DOI 10.1207/s15327957pspr1003_2"
+  file: "books/Bond & DePaulo 2006 - Accuracy of Deception Judgments.txt"
+  structure: "Meta-analysis of 206 documents: percentage correct, standardized mean differences, moderators (medium, motivation, preparation, baseline exposure, interaction, expertise), double-standard framework"
+  short: "Bond & DePaulo, Accuracy of Deception Judgments (2006)"
+  notes: >
+    Peer-reviewed meta-analysis of 24,483 judges and 4,435 senders; the quantitative ground truth beneath the detection chapters. Where B7 gives a practitioner method, B8 gives the measured ceiling of the whole detection enterprise.
+
+
+- id: B9
+  rank: primary
+  weight: 95
+  status: active
+  title: "Behavioral Study of Obedience"
+  author: "Stanley Milgram"
+  year: 1963
+  publisher: "Journal of Abnormal and Social Psychology 67(4), 371-378"
+  file: "books/Milgram 1963 - Behavioral Study of Obedience.txt"
+  structure: "Single experimental report: method, results (65 percent full obedience), tension observations, discussion with 13-feature situational analysis"
+  short: "Milgram, Behavioral Study of Obedience (1963)"
+  notes: >
+    The classic peer-reviewed obedience experiment: 26 of 40 subjects administered the maximum 450-volt shock on authority's command. The measured anchor for every authority chapter claim.
+
 # NEXT BOOK GOES HERE. Do not renumber the ones above.
 # ---------------------------------------------------------------------
 # - id: B6

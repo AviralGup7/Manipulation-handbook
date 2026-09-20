@@ -50,3 +50,9 @@ Output goes to `registry/corpus/`, which is git-ignored: it is large, it is
 third-party expression, and it is trivially regenerable from the scans here.
 Rule R15 reads that corpus to machine-check that no run of nine or more words
 of source expression has leaked into the handbook.
+
+A registered source may also be a **plain-text transcript** (`.txt`) instead
+of a PDF — the format used for journal articles whose PDFs cannot be mirrored
+here (the register records the DOI instead). `tools/extract_corpus.py`
+recognises the extension and passes the transcript through to the corpus
+(normalised like any other), so grounding checks work identically.
